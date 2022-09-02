@@ -1,14 +1,15 @@
 import React from "react";
+import './FooterStyle.css';
 
 const Footer =()=>{
 
     return (
         
-<footer class="footer">
+<footer className="footer">
 
 
-    <p class="copyright">
-      &copy; 2022 Cryptex All Rights Reserved by <a href="https://github.com/amalisaah" class="copyright-link">amalisaah</a> & <a href="https://github.com/aihoon01" class="copyright-link">aihoon1</a>
+    <p className="copyright">
+      &copy; 2022 CryptoTech All Rights Reserved by <a href="https://github.com/amalisaah" className="copyright-link">amalisaah</a> & <a href="https://github.com/aihoon01" className="copyright-link">aihoon1</a>
     </p>
 
 </footer>

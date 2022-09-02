@@ -1,15 +1,16 @@
 import './App.css';
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "./Components/NavBar/Navbar";
-import Footer from "./Components/Footer/Footer"
+import Footer from "./Components/Footer/Footer";
+import Home from "./Components/Home/Home";
+
 
 function App() {
 
-  const [currency, setcurrency] = useState("usd")
-
   return (
     <>
-    <Navbar currentcurrency={currency} changecurrency={setcurrency}  />
+    <Navbar />
+    <Home />
     <Footer />
     </>       
   );

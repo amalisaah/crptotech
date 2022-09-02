@@ -10,7 +10,7 @@ const Navbar = () => {
     <header className='header'>
       <div className='container'>
         <h1>Crypto<span className='primary'>Tech</span></h1>
-        <ul className='nav-menu'>
+        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li>
               <a href='/'>PORTFOLIO</a>
           </li>
@@ -22,7 +22,7 @@ const Navbar = () => {
           </li>
         </ul>
         <form className='money'>
-            <select className='select' value='USD'>
+            <select className='select' >
               <option value='euro'>Euro</option>
               <option value='euro'>USD</option>
             </select>

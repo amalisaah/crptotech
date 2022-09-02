@@ -51,7 +51,8 @@ header .container {
       flex-direction: column;
       justify-content: start;
       top: 90px;
-      right: -100%;
+      /* right: -100%; */
+      display: none;
       width: 50%;
       height: 100vh;
       transition: 0.4s;
@@ -60,9 +61,11 @@ header .container {
       border-left: 1px solid #eee;
   }
 
-  /* .nav-menu.active {
+  .nav-menu.active {
       right: 0;
-  } */
+      display: block;
+      
+  }
 
   .nav-menu li {
       padding: 1rem;

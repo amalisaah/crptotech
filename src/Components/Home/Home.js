@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FiArrowUpRight, FiArrowDown } from 'react-icons/fi';
-import './Homestyle.css'
+import './Homestyle.css';
+import imge1 from "./assets/about-banner.png";
+import imge2 from "./assets/images.png";
 
 const Home = () => {
 
@@ -60,6 +62,7 @@ const Home = () => {
                     )   
                     )}
                 </div>
+                {/* <button className='btn'>See More Coins</button> */}
             </div>
             <div className='container'>
                 {/* Left */}
@@ -71,8 +74,8 @@ const Home = () => {
 
                 {/* Right */}
 
-                <div className='right'>
-                    
+                <div >
+                    <img src={imge1} width="100%" alt="hero banner" /> 
                 </div>
             </div>
             <div className='container'>
@@ -87,8 +90,8 @@ const Home = () => {
 
                 {/* Right */}
 
-                <div className='right'>
-                    
+                <div >
+                    <img src={imge2} width="100%" alt="hero banner" /> 
                 </div>
             </div>
         </div>

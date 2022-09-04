@@ -1,8 +1,8 @@
 import React from 'react';
-import './Coin.css';
-import Table from '../Table';
+import './PortfolioStyle.css';
+import Table from './Table/Table';
 
-const Coin = ()=>{
+const   Portfolio = ()=>{
 
     return(
         <table className="market-table">
@@ -23,6 +23,12 @@ const Coin = ()=>{
 
                   <th className="table-heading" scope="col">1h %</th>
 
+                  <th className="table-heading" scope="col">Price</th>
+
+                  <th className="table-heading" scope="col">24h %</th>
+
+                  <th className="table-heading" scope="col">1h %</th>
+
                   <th className="table-heading market-cap" scope="col">Market Cap</th>
                   
                   <th className="table-heading market-vol" scope="col">Market Volume</th>
@@ -31,10 +37,10 @@ const Coin = ()=>{
             </thead>
 
             <tbody className="table-body">
-            <Table />
+            {/* <Table /> */}
              </tbody>
     </table>
     )
 }
 
-export default Coin;
+export default Portfolio;

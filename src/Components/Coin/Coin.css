@@ -1,47 +1,44 @@
-:root {
-    --fs-5: 1.8rem;
-    --fs-7: 1.4rem;
-    --cadet-blue-crayola: hsl(227, 13%, 73%);
-    --white: hsl(0, 0%, 100%);
-    --roman-silver: hsl(223, 10%, 52%);
-    
+table, th, td {
+  border: 1px solid red;
+  border-collapse: collapse;
+  text-align: center;
+  padding: .25rem;
 }
-
-
-.market-table {
-     width: 100%; 
+/* thead { 
+  position :fixed;
+  width: 100%;
+} */
+table {
+  width: 100%;
 }
-.table-heading,
-.table-data { padding: .25rem; }
-
-.table-heading {
-  /* font-size: var(--fs-5); */
-  text-align: left;
-  /* white-space: nowrap; */
-}
-
-/* table { border-collapse: collapse; } */
-/* .market-table .table-head { border-block-end: 2px solid var(--white); } */
-
 .table-row:not(.table-title) { height: 90px; }
 
-/* .market-table .add-to-fav {
-    color: var(--cadet-blue-crayola);
-    font-size: 18px;
-  } */
-
-  .market-table .coin-name {
-    font-size: var(--fs-5);
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-  }
+.add-to-fav {
+  color: hsl(223, 10%, 52%);
+  font-size: 18px;
+  border: var(--background);
+  background: var(--background);
   
-  .market-table .coin-name .span {
-    color: var(--roman-silver);
-    font-size: var(--fs-7);
+}
+
+.coin-name {
+  /* font-size: 1.5rem;  */
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+} 
+
+.wrapper {
+  display: flex;
+  gap: 0.4rem;
+}
+.market-table .coin-name .span {
+  color: hsl(223, 10%, 52%);
+  /* font-size: var(--fs-7); */
+}
+
+@media screen and (max-width: 478px) {
+  .market-cap, .market-vol {
+      display: none;
   }
-  .market-table .btn-outline {
-    /* border-width: 2px; */
-    padding-inline: 10px;
-  }
+}

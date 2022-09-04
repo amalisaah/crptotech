@@ -1,0 +1,74 @@
+.container {
+    display: flex;
+    margin-bottom: 50px;
+    width: 100%;
+    justify-content: space-between;
+}
+.card {
+    display: flex;
+}
+.card .left {
+    flex-direction: column;
+}
+.name {
+    display: flex;
+}
+
+.coin-name {
+    /* font-size: 1.5rem;  */
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+} 
+.coin-name .span {
+    color: hsl(223, 10%, 52%);
+    /* font-size: var(--fs-7); */
+  }
+
+button {
+    /* background: none; */
+    /* border: none; */
+    font: inherit;
+    cursor: pointer;
+}
+button {
+    /* color: var(--white); */
+    border-radius: 50px;
+    font-size: var(--fs-6);
+    font-weight: var(--fw-500);
+    border: 1px solid white;
+    padding: 5px 15px;
+    background-color: aqua;
+    width: 120;
+    height: 70px;
+}
+  
+
+.add-to-fav {
+    color: hsl(223, 10%, 52%);
+    font-size: 18px;
+    border: var(--background);
+    padding: 0;
+    /* background: tomato; */
+    height: fit-content;
+}
+/*   
+  button-outline:is(:hover, :focus) {
+    background-color: var(--blue-crayola);
+    border-color: var(--blue-crayola);
+  }
+  
+  button-primary {
+    position: relative;
+    background-color: var(--blue-crayola);
+    max-width: max-content;
+    font-weight: var(--fw-700);
+    padding: 13px 30px;
+    overflow: hidden;
+    z-index: 1;
+  } */
+
+  .name img {
+    width: 40px;
+    height: 40px;
+  }

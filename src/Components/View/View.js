@@ -24,7 +24,7 @@ const View = ()=>{
 
     return (
         <div className='view'>
-            <div className='container'>
+            <div className='details'>
                 <div className='card left'>
                     <div className='name'>
                         <button className="add-to-fav" aria-label="Add to favourite" >
@@ -42,10 +42,12 @@ const View = ()=>{
                     <div className='top'>
                        <div className='price'>
                             <button>Price</button>
-                            <p className="table-data last-price">${data[0].current_price.toLocaleString()}</p>
+                            <h2>${data[0].current_price.toLocaleString()}</h2>
                         </div>
                         <button className='buy'>Buy</button> 
                     </div>
+
+                    <div className='rates'>
                     <button>{data[0].price_change_percentage_24h < 0 ? (
                         <span className='red'>
                             <FiArrowDownLeft className='icon' />
@@ -56,7 +58,8 @@ const View = ()=>{
                             <FiArrowUpRight className='icon' />
                             {data[0].price_change_percentage_24h.toFixed(2)}%
                         </span>
-                         )}</button>
+                         )}
+                    </button>
                     <button>{data[0].price_change_percentage_24h < 0 ? (
                         <span className='red'>
                             <FiArrowDownLeft className='icon' />
@@ -67,17 +70,32 @@ const View = ()=>{
                             <FiArrowUpRight className='icon' />
                             {data[0].price_change_percentage_24h.toFixed(2)}%
                         </span>
-                         )}</button>
+                         )}
+                    </button>
+                    </div>
+                    
                 </div>
             </div>
 
-            <div className='container'>
-                <div className='title'>Market Cap</div>
-                <div className='price'>${data[0].market_cap.toLocaleString()}</div>
-                <div className='title'>Market Cap</div>
-                <div className='price'>${data[0].market_cap.toLocaleString()}</div>
-                <div className='title'>Market Cap</div>
-                <div className='price'>${data[0].market_cap.toLocaleString()}</div>
+            <div className='details bulk '>
+                <div>
+                    <h3 className='title'>Market Cap</h3>
+                    <div className='price'>${data[0].market_cap.toLocaleString()}</div>
+                </div>
+                <div>
+                    <h3 className='title'>Market Cap</h3>
+                    <div className='price'>${data[0].market_cap.toLocaleString()}</div>
+                </div>
+                <div>
+                    <h3 className='title'>Market Cap</h3>
+                    <div className='price'>${data[0].market_cap.toLocaleString()}</div>
+                </div>
+                
+            </div>
+
+            <div className='details chart'>
+                CHART
+                
             </div>
             
         </div>

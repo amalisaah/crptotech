@@ -1,14 +1,24 @@
-.container {
+ 
+
+div {
+    gap:10px;
+}
+.details {
     display: flex;
     margin-bottom: 50px;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 .card {
     display: flex;
-}
-.card .left {
     flex-direction: column;
+    width: 50%;
+    background:rgb(222, 241, 241);
+    padding: 2px;
+}
+.left button {
+    width: 80px;
+    align-self: center;
 }
 .name {
     display: flex;
@@ -22,8 +32,7 @@
 } 
 .coin-name .span {
     color: hsl(223, 10%, 52%);
-    /* font-size: var(--fs-7); */
-  }
+}
 
 button {
     /* background: none; */
@@ -32,43 +41,77 @@ button {
     cursor: pointer;
 }
 button {
-    /* color: var(--white); */
     border-radius: 50px;
-    font-size: var(--fs-6);
+    font-size: 1.2rem;
     font-weight: var(--fw-500);
     border: 1px solid white;
     padding: 5px 15px;
-    background-color: aqua;
+    background-color: rgb(159, 196, 196);
     width: 120;
     height: 70px;
 }
-  
+.buy {
+    height: 50px;
+    width: 70px;
+    background-color: rgb(9, 190, 78);
+    font-weight: 600;
+    font-size: large;
+    color: hsla(49, 34%, 15%, 0.836)
+} 
 
-.add-to-fav {
+button.add-to-fav {
     color: hsl(223, 10%, 52%);
     font-size: 18px;
     border: var(--background);
     padding: 0;
-    /* background: tomato; */
+    background-color: inherit;
     height: fit-content;
+    width: fit-content;
 }
-/*   
-  button-outline:is(:hover, :focus) {
-    background-color: var(--blue-crayola);
-    border-color: var(--blue-crayola);
-  }
-  
-  button-primary {
-    position: relative;
-    background-color: var(--blue-crayola);
-    max-width: max-content;
-    font-weight: var(--fw-700);
-    padding: 13px 30px;
-    overflow: hidden;
-    z-index: 1;
-  } */
+.top {
+    display: flex;
+    justify-content: space-between;
+}
+.price {
+    display: flex;
+}
 
-  .name img {
-    width: 40px;
-    height: 40px;
+
+.name img {
+width: 40px;
+height: 40px;
+}
+
+.rates {
+    margin: auto;
+}
+.bulk {
+    height: 100px;
+}
+.chart {
+    font-size: 5.4rem;
+}
+
+@media screen and (max-width: 650px) {
+    .details {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card, .bulk {
+        display: flex;
+        width: 80%;
+        border-radius: 10px;
+        height: 350px;
+        margin: auto;
+        justify-content: space-around;
+        padding: 5px;
+    }
+    .top {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .price {
+        flex-direction: column;
+    }
   }

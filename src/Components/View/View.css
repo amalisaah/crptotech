@@ -1,4 +1,6 @@
- 
+.view {
+    padding :5rem;
+} 
 
 div {
     gap:10px;
@@ -16,7 +18,7 @@ div {
     background:rgb(222, 241, 241);
     padding: 2px;
 }
-.left button {
+.left .view-btn {
     width: 80px;
     align-self: center;
 }
@@ -34,13 +36,13 @@ div {
     color: hsl(223, 10%, 52%);
 }
 
-button {
+.view-btn {
     /* background: none; */
     /* border: none; */
     font: inherit;
     cursor: pointer;
 }
-button {
+/* button {
     border-radius: 50px;
     font-size: 1.2rem;
     font-weight: var(--fw-500);
@@ -49,7 +51,7 @@ button {
     background-color: rgb(159, 196, 196);
     width: 120;
     height: 70px;
-}
+} */
 .buy {
     height: 50px;
     width: 70px;

@@ -1,31 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import { FiArrowUpRight, FiArrowDownLeft  } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
 
+const Table = ({data,head})=>{
 
-const Table = ()=>{
-   const [data, setData] = useState(null)
-   const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false'
-   // const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=6&page=1&sparkline=false&price_change_percentage=24h'
 
-   useEffect(() => {
-       axios.get(url).then((response) => {
-           setData(response.data)
-       }).catch((error) => {
-           console.log(error)
-       })
-   }, [])
+    
 
-    if (!data) return null 
+    console.log(data)
+    
+    const handleClick=(e)=>{e.target.style={backgroundColor:'red'}}
 
-   console.log(data)
 
     return (
-        data.map((Data,index)=>(
+        <table className="market-table">
+            <thead className="table-head">
+                <tr className="table-row table-title">
+                {head.map((topic,index) => (
+                    
+                <th className='table-heading' key={index}>{topic}</th>))}
+                </tr>
+            </thead>
+
+            <tbody className="table-body">
+            {data.map((Data,index)=>(
             <tr className="table-row" key={index}>
                <td className="table-data">
-                    <button className="add-to-fav" aria-label="Add to favourite" >
+                    <button className="add-to-fav" aria-label="Add to favourite" onClick={handleClick}>
                         <FaStar />
                     </button>
                 </td> 
@@ -71,7 +72,10 @@ const Table = ()=>{
                 <td className="table-data market-vol">{Data.circulating_supply}</td>
 
             </tr>
-        ))
+        ))}
+            </tbody>
+        </table>
+        
     )
 }
 

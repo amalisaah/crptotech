@@ -31,9 +31,9 @@ const View = ()=>{
                             <FaStar />
                         </button>
                         <img src={data[0].image}  alt="coin logo" />
-                        <h1>
-                        <a href="#" className="coin-name">{data[0].name} <span className="span">{data[0].symbol.toUpperCase()}</span></a>
-                    </h1>  
+                        <h1 className="coin-name">
+                        {data[0].name} <span className="span">{data[0].symbol.toUpperCase()}</span>
+                        </h1>  
                     </div>
                     <button className='view-btn'>Rank</button>
                 </div>

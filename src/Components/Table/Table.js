@@ -1,5 +1,6 @@
-import React, {useState,useEffect} from 'react';
+// import React, {useState,useEffect} from 'react';
 import { FiArrowUpRight, FiArrowDownLeft  } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import './TableStyle.css'
 
@@ -10,8 +11,6 @@ const Table = ({data,head,onClick})=>{
         
     }
     
-    const [value,setValue]=useState(null);
-    useEffect(()=>{console.log(value)})
  
     return (
         <table className="market-table">
@@ -38,7 +37,7 @@ const Table = ({data,head,onClick})=>{
                     <img src={Data.image} width="20" height="20" alt="coin logo"  />
 
                     <h4>
-                        <a href="#" className="coin-name">{Data.name} <span className="span">{Data.symbol.toUpperCase()}</span></a>
+                        <Link to='/view' className="coin-name">{Data.name} <span className="span">{Data.symbol.toUpperCase()}</span></Link>
                     </h4>
                     </div>
                 </td>
@@ -72,9 +71,10 @@ const Table = ({data,head,onClick})=>{
 
                 <td className="table-data market-cap">${Data.market_cap.toLocaleString()}</td>
                 <td className="table-data market-vol">{Data.circulating_supply}</td>
-                <button className='table-btn' onClick={handleClick} id={Data.name}>Buy</button>
-
+                
+                <td> <button className='table-btn' onClick={handleClick} id={Data.name}>Buy</button></td>
             </tr>
+           
         ))}
             </tbody>)}
         </table>

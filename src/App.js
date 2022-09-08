@@ -19,7 +19,8 @@ function App() {
     <Router>
       <Navbar/>
       <Routes>
-        <Route path='/' element={<Home />}/>
+        <Route path='/' element={(<h2>SITE UNDER CONSTRUCTION COME BACK LATER</h2>)}/>
+        <Route path='/home' element={<Home/>}/>
         <Route path='watchlist' element={<Watchlist />}></Route>
         <Route path='portfolio' element={<Portfolio />}>
           {/* <Route path='form' element={<Form/>} /> */}

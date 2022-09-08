@@ -4,7 +4,7 @@
         //use input values from user porfolio input form.
         const id = 1 //hard_encoded
         const amount = 1 //hard_encoded
-        const currency = usd //hard_encoded
+        const currency = 'usd' //hard_encoded
 
         const baseUrl = 'http://localhost:4000';
         const endPoint = '/assert';
@@ -14,7 +14,6 @@
         try {
         const res = await fetch(urlToFetch)
         if (res.ok) {
-        console.log('Here Now')
         const data = await res.json();
         } else {
             alert("Cannot get data")
@@ -24,3 +23,6 @@
         }
         
     }
+
+
+    

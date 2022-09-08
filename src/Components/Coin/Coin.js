@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Coin.css';
-import Table from '../Table';
+import Table from '../Table/Table';
+import Form from '../Portfolio/Form/Form'
 
 
 
@@ -16,11 +17,19 @@ const Coin = ()=>{
             console.log(error)
         })
     }, [])
+
+    const [visible,setVisible]=useState(false)
+    const Visiblity =(b)=>{
+        setVisible(b)
+    }
     if (!data) return (<p>Loading ...</p>);
 
     const head = ['#','Fav','Name','Price','24H %','1H %','Market Cap','Market Volume']
     return(
-    <Table data={data} head={head}/>
+    <>
+        <Table data={data} head={head} onClick={Visiblity} />
+        <Form show={visible} focus={Visiblity} />
+    </>
     )
 }
 

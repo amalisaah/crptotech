@@ -45,7 +45,14 @@ body {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
-
+button {
+  cursor: pointer; 
+  border: none;
+  color: #fff;
+  background-color: #04AA6D;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
 
 h1 {
   font-size: 3.5rem;
@@ -66,20 +73,7 @@ p {
   font-size: 1.2rem;
 }
 
-.btn {
-  padding: 14px 32px;
-  border: 1px solid var(--primary);
-  background-color: var(--primary);
-  color: #fff;
-  border-radius: 24px 4px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-}
 
-.btn:hover {
-  box-shadow: rgb(0 0 0 / 15%) 0px 8px 24px;
-}
 
 /* input {
   padding: 12px 32px;
@@ -112,10 +106,7 @@ p {
     font-size: 1rem;
   }
 
-  .btn {
-    width: 100%;
-    margin: 1rem 0;
-  }
+  
 
   input {
     width: 100%;

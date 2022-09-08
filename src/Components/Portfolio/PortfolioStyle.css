@@ -1,0 +1,25 @@
+.summary {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    height: 200px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.balance {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid rgb(165, 170, 117); */
+    border-radius: 8px;
+    background-color: rgb(238, 234, 229);
+    width: 40%;
+    height: 90%;
+    text-align: center;
+    /* line-height: 500%; */
+    justify-content: center;
+}
+.balance p {
+    font-size: xx-large;
+    font-weight: 700;
+    color: green;
+}

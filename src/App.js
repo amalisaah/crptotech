@@ -6,7 +6,8 @@ import Home from "./Components/Home/Home";
 import Coin from "./Components/Coin/Coin";
 import Portfolio from "./Components/Portfolio/Portfolio";
 import View from "./Components/View/View";
-
+import Form from './Components/Portfolio/Form/Form';
+// import Select from './Components/Portfolio/Select/Select';
 
 
 function App() {
@@ -15,9 +16,12 @@ function App() {
     <>
     <Navbar />
     {/* <Home /> */}
+    <View/>
     {/* <Portfolio /> */}
     {/* <Coin /> */}
-    <View/>
+    
+    {/* <Form/> */}
+    {/* <Select /> */}
     <Footer />
     </>       
   );

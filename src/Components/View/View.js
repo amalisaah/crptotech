@@ -27,7 +27,7 @@ const View = ()=>{
             <div className='details'>
                 <div className='card left'>
                     <div className='name'>
-                        <button className="add-to-fav" aria-label="Add to favourite" >
+                        <button className="add-to-fav view-btn" aria-label="Add to favourite" >
                             <FaStar />
                         </button>
                         <img src={data[0].image}  alt="coin logo" />
@@ -35,20 +35,20 @@ const View = ()=>{
                         <a href="#" className="coin-name">{data[0].name} <span className="span">{data[0].symbol.toUpperCase()}</span></a>
                     </h1>  
                     </div>
-                    <button>Rank</button>
+                    <button className='view-btn'>Rank</button>
                 </div>
 
                 <div className='card'>
                     <div className='top'>
                        <div className='price'>
-                            <button>Price</button>
+                            <button className='view-btn'>Price</button>
                             <h2>${data[0].current_price.toLocaleString()}</h2>
                         </div>
-                        <button className='buy'>Buy</button> 
+                        <button className='buy view-btn'>Buy</button> 
                     </div>
 
                     <div className='rates'>
-                    <button>{data[0].price_change_percentage_24h < 0 ? (
+                    <button className='view-btn'>{data[0].price_change_percentage_24h < 0 ? (
                         <span className='red'>
                             <FiArrowDownLeft className='icon' />
                             {data[0].price_change_percentage_24h.toFixed(2)}%
@@ -60,7 +60,7 @@ const View = ()=>{
                         </span>
                          )}
                     </button>
-                    <button>{data[0].price_change_percentage_24h < 0 ? (
+                    <button className='view-btn'>{data[0].price_change_percentage_24h < 0 ? (
                         <span className='red'>
                             <FiArrowDownLeft className='icon' />
                             {data[0].price_change_percentage_24h.toFixed(2)}%

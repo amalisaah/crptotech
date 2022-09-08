@@ -6,7 +6,6 @@ import cors from 'cors';
 import allCryptoRouter from './controller/routes/cyptoinfo.js';
 import sortCryptoRouter from './controller/routes/sortCrypto.js';
 import addAssertRouter from './controller/routes/asserts.js';
-import currencyRouter from './controller/routes/currency.js';
 // import sortedCryptoRouter from './controller/routes/sortedCrytpo.js';
 
 

@@ -1,12 +1,14 @@
 import express from 'express';
 import fetch from 'node-fetch';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const allCryptoRouter = express.Router();
 
 allCryptoRouter.get('/', async (req, res) => { 
     const headers = {
         headers: {
-        'X-CMC_PRO_API_KEY': '8111669a-0ff1-4398-aef8-5bb4a40d5323',
+        'X-CMC_PRO_API_KEY': process.env.API_KEY,
         'Accept': 'application/json',
         'Accept-Encoding': 'deflate, gzip'
     

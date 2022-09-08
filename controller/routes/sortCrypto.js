@@ -1,5 +1,7 @@
 import express from 'express';
 import fetch from 'node-fetch';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const sortCryptoRouter = express.Router();
 sortCryptoRouter.get('/', async (req, res) => {
@@ -7,7 +9,7 @@ sortCryptoRouter.get('/', async (req, res) => {
     const sortIn = req.query.sort_dir;
     const headers = {
         headers: {
-        'X-CMC_PRO_API_KEY': '8111669a-0ff1-4398-aef8-5bb4a40d5323',
+        'X-CMC_PRO_API_KEY': process.env.API_KEY,
         'Accept': 'application/json',
         'Accept-Encoding': 'deflate, gzip'
     

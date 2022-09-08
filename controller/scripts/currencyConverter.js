@@ -7,21 +7,8 @@
     </head>
     <body>
         <h2>Currency Convert</h2>
-        <!-- <div>
-            <input type="number" placeholder="usd">
-            <select>
-                <option id="usd" value="base">USD</option>
-            </select>
-        </div> -->
-        <!-- <div>
-            <input type="number">
-            <select>
-              
-            </select>
-        </div> -->
-
         <div>
-            <input type="number">
+            <input type="number"></input>
             <select>
 
             </select>
@@ -36,7 +23,7 @@
             var myHeaders = new Headers();
             myHeaders.append("apikey", "QBWatwiJIQm9EHbPXtU02YCTAzEgfS2w");
 
-            var requestOptions = {
+            let requestOptions = {
             method: 'GET',
             redirect: 'follow',
             headers: myHeaders

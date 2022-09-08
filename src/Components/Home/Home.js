@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import { FiArrowUpRight, FiArrowDown } from 'react-icons/fi';
 import './Homestyle.css';
@@ -22,7 +23,7 @@ const Home = () => {
 
     console.log(data)
 
-    if (!data) return null
+    if (!data) return (<h2>Loading ...</h2>);
 
     return (
         <div className='featured'>
@@ -31,7 +32,7 @@ const Home = () => {
                 <div className='left'>
                     <h2>Explore top Crypto's Like Bitcoin, Ethereum, and Dogecoin</h2>
                     <p>See all available assets: Cryptocurrencies and NFT's</p>
-                    <button className='btn'>See More Coins</button>
+                    <button className='btn'><Link to='coin' className='link'>See More Coins</Link></button>
                 </div>
 
                 {/* Right */}
@@ -69,7 +70,7 @@ const Home = () => {
                 <div className='left'>
                     <h2>View all your assets in one place</h2>
                     <p>See all your available assets and it current value</p>
-                    <button className='btn' id='but'>Go to wallet</button>
+                    <button className='btn' id='but'><Link to='portfolio' className='link'>Go to wallet</Link></button>
                 </div>
 
                 {/* Right */}
@@ -85,7 +86,7 @@ const Home = () => {
                     <p>Still can't decide if it worth buying?
                        Add to watchlist and monitor it performance more closely
                     </p>
-                    <button className='btn' id='but'>Go to wallet</button>
+                    <button className='btn' id='but'><Link to='watchlist' className='link'> Go to watchlist</Link></button>
                 </div>
 
                 {/* Right */}

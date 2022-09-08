@@ -1,13 +1,20 @@
 import React from 'react';
 import './FormStyle.css';
 
-const Form =()=>{
+const Form =(props)=>{
+
+    const Focus =()=>{
+        props.focus(false) 
+    }
+    
     
     return (
-        <div className='form-buy'>
+        
+        props.show &&
+        <div className='form-buy' onMouseLeave={Focus}>
             <h2>BUY COIN</h2>
             <input list="coins" />
-                <datalist id="coins">
+                <datalist id="coins" value=''>
                     <option value="BitCoin" />
                     <option value="Etherum" />
                     <option value="USD" />

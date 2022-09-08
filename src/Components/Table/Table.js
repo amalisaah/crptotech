@@ -1,17 +1,18 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import { FiArrowUpRight, FiArrowDownLeft  } from 'react-icons/fi';
 import { FaStar } from 'react-icons/fa';
+import './TableStyle.css'
 
-const Table = ({data,head})=>{
+const Table = ({data,head,onClick})=>{
 
-
+    const handleClick =(e)=>{
+        onClick(true)
+        
+    }
     
-
-    console.log(data)
-    
-    const handleClick=(e)=>{e.target.style={backgroundColor:'red'}}
-
-
+    const [value,setValue]=useState(null);
+    useEffect(()=>{console.log(value)})
+ 
     return (
         <table className="market-table">
             <thead className="table-head">
@@ -21,12 +22,13 @@ const Table = ({data,head})=>{
                 <th className='table-heading' key={index}>{topic}</th>))}
                 </tr>
             </thead>
-
-            <tbody className="table-body">
+            
+            {data && 
+            (<tbody className="table-body">
             {data.map((Data,index)=>(
             <tr className="table-row" key={index}>
                <td className="table-data">
-                    <button className="add-to-fav" aria-label="Add to favourite" onClick={handleClick}>
+                    <button className="add-to-fav" aria-label="Add to favourite" >
                         <FaStar />
                     </button>
                 </td> 
@@ -70,10 +72,11 @@ const Table = ({data,head})=>{
 
                 <td className="table-data market-cap">${Data.market_cap.toLocaleString()}</td>
                 <td className="table-data market-vol">{Data.circulating_supply}</td>
+                <button className='table-btn' onClick={handleClick} id={Data.name}>Buy</button>
 
             </tr>
         ))}
-            </tbody>
+            </tbody>)}
         </table>
         
     )

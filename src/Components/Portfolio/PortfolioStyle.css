@@ -1,3 +1,7 @@
+.portfolio {
+    background-color: var(--background);
+    /* opacity: 0.3; */
+}
 .summary {
     display: flex;
     width: 90%;
@@ -5,6 +9,7 @@
     height: 200px;
     align-items: center;
     margin-bottom: 30px;
+    margin-top: 5px;
 }
 .balance {
     display: flex;
@@ -13,7 +18,7 @@
     border-radius: 8px;
     background-color: rgb(238, 234, 229);
     width: 40%;
-    height: 90%;
+    height: 100%;
     text-align: center;
     /* line-height: 500%; */
     justify-content: center;
@@ -23,3 +28,16 @@
     font-weight: 700;
     color: green;
 }
+
+.add {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px #999;
+    padding: 15px 25px;
+    font-size: 24px;
+}
+.add:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }

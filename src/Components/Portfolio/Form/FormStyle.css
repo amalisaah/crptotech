@@ -1,13 +1,31 @@
-input, select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
+.form-buy {
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    width: 500px;
+    margin: auto;
+    margin-top: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    font-weight: 600;
+    position: fixed;
+    top: 90px;
+    left: 30%;
+    z-index: 10;
 }
+
+/* 
+      flex-direction: column;
+      justify-content: start;
+       */
+      /* right: -100%; */
+      /* display: none;
+      width: 50%;
+      height: 100vh;
+      transition: 0.4s;
+      z-index: 2;
+      background: #fff;
+      border-left: 1px solid #eee; */
   
 .form-btn {
     height: 50px;
@@ -20,16 +38,15 @@ button:hover {
     background-color: #45a049;
 }
   
-.form-buy {
-    border-radius: 10px;
-    background-color: #f2f2f2;
-    padding: 20px;
-    width: 500px;
-    margin: auto;
-    margin-top: 15px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-    font-weight: 600;
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
 }
 input[type=number] {
     color:black;

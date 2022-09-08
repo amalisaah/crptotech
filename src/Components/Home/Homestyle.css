@@ -65,6 +65,10 @@
     border: 1px solid var(--primary);
     background-color: var(--primary);  
     border-radius: 24px 4px;
+    color: white;
+}
+.link {
+    color: inherit;
 }
   
 .btn:hover {
@@ -78,10 +82,10 @@
 .red {
     color: #ff0000;
 }
-#but {
+/* #but {
     background-color: bisque;
     color: goldenrod;
-}
+} */
 
 @media screen and (max-width: 800px) {
     .featured .container {

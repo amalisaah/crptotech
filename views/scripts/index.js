@@ -1,10 +1,11 @@
-const baseUrl = 'http://localhost:4000';
+const baseUrl = 'https://cryptotech-backend.herokuapp.com';
 // Get all available Crytpo Currencies
 const getAllCrypto = async () => {
     try {
     const res = await fetch(baseUrl)
     if (res.ok) {
-    const data = await res.json();  
+    const data = await res.json()   
+    } else {
         alert("Cannot get data")
     }
     } catch (error) {
@@ -110,4 +111,3 @@ const getCryptoInfo = async () => {
     }
     
 }
-// export default getAllCrypto, ;

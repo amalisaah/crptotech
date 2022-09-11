@@ -12,9 +12,13 @@
 ]; 
 */
 
+
 //This function returns data based on specified ID
 const getCryptotById = (id) => {
     return data.find(element =>element.id = id)
 };
 
+const deleteElementById = (id) => {
+    return data.filter(element => element.id !== id)
+};
 

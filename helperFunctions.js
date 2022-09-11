@@ -17,3 +17,4 @@ const getCryptotById = (id) => {
     return data.find(element =>element.id = id)
 };
 
+

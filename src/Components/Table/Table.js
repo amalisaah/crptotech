@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import './TableStyle.css'
 
-const Table = ({data,head,onClick,addfav})=>{
+const Table = ({data,head,onClick,addfav,SelCoin})=>{
 
     const handleClick =(e)=>{ //display form
         onClick(true)
@@ -18,7 +18,15 @@ const Table = ({data,head,onClick,addfav})=>{
         
     }
     
+    const showCoin=(e)=>{SelCoin(e.target.id)}
  
+
+
+
+
+
+
+
     return (
         <table className="market-table">
             <thead className="table-head">
@@ -43,8 +51,8 @@ const Table = ({data,head,onClick,addfav})=>{
                   {/*  <div className="wrapper">
                     <img src={Data.image} width="20" height="20" alt="coin logo"  />*/}
 
-                    <h4>
-                        <Link to='/view' className="coin-name">{Data.name} <span className="span">{Data.symbol.toUpperCase()}</span></Link>
+                    <h4 onClick={showCoin}>
+                        <Link to='/view' className="coin-name" id={Data.name}> {Data.name} <span className="span">{Data.symbol.toUpperCase()}</span></Link>
                     </h4>
                     {/* </div> */}
                 </td> 

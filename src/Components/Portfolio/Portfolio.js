@@ -15,6 +15,15 @@ const Portfolio = (props)=>{
         setVisible(value)
     }
 
+    const changeFormNum=(num)=>{props.changeFormNum(num)} 
+    const changeFormName=(name)=>{props.changeFormName(name)}
+
+
+
+
+
+
+
     return(
         <div className='portfolio' >
             <div className='summary'>
@@ -30,7 +39,7 @@ const Portfolio = (props)=>{
             </div>
 
             <Table head={head}/>
-            <Form show={visible} focus={Visiblity} data={data}/>
+            <Form show={visible} focus={Visiblity} data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form}/>
             {/* <Outlet/> */}
         </div>
     )

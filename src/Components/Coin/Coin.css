@@ -1,30 +1,6 @@
- th, td {
-  border: 0.4rem outset whitesmoke;
-  border-collapse: collapse;
-  text-align: center;
-  padding: .25rem;
-  background-color: azure;
-}
-thead {
-  width: 100%;
-  height: 75px;
-  /* border-bottom: 1px solid #eee; */
-  background: #fff;
-  position: sticky;
-  top: 90px;
-  left: 0;
-  z-index: 10;
-}
-thead th {
-  background-color: azure;
-}
-/* tbody {
-  overflow-x: scroll;
-} */
-table {
-  width: 100%;
- 
-}
+
+
+
 .table-row:not(.table-title) { height: 90px; }
 
 .add-to-fav {

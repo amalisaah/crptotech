@@ -1,22 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './View.css';
-import axios from 'axios';
 import { FaStar } from 'react-icons/fa';
 import { FiArrowUpRight, FiArrowDownLeft  } from 'react-icons/fi';
 
 
-const View = ()=>{
-    const [data, setData] = useState(null)
-    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false'
-   // const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=6&page=1&sparkline=false&price_change_percentage=24h'
-
-   useEffect(() => {
-       axios.get(url).then((response) => {
-           setData(response.data)
-       }).catch((error) => {
-           console.log(error)
-       })
-   }, [])
+const View = (props)=>{
+    
+    const data=props.coin
 
     if (!data) return null 
 
@@ -30,45 +20,45 @@ const View = ()=>{
                         <button className="add-to-fav view-btn" aria-label="Add to favourite" >
                             <FaStar />
                         </button>
-                        <img src={data[0].image}  alt="coin logo" />
+                        {/* <img src={data[0].image}  alt="coin logo" /> */}
                         <h1 className="coin-name">
-                        {data[0].name} <span className="span">{data[0].symbol.toUpperCase()}</span>
+                        {data.name} <span className="span">{data.symbol.toUpperCase()}</span>
                         </h1>  
                     </div>
-                    <button className='view-btn'>Rank</button>
+                    <button className='view-btn'>{data.cmc_rank}</button>
                 </div>
 
                 <div className='card'>
                     <div className='top'>
                        <div className='price'>
                             <button className='view-btn'>Price</button>
-                            <h2>${data[0].current_price.toLocaleString()}</h2>
+                            <h2>${data.quote.USD.price.toLocaleString()}</h2>
                         </div>
                         <button className='buy view-btn'>Buy</button> 
                     </div>
 
                     <div className='rates'>
-                    <button className='view-btn'>{data[0].price_change_percentage_24h < 0 ? (
+                    <button className='view-btn'>{data.quote.USD.percent_change_24h < 0 ? (
                         <span className='red'>
                             <FiArrowDownLeft className='icon' />
-                            {data[0].price_change_percentage_24h.toFixed(2)}%
+                            {data[0].quote.USD.percent_change_24h.toFixed(2)}%
                         </span>
                      ) : (
                         <span className='green'>
                             <FiArrowUpRight className='icon' />
-                            {data[0].price_change_percentage_24h.toFixed(2)}%
+                            {data.quote.USD.percent_change_24h.toFixed(2)}%
                         </span>
                          )}
                     </button>
-                    <button className='view-btn'>{data[0].price_change_percentage_24h < 0 ? (
+                    <button className='view-btn'>{data.quote.USD.percent_change_7d< 0 ? (
                         <span className='red'>
                             <FiArrowDownLeft className='icon' />
-                            {data[0].price_change_percentage_24h.toFixed(2)}%
+                            {data.quote.USD.percent_change_7d.toFixed(2)}%
                         </span>
                      ) : (
                         <span className='green'>
                             <FiArrowUpRight className='icon' />
-                            {data[0].price_change_percentage_24h.toFixed(2)}%
+                            {data.quote.USD.percent_change_7d.toFixed(2)}%
                         </span>
                          )}
                     </button>
@@ -80,15 +70,15 @@ const View = ()=>{
             <div className='details bulk '>
                 <div>
                     <h3 className='title'>Market Cap</h3>
-                    <div className='price'>${data[0].market_cap.toLocaleString()}</div>
+                    <div className='price'>${data.quote.USD.market_cap.toFixed(0).toLocaleString()}</div>
                 </div>
                 <div>
-                    <h3 className='title'>Market Cap</h3>
-                    <div className='price'>${data[0].market_cap.toLocaleString()}</div>
+                    <h3 className='title'>Total Supply</h3>
+                    <div className='price'>${(data.total_supply.toFixed(0)).toLocaleString()}</div>
                 </div>
                 <div>
-                    <h3 className='title'>Market Cap</h3>
-                    <div className='price'>${data[0].market_cap.toLocaleString()}</div>
+                    <h3 className='title'>Fully Diluted Market Cap</h3>
+                    <div className='price'>${data.quote.USD.fully_diluted_market_cap.toLocaleString()}</div>
                 </div>
                 
             </div>

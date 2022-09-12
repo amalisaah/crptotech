@@ -19,20 +19,28 @@ const Coin = (props)=>{
     const Visiblity =(b)=>{
         props.Visiblity(b)
     }
+    const changeFormNum=(num)=>{props.changeFormNum(num)} 
+    const changeFormName=(name)=>{props.changeFormName(name)}
+
+
+
+
 
     // useEffect(()=>{console.log(isVisible)},[])
-
+    const SelCoin=(id)=>{
+        props.SelCoin(id)
+    }
 
 
 
    
     if (!data) return (<p>Loading ...</p>);
 
-    const head = ['#','Fav','Name','Price','24H %','7d %','Market Cap','Market Volume','Purchase']
+    const head = ['Fav','#','Name','Price','24H %','7d %','Market Cap','Market Volume','Purchase']
     return(
     <>
-        <Table data={data} head={head} onClick={Visiblity} addfav={getCoin} />
-        <Form show={isVisible} focus={Visiblity} data={data}/>
+        <Table data={data} head={head} onClick={Visiblity} addfav={getCoin} SelCoin={SelCoin}/>
+        <Form show={isVisible} focus={Visiblity} data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form}/>
     </>
     )
 }

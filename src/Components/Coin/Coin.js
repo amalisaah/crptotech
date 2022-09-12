@@ -1,34 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import './Coin.css';
 import Table from '../Table/Table';
-import Form from '../Portfolio/Form/Form'
+import Form from '../Portfolio/Form/Form';
 
 
 
-const Coin = ()=>{
-    const [data, setData] = useState(null)
-    const url = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false';
+    
 
-    useEffect(() => {
-        axios.get(url).then((response) => {
-            setData(response.data)
-        }).catch((error) => {
-            console.log(error)
-        })
-    }, [])
-
-    const [visible,setVisible]=useState(false)
-    const Visiblity =(b)=>{
-        setVisible(b)
+const Coin = (props)=>{
+    //watchlist
+    let data= props.data;
+    const getCoin=(val)=>{
+        props.addfav(val)
     }
+
+    //forms
+    const isVisible =props.isVisible;
+    const Visiblity =(b)=>{
+        props.Visiblity(b)
+    }
+
+    // useEffect(()=>{console.log(isVisible)},[])
+
+
+
+
+   
     if (!data) return (<p>Loading ...</p>);
 
-    const head = ['#','Fav','Name','Price','24H %','1H %','Market Cap','Market Volume']
+    const head = ['#','Fav','Name','Price','24H %','7d %','Market Cap','Market Volume','Purchase']
     return(
     <>
-        <Table data={data} head={head} onClick={Visiblity} />
-        <Form show={visible} focus={Visiblity} />
+        <Table data={data} head={head} onClick={Visiblity} addfav={getCoin} />
+        <Form show={isVisible} focus={Visiblity} data={data}/>
     </>
     )
 }

@@ -42,15 +42,16 @@ table {
 
 .coin-name {
   /* font-size: 1.5rem;  */
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
   gap: 0.4rem;
+  height: 90px;
 } 
 
-.wrapper {
+/* .wrapper {
   display: flex;
   gap: 0.4rem;
-}
+} */
 .market-table .coin-name .span {
   color: hsl(223, 10%, 52%);
   /* font-size: var(--fs-7); */

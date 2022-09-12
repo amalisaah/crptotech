@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-// import { Link, Outlet } from 'react-router-dom';
 import './PortfolioStyle.css';
 import Table from '../Table/Table';
 import Form from './Form/Form';
 
 const head = ['#','Fav','Name','Price','24H %','1H %','Market Cap','Market Volume']
 
-const Portfolio = ()=>{
+const Portfolio = (props)=>{
+
+    const data =props.data;
 
     const [visible,setVisible]=useState(false);
 
@@ -29,7 +30,7 @@ const Portfolio = ()=>{
             </div>
 
             <Table head={head}/>
-            <Form show={visible} focus={Visiblity} />
+            <Form show={visible} focus={Visiblity} data={data}/>
             {/* <Outlet/> */}
         </div>
     )

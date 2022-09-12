@@ -65,4 +65,10 @@ input[type=number] {
     color: #04AA6D;
     margin-bottom: 25px;
 }
-  
+.close{
+    position: absolute;
+    top: 3px;
+    right:5px;
+    width:35px;
+    background:red;
+}

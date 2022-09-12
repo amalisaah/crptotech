@@ -2,7 +2,7 @@ import React from 'react';
 import './FormStyle.css';
 
 const Form =(props)=>{
-
+    let data=props.data;
     const Focus =()=>{
         props.focus(false) 
     }
@@ -11,15 +11,12 @@ const Form =(props)=>{
     return (
         
         props.show &&
-        <div className='form-buy' onMouseLeave={Focus}>
+        <div className='form-buy' >
+            <button className='close' onClick={Focus}>X</button>
             <h2>BUY COIN</h2>
             <input list="coins" />
                 <datalist id="coins" value=''>
-                    <option value="BitCoin" />
-                    <option value="Etherum" />
-                    <option value="USD" />
-                    <option value="Dodgecoin" />
-                    <option value="chale"/>
+                    {data && data.map(Data=><option value={Data.name} key={Data.id} />)}
                 </datalist>
             <div className='block'>
                 <label htmlFor="quantity">Quantity</label>

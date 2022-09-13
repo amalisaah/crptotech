@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {FaBars, FaTimes} from 'react-icons/fa'
 import "./Navbarstyle.css";
 
-const nav =[]
+
 const Navbar = () => {
   const [click,setClick]=useState(false);
   const handleClick = () => setClick(!click);
@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <header className='header'>
       <div className='container'>
-        <h1><NavLink to='/home'>Crypto<span className='primary'>Tech</span></NavLink></h1>
+        <h1><NavLink to='/'>Crypto<span className='primary'>Tech</span></NavLink></h1>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li>
               <NavLink to='/portfolio'>PORTFOLIO</NavLink>

@@ -1,4 +1,4 @@
- .view {
+.view {
     padding :5rem;
     background-color: var(--background);
 } 
@@ -79,7 +79,16 @@ div {
 
 .bulk {
     display:flex;
+    justify-content: space-between;
 }
+.bulk h3 {
+    padding-bottom: 1.2rem;
+    text-align: center;
+}
+.bulk div:not(:last-child) {
+    border-right: 3px solid #fff;
+}
+
 /* button {
     border-radius: 50px;
     font-size: 1.2rem;

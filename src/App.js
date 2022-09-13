@@ -1,5 +1,5 @@
 // import './App.css';
-import React, { useState, useEffect,createContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router,Routes, Route } from 'react-router-dom';
 import Navbar from "./Components/NavBar/Navbar";
 import Footer from "./Components/Footer/Footer";
@@ -14,7 +14,7 @@ import Watchlist from './Components/Watchlist/Watchlist';
 
 
 
-// const UserContext=createContext()
+
 
 function App() {
   

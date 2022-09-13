@@ -21,7 +21,7 @@ const Form =(props)=>{
     } 
     
     const purchase=(e)=>{
-        if (props.form.name !='' && props.form.num>0){
+        if (props.form.name !=='' && props.form.num>0){
             Focus();
             props.changeFormName('')
             props.changeFormNum(0.0)

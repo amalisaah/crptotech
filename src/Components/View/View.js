@@ -1,5 +1,4 @@
-import React,{useEffect,useState} from 'react';
-import axios from 'axios'
+import React from 'react';
 import './View.css';
 import { FaStar } from 'react-icons/fa';
 import { FiArrowUpRight, FiArrowDownLeft  } from 'react-icons/fi';

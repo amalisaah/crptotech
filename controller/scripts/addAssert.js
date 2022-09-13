@@ -6,7 +6,7 @@
         const amount = 1 //hard_encoded
         const currency = 'usd' //hard_encoded
 
-        const baseUrl = 'http://localhost:4000';
+        const baseUrl = 'https://git.heroku.com/cryptotech-backend.git';
         const endPoint = '/assert';
         const requestParams = `?id=${id}&amount=${amount}&convert=${currency}`;
         const urlToFetch = `${baseUrl}${endPoint}${requestParams}`;

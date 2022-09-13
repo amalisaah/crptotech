@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-const baseUrl = 'http://localhost:4000';
+const baseUrl = 'https://git.heroku.com/cryptotech-backend.git';
 // Get all available Crytpo Currencies
 export const getAllCrypto = async () => {
     try {

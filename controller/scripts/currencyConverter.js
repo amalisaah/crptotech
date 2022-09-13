@@ -14,11 +14,10 @@
             </select>
         </div>
         <script>
-            const select = document.querySelectorAll('select');
-            let input = document.querySelectorAll('input');
-            input[0].value = 10; //hard_encoded: change to 
-            const inputValue = input[0].value;
-            const usdInput = document.getElementById('usd');
+            const select = document.querySelectorAll('select'); // hard defined
+            let input = document.querySelectorAll('input'); // hard defined: Needs an array of Inputs
+            input[0].value = 10; //hard_encoded: change to flexible array of inputs
+            const inputValue = input[0].value; // Once again Hard Coded
             let html = "";
             var myHeaders = new Headers();
             myHeaders.append("apikey", "QBWatwiJIQm9EHbPXtU02YCTAzEgfS2w");
@@ -34,9 +33,9 @@
                 const res = await fetch(endPoint, requestOptions);
                 // console.log(res)
                 const data = await res.json();
-                console.log(data.rates)
+                // console.log(data.rates)
                 const base = data.base;
-                console.log(base)
+                // console.log(base)
                 // usdInput.value = base;
                 const rates = data.rates;
                 const arrKeys = Object.keys(data.rates);
@@ -58,15 +57,15 @@
 
                 function render () {
                     return input[0].value = inputValue;
-                }
+                };
 
                 function convert () {
                     render()
-                    const temp = input[0].value
-                    console.log(temp)
-                    let newInput = temp * rates[select[0].value] / rates[base]
-                    console.log(newInput);
-                    return input[0].value = newInput;
+                    const temp = input[0].value // Values to be converted
+                    // console.log(temp)
+                    let newValue = temp * rates[select[0].value] / rates[base]
+                    console.log(newValue);
+                    return input[0].value = newValue;
                     
                 }
                 // input[0].addEventListener('keyup', () => convert(1, 0))

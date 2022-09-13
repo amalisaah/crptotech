@@ -1,6 +1,7 @@
+import fetch from 'node-fetch';
 const baseUrl = 'http://localhost:4000';
 // Get all available Crytpo Currencies
-const getAllCrypto = async () => {
+export const getAllCrypto = async () => {
     try {
     const res = await fetch(baseUrl)
     if (res.ok) {
@@ -15,7 +16,7 @@ const getAllCrypto = async () => {
 
 //sort crypto currency by name;
     //ascending order Sort
-const sortCryptoNameA = async () => { 
+export const sortCryptoNameA = async () => { 
     const endPoint = '/sort';
     const requestParams = '?sort=name&sort_dir=asc';
     const urlToFetch = `${baseUrl}${endPoint}${requestParams}`;
@@ -34,7 +35,7 @@ const sortCryptoNameA = async () => {
 }
 
     //Descending order Sort
-const sortCryptoNameD = async () => { 
+export const sortCryptoNameD = async () => { 
     const endPoint = '/sort';
     const requestParams = '?sort=name&sort_dir=desc';
     const urlToFetch = `${baseUrl}${endPoint}${requestParams}`;
@@ -55,7 +56,7 @@ const sortCryptoNameD = async () => {
 
 //Sort Crypto by Price
    //ascending order Sort
-const sortCryptoPriceA = async () => { 
+export const sortCryptoPriceA = async () => { 
     const endPoint = '/sort';
     const requestParams = '?sort=price&sort_dir=asc';
     const urlToFetch = `${baseUrl}${endPoint}${requestParams}`;
@@ -74,7 +75,7 @@ const sortCryptoPriceA = async () => {
     
 }
    //Descending order Sort
-const sortCryptoPriceD = async () => { 
+export const sortCryptoPriceD = async () => { 
     const endPoint = '/sort';
     const requestParams = '?sort=price&sort_dir=desc';
     const urlToFetch = `${baseUrl}${endPoint}${requestParams}`;
@@ -93,7 +94,7 @@ const sortCryptoPriceD = async () => {
 }
 
 
-const getCryptoInfo = async () => {
+export const getCryptoInfo = async () => {
     const endPoint = '/';
     const requestParams = `?id=1`;
     const urlToFetch = `${baseUrl}${endPoint}${requestParams}`;

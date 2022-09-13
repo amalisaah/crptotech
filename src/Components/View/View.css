@@ -1,47 +1,94 @@
 .view {
     padding :5rem;
+    background-color: var(--background);
 } 
-
+/*
 div {
     gap:10px;
-}
-.details {
+}*/
+.details-top {
     display: flex;
-    margin-bottom: 50px;
+    padding: 1rem;
+    margin-bottom: 70px;
     width: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
+    border-bottom: 3px solid #fff;
 }
-.card {
+/*.card {
     display: flex;
     flex-direction: column;
     width: 50%;
     background:rgb(222, 241, 241);
     padding: 2px;
+    
 }
 .left .view-btn {
     width: 80px;
     align-self: center;
-}
-.name {
+}-*/
+.name-w {
     display: flex;
+    gap: 0.6rem
 }
 
-.coin-name {
-    /* font-size: 1.5rem;  */
+.coin-name-w {
+    font-size: 2rem; 
+    font-weight: 700;
     display: flex;
     align-items: center;
     gap: 0.4rem;
+    padding-bottom: 1rem;
+    
 } 
-.coin-name .span {
+.coin-name-w .span {
     color: hsl(223, 10%, 52%);
+    font-size: 1.2rem;
 }
 
 .view-btn {
-    /* background: none; */
-    /* border: none; */
+    border-radius: 4px;
+    border: none;
     font: inherit;
-    cursor: pointer;
+    cursor: cursor;
+    padding: 2px;
+    /* color: aliceblue; */
 }
+.rank, .cap{
+    background: hsl(223, 10%, 52%);
+    /* border-radius: 4px; */
+    margin:0 5px;
+    
+}
+.price-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: hsl(223, 10%, 52%);
+}
+.price h2{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.price {
+    display:flex;
+    gap: 0.4rem;
+    padding-bottom: 1rem;
+}
+.red-b {
+    background: #ff0000;
+}
+
+.bulk {
+    display:flex;
+    justify-content: space-between;
+}
+.bulk h3 {
+    padding-bottom: 1.2rem;
+    text-align: center;
+}
+.bulk div:not(:last-child) {
+    border-right: 3px solid #fff;
+}
+
 /* button {
     border-radius: 50px;
     font-size: 1.2rem;
@@ -51,17 +98,22 @@ div {
     background-color: rgb(159, 196, 196);
     width: 120;
     height: 70px;
-} */
-.buy {
+} 
+
+.green-b {
+    background
+}
+*/
+/* .buy {
     height: 50px;
     width: 70px;
     background-color: rgb(9, 190, 78);
     font-weight: 600;
     font-size: large;
     color: hsla(49, 34%, 15%, 0.836)
-} 
+}  */
 
-button.add-to-fav {
+/* button.add-to-fav {
     color: hsl(223, 10%, 52%);
     font-size: 18px;
     border: var(--background);
@@ -74,11 +126,9 @@ button.add-to-fav {
     display: flex;
     justify-content: space-between;
 }
-.price {
-    display: flex;
-}
 
 
+*//*
 .name img {
 width: 40px;
 height: 40px;
@@ -99,6 +149,7 @@ height: 40px;
         flex-direction: column;
         align-items: center;
     }
+    
     .card, .bulk {
         display: flex;
         width: 80%;
@@ -116,4 +167,4 @@ height: 40px;
     .price {
         flex-direction: column;
     }
-  }
+  } */

@@ -1,0 +1,8 @@
+td, tbody th {
+    border-bottom: 1px solid gray;
+
+}
+td:not(.name) {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+}

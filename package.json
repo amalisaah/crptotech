@@ -7,6 +7,8 @@
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "chai": "^4.3.6",
+    "node-fetch": "^3.2.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
@@ -16,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "mocha --timeout 50000",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -38,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "mocha": "^10.0.0",
     "react-router-dom": "^6.3.0"
   }
 }

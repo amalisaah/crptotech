@@ -60,15 +60,16 @@ header .container {
   .nav-menu {
       position: absolute;
       flex-direction: column;
-      justify-content: start;
+      /* justify-content: center; */
+      align-items: center;
       top: 90px;
       /* right: -100%; */
       display: none;
       width: 50%;
-      height: 100vh;
+      height: 50vh;
       transition: 0.4s;
       z-index: 2;
-      background: #fff;
+      background: rgba(224, 230, 221, 0.7);
       border-left: 1px solid #eee;
   }
 

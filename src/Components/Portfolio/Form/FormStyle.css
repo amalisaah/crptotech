@@ -72,3 +72,19 @@ input[type=number] {
     width:35px;
     background:red;
 }
+@media screen and (max-width:730px){
+    .form-buy { 
+        /* width: 400px; */
+        width: 54.3%;
+    } 
+
+}
+@media screen and (max-width:585px){
+    .form-buy {
+        
+        padding: 15px; 
+        width: 54.3%;
+        
+    } 
+
+}

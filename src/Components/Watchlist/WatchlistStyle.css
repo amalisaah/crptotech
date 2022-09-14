@@ -6,3 +6,21 @@ td:not(.name) {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
 }
+@media screen and (max-width:1240px) {
+    
+    td, tbody th {
+        border-bottom: 1px solid gray;
+
+    }
+    td:not(.name) {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+    }
+    .table-body td, .table-head th,.table-body th {
+        border: 0 ;
+        border-collapse: collapse;
+        text-align: center;
+        padding: .25rem;
+        background-color: azure;
+      }
+}  

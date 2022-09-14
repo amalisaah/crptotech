@@ -18,6 +18,9 @@ const Portfolio = (props)=>{
     const changeFormNum=(num)=>{props.changeFormNum(num)} 
     const changeFormName=(name)=>{props.changeFormName(name)}
 
+    const getValue =(name)=>{
+        props.getValue(name)
+    }
 
 
 
@@ -50,7 +53,7 @@ const Portfolio = (props)=>{
                     </thead>
                 </table>
             </div>
-            <Form show={visible} focus={Visiblity} data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form}/>
+            <Form show={visible} focus={Visiblity} data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form} getValue={getValue}/>
             {/* <Outlet/> */}
         </div>
     )

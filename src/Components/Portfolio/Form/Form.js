@@ -20,23 +20,25 @@ const Form =(props)=>{
         const num=e.target.value
         props.changeFormName(num)
     } 
-    // const getValue=()=>{
-
+    // const getValue=(name)=>{
+    //     props.getValue(name)
     // }
     
     const purchase=(e)=>{
         if (props.form.name !=='' && props.form.num>0){
             // Focus();
-            getValue()
-            props.changeFormName('')
-            props.changeFormNum(0.0)
+            props.getValue(props.form.name)
+            // props.changeFormName('')
+            const q=document.getElementById('a')
+            
+            // props.changeFormNum(0.0)
         }
         else if (props.form.name !=='' || props.form.num <= 0){
             setB(true);      
         }
 
     }
-    console.log(b)
+    // console.log(b)
 
     return (
         
@@ -44,7 +46,7 @@ const Form =(props)=>{
         <div className='form-buy' >
             <button className='close' onClick={Focus}>X</button>
             <h2>BUY COIN</h2>
-            <input list="coins" placeholder='Enter coin name' onChange={changeFormName} value={props.form.name}/>
+            <input list="coins" placeholder='Enter coin name' onChange={changeFormName} value={props.form.name} id='a'/>
                 <datalist id="coins"  >
                     {data && data.map(Data=><option value={Data.name} key={Data.id} />)}
                 </datalist>
@@ -62,7 +64,7 @@ const Form =(props)=>{
                 $247575765
             </div>
             <button className='form-btn' onClick={purchase} >Purchase</button>
-            {b && <div> we are good to go</div>}
+            {/* {b && <div> we are good to go</div>} */}
             
         </div>
     )

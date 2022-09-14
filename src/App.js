@@ -40,7 +40,9 @@ function App() {
   useEffect(()=>{getAllCrypto()},[])
 
 
-
+  const cryptoId = (data, name) => {
+    return data.find(element => element.name === name).id;
+  };
   const getCryptotById = (name) => {
     const coin=data.find(element => element.name === name);
     return coin  
@@ -50,6 +52,8 @@ function App() {
     data.splice(data.findIndex(element => element.id === id), 1)
     return data
   };
+
+
 
 
  
@@ -89,7 +93,12 @@ function App() {
     const changeFormNum=(num)=>{
       setForm(prev=>({...prev,num:num}))
     }
-
+  
+    const getValue=(name)=>{
+      const id=cryptoId (data, name);
+      console.log(id)
+      
+    }
 
   return (
       // <Home/>
@@ -100,7 +109,7 @@ function App() {
         {/* <Route path='/' element={(<h2>SITE UNDER CONSTRUCTION COME BACK LATER</h2>)}/> */}
         <Route path='/' element={<Home/>}/>
         <Route path='watchlist' element={<Watchlist data={data} watch={watch} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}/>}></Route>
-        <Route path='portfolio' element={<Portfolio data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}/>}>
+        <Route path='portfolio' element={<Portfolio data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue}/>}>
           {/* <Route path='form' element={<Form/>} /> */}
         </Route>
         <Route path='view' element={<View coin={coin}   changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}   />} />

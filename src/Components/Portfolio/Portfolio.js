@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './PortfolioStyle.css';
-import Table from '../Table/Table';
+// import Table from '../Table/Table';
 import Form from './Form/Form';
 
-const head = ['#','Fav','Name','Price','24H %','1H %','Market Cap','Market Volume']
+const head = ['#','Name','Quantity','Price']
 
 const Portfolio = (props)=>{
 
@@ -38,7 +38,18 @@ const Portfolio = (props)=>{
                 <button className='add' onClick={()=>setVisible(true)}> Buy More</button>
             </div>
 
-            <Table head={head}/>
+            <div className='p-lower'>
+                <div></div>
+                <table className='p-table'>
+                    <thead className="table-head-w">
+                        <tr className="table-row table-title">
+                        {head.map((topic,index) => (
+                            
+                        <th className='table-heading' key={index}>{topic}</th>))}
+                        </tr>
+                    </thead>
+                </table>
+            </div>
             <Form show={visible} focus={Visiblity} data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form}/>
             {/* <Outlet/> */}
         </div>

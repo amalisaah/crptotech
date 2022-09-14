@@ -1,4 +1,5 @@
-import React from 'react';
+import { getValue } from '@testing-library/user-event/dist/utils';
+import React,{useState} from 'react';
 import './FormStyle.css';
 
 
@@ -9,7 +10,7 @@ const Form =(props)=>{
     const Focus =()=>{ //hides form
         props.focus(false) 
     }
-
+    const [b,setB]=useState(false);
     //Data Values
     const changeFormNum=(e)=>{
         const num=e.target.value
@@ -19,15 +20,23 @@ const Form =(props)=>{
         const num=e.target.value
         props.changeFormName(num)
     } 
+    // const getValue=()=>{
+
+    // }
     
     const purchase=(e)=>{
         if (props.form.name !=='' && props.form.num>0){
-            Focus();
+            // Focus();
+            getValue()
             props.changeFormName('')
             props.changeFormNum(0.0)
         }
-    }
+        else if (props.form.name !=='' || props.form.num <= 0){
+            setB(true);      
+        }
 
+    }
+    console.log(b)
 
     return (
         
@@ -46,13 +55,14 @@ const Form =(props)=>{
             </div>
             <div className='block'>
                 <label htmlFor="price-per">Price per Coin</label>
-                <input type="number" id="price-per" name="quantity" placeholder='0.0' disabled value='24' />  
+                <input type="number" id="price-per" name="quantity" placeholder='0.0' disabled value={b} />  
             </div>
             <div className='spent'>
                 <h3>Total Spent</h3>
                 $247575765
             </div>
             <button className='form-btn' onClick={purchase} >Purchase</button>
+            {b && <div> we are good to go</div>}
             
         </div>
     )

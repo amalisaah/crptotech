@@ -21,8 +21,10 @@ const Portfolio = (props)=>{
     const getValue =(name)=>{
         props.getValue(name)
     }
+    const buyCoin=()=>{props.buyCoin()} 
 
-
+    const buy=props.buy
+    console.log(buy)
 
 
 
@@ -51,9 +53,20 @@ const Portfolio = (props)=>{
                         <th className='table-heading' key={index}>{topic}</th>))}
                         </tr>
                     </thead>
+                    <tbody>
+                        {buy.length>0 && buy.map((buys,index)=>
+                                
+                            <tr key={index}>
+                                <td>{index+1}</td>
+                                <td>{buys.name}</td>
+                                <td>{buys.num}</td>
+                                <td>{buys.price}</td>
+                            </tr>
+                        )}
+                    </tbody>
                 </table>
             </div>
-            <Form show={visible} focus={Visiblity} data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form} getValue={getValue}/>
+            <Form show={visible} focus={Visiblity} data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form} getValue={getValue} buyCoin={buyCoin} />
             {/* <Outlet/> */}
         </div>
     )

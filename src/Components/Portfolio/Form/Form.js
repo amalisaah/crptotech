@@ -7,38 +7,48 @@ import './FormStyle.css';
 const Form =(props)=>{
     
     let data=props.data; //option values
+    const dataName= data && data.map(b=>b.name)
+    const amt = props.form.amt //total amt
+
     const Focus =()=>{ //hides form
         props.focus(false) 
     }
-    const [b,setB]=useState(false);
+    // const [aot,setB]=useState('');
     //Data Values
     const changeFormNum=(e)=>{
         const num=e.target.value
         props.changeFormNum(num)
+        if (dataName.includes(props.form.name))
+        props.getValue(props.form.name)
+        
     } 
     const changeFormName=(e)=>{
         const num=e.target.value
         props.changeFormName(num)
     } 
-    // const getValue=(name)=>{
-    //     props.getValue(name)
+    // const changeFormAmt=(amt)=>{
+        // props.getValue(props.form.name)
+        
     // }
-    
+
     const purchase=(e)=>{
-        if (props.form.name !=='' && props.form.num>0){
-            // Focus();
-            props.getValue(props.form.name)
-            // props.changeFormName('')
-            const q=document.getElementById('a')
+        if (dataName.includes(props.form.name) && props.form.num>0){
+            // Focus(); 
+            props.buyCoin()           
+            props.changeFormName('');
+            props.changeFormNum('');
             
-            // props.changeFormNum(0.0)
+            // console.log(amt)
+
+            
+            
         }
-        else if (props.form.name !=='' || props.form.num <= 0){
-            setB(true);      
-        }
+        // else if (props.form.name !=='' || props.form.num <= 0){
+        //     null    
+        // }
 
     }
-    // console.log(b)
+
 
     return (
         
@@ -57,11 +67,11 @@ const Form =(props)=>{
             </div>
             <div className='block'>
                 <label htmlFor="price-per">Price per Coin</label>
-                <input type="number" id="price-per" name="quantity" placeholder='0.0' disabled value={b} />  
+                <input type="number" id="price-per" name="quantity" placeholder='0.0' disabled value={amt} />  
             </div>
             <div className='spent'>
                 <h3>Total Spent</h3>
-                $247575765
+                {amt}
             </div>
             <button className='form-btn' onClick={purchase} >Purchase</button>
             {/* {b && <div> we are good to go</div>} */}

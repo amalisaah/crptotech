@@ -20,6 +20,8 @@ function App() {
   
   
   const[data,setData]=useState();
+  let id;
+  // let am
   // Get all available Crytpo Currencies
   const baseUrl = 'https://cryptotech-backend.herokuapp.com';
     const getAllCrypto = async () => {
@@ -36,6 +38,35 @@ function App() {
     }
       
   };
+
+  const addAssert = async () => {
+        
+    //use input values from user porfolio input form.
+    
+    const amount = Number(form.num)
+    // const currency = 'usd' //hard_encoded
+
+    const baseUrl = 'https://cryptotech-backend.herokuapp.com';
+    const endPoint = '/assert';
+    const requestParams = `?id=${id}&amount=${amount}&convert=usd`;
+    const urlToFetch = `${baseUrl}${endPoint}${requestParams}`;
+
+    try {
+    const res = await fetch(urlToFetch)
+    if (res.ok) {
+    const respond = await res.json();
+    const amt = respond.data.quote.USD.price.toFixed(3)
+    setForm(prev=>({...prev,amt:amt}))
+    } else {
+        alert("Cannot get data")
+    }
+    } catch (error) {
+      console.log('why')
+        console.log(error.message);
+    }
+    
+}
+
   /*SET DATA ONLY ON FIRST RENDER*/
   useEffect(()=>{getAllCrypto()},[])
 
@@ -68,7 +99,6 @@ function App() {
     })
   }
 
-  console.log(watch)
 
 /*FOR MANAGING FORM VISIBILITY*/
   const [isVisible,setIsVisible]=useState(false)
@@ -85,7 +115,7 @@ function App() {
     }
 
 /*Manage FORMS */
-    const [form,setForm]=useState({name:'',num:0.0}) 
+    const [form,setForm]=useState({name:'',num:'', amt:0}) 
     const changeFormName=(name)=>{
       setForm(prev=>({...prev,name:name}))
     }
@@ -94,11 +124,24 @@ function App() {
       setForm(prev=>({...prev,num:num}))
     }
   
+
+/* Values for Port */ 
+    const [buy,setBuy]=useState([])
     const getValue=(name)=>{
-      const id=cryptoId (data, name);
-      console.log(id)
-      
+      id=cryptoId (data, name);
+      // console.log(id)
+      if (Number(form.num)>=0.1)
+        addAssert()
     }
+
+    const buyCoin =()=>{
+      setBuy(prev=>([...prev,{name:form.name,num:form.num,price:form.amt}]))
+      // console.log(buy)
+    }
+
+
+
+
 
   return (
       // <Home/>
@@ -109,7 +152,7 @@ function App() {
         {/* <Route path='/' element={(<h2>SITE UNDER CONSTRUCTION COME BACK LATER</h2>)}/> */}
         <Route path='/' element={<Home/>}/>
         <Route path='watchlist' element={<Watchlist data={data} watch={watch} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}/>}></Route>
-        <Route path='portfolio' element={<Portfolio data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue}/>}>
+        <Route path='portfolio' element={<Portfolio data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} />}>
           {/* <Route path='form' element={<Form/>} /> */}
         </Route>
         <Route path='view' element={<View coin={coin}   changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}   />} />

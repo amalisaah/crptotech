@@ -8,7 +8,7 @@ const addAssert = async () => {
 
     const baseUrl = 'https://cryptotech-backend.herokuapp.com';
     const endPoint = '/assert';
-    const requestParams = `?id=${id}&amount=${amount}&convert=${currency}`;
+    const requestParams = `?id=${id}&amount=${amount}&convert=usd`;
     const urlToFetch = `${baseUrl}${endPoint}${requestParams}`;
 
     try {

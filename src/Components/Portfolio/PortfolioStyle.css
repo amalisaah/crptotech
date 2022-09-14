@@ -45,3 +45,65 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
+td, tbody th {
+    /* border-bottom: 1px solid gray; */
+    padding: 20px;
+
+}
+td:not(.name) {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+@media screen and (max-width:640px){
+    
+    .add {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 6px #999;
+        padding: 10px 20px;
+        font-size: 21px;
+    } 
+    .balance {
+        /* border: 1px solid rgb(165, 170, 117); */
+        border-radius: 7px;
+        background-color: rgb(238, 234, 229);
+        width: 35%;
+    }
+    .balance p {
+        font-size: x-large;
+        font-weight: 600;
+        color: green;
+    }
+    
+}
+@media screen and (max-width:515px){
+.summary {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        justify-content: space-around;
+        height: 500px;
+        align-items: center;
+        margin-bottom: 30px;
+        margin-top: 5px;
+        margin: auto;
+    }  
+    .balance {
+        /* border: 1px solid rgb(165, 170, 117); */
+        border-radius: 9px;
+        background-color: rgb(238, 234, 229);
+        width: 75%;
+        height: 225px;
+    }
+    .p-lower {
+        display: flex;
+        /* grid-template-columns: repeat(2, 1fr); */
+    }
+    .add {
+        margin-bottom: 10px;
+        /* border-radius: 15px;
+        box-shadow: 0 8px #999;
+        padding: 15px 25px;
+        font-size: 24px; */
+    }
+}

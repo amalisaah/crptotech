@@ -2,10 +2,7 @@
     padding :5rem;
     background-color: var(--background);
 } 
-/*
-div {
-    gap:10px;
-}*/
+
 .details-top {
     display: flex;
     padding: 1rem;
@@ -14,25 +11,14 @@ div {
     justify-content: space-between;
     border-bottom: 3px solid #fff;
 }
-/*.card {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    background:rgb(222, 241, 241);
-    padding: 2px;
-    
-}
-.left .view-btn {
-    width: 80px;
-    align-self: center;
-}-*/
+
 .name-w {
     display: flex;
     gap: 0.6rem
 }
 
 .coin-name-w {
-    font-size: 2rem; 
+    font-size: 3rem; 
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -41,130 +27,217 @@ div {
     
 } 
 .coin-name-w .span {
-    color: hsl(223, 10%, 52%);
-    font-size: 1.2rem;
+    color: #4d4d4d;
+    font-size: 2.2rem;
 }
 
-.view-btn {
+.rank, .cap,.rank:hover, .cap:hover {
+    background: #0d579b;
+    /* border-radius: 4px; */
+    margin:0 5px;
+    width: 8rem;
     border-radius: 4px;
     border: none;
     font: inherit;
-    cursor: cursor;
+    cursor: text;
     padding: 2px;
-    /* color: aliceblue; */
-}
-.rank, .cap{
-    background: hsl(223, 10%, 52%);
-    /* border-radius: 4px; */
-    margin:0 5px;
+    background: #0d579b;
     
 }
 .price-label {
-    font-size: 0.8rem;
+    font-size: 1.rem;
     font-weight: 500;
-    color: hsl(223, 10%, 52%);
+    color: #4d4d4d;
+    text-align : right;
 }
 .price h2{
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
 }
 .price {
     display:flex;
     gap: 0.4rem;
     padding-bottom: 1rem;
+    color:#4d4d4d;
+    font-size: 1.2rem;
 }
-.red-b {
-    background: #ff0000;
+.rate,.rate:hover {
+    background-color: inherit;
 }
 
+.red-b,.green-b {
+    padding: 4px;
+    border-radius: 4px;
+    border: none;
+    font: inherit;
+    cursor: text;
+}
+.red-b {
+    background-color: #ff0000;
+}
+.green-b {
+    background-color: green;
+}
+.buys {
+    border: none;
+    background-color: #329239;
+    color: #ffffff;
+    border-radius: 9px;
+    box-shadow: 0 8px #999;
+    padding: 15px 25px;
+    font-size: 24px;
+    transition: all 2s;
+}
+.buys:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    transition: all 4ms;
+}
 .bulk {
     display:flex;
     justify-content: space-between;
 }
 .bulk h3 {
     padding-bottom: 1.2rem;
-    text-align: center;
+    text-align: left;
 }
 .bulk div:not(:last-child) {
     border-right: 3px solid #fff;
 }
-
-/* button {
-    border-radius: 50px;
-    font-size: 1.2rem;
-    font-weight: var(--fw-500);
-    border: 1px solid white;
-    padding: 5px 15px;
-    background-color: rgb(159, 196, 196);
-    width: 120;
-    height: 70px;
-} 
-
-.green-b {
-    background
+.title {
+    color: #0d579b
 }
-*/
-/* .buy {
-    height: 50px;
-    width: 70px;
-    background-color: rgb(9, 190, 78);
-    font-weight: 600;
-    font-size: large;
-    color: hsla(49, 34%, 15%, 0.836)
-}  */
-
-/* button.add-to-fav {
-    color: hsl(223, 10%, 52%);
-    font-size: 18px;
-    border: var(--background);
-    padding: 0;
-    background-color: inherit;
-    height: fit-content;
-    width: fit-content;
+.bulk p {
+    text-align: center;
 }
-.top {
-    display: flex;
-    justify-content: space-between;
+.detail {
+    margin: 2px;
 }
 
 
-*//*
-.name img {
-width: 40px;
-height: 40px;
-}
 
-.rates {
-    margin: auto;
-}
-.bulk {
-    height: 100px;
-}
-.chart {
-    font-size: 5.4rem;
-}
-
-@media screen and (max-width: 650px) {
-    .details {
-        flex-direction: column;
-        align-items: center;
+@media screen and (max-width: 790px) {
+    /* .details {
+        
+    } */
+    .coin-name-w {
+        font-size: 2rem; 
+        font-weight: 700;
+        
+    } 
+    .coin-name-w .span {
+        font-size: 1.8rem;
     }
-    
-    .card, .bulk {
-        display: flex;
-        width: 80%;
-        border-radius: 10px;
-        height: 350px;
-        margin: auto;
-        justify-content: space-around;
-        padding: 5px;
+    .price-label {
+        font-size: 0.9rem;
     }
-    .top {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .price h2{
+        font-size: 1.8rem;
+        font-weight: 600;
     }
     .price {
+        display:flex;
+        gap: 0.4rem;
+        padding-bottom: 1rem;
+        color:#4d4d4d;
+        font-size: 1.2rem;
+    }
+    .rank, .cap,.rank:hover, .cap:hover { 
+        margin:0 3px;
+        width: 6rem;
+        border-radius: 4px;
+        border: none;        
+    }
+    .buys {
+        border-radius: 8px;
+        box-shadow: 0 6px #999;
+        padding: 10px 18px;
+        font-size: 20px;
+        transition: all 2s;
+    }
+  
+  } 
+@media screen and (max-width: 675px) {
+    .view {padding: 0.75rem;}
+  } 
+@media screen and (max-width: 550px) {
+    .details {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        height: 280px;
+    }
+    
+    .bulk {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        height: 680px;
+    }
+    .details>div{
+        display: flex;
+    }
+    .card-right{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+    .price-label {
+        font-size: 1.2rem;
+        text-align : right;
+    }
+    .price h2{
+        font-size: 2.4rem;
+        font-weight: 600;
+    }
+    .view {padding: 3rem;}
+  
+    .view-btns {
+        display: flex;
+        justify-content: center;
+    }
+    .detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        padding: 12px 22px;
+        margin: .4rem;
+        width: 210px;
+        height: 170px;
+        border-radius: 24px;
+        border: 1px solid #d3d3d3;
+        /* box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px; */
+        text-align: center;
+        background-color: rgba(247, 148, 26,0.5);
+    }
+} 
+@media screen and (max-width: 460px){
+    .card-left{
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
+    .price-label {
+        font-size: 1.0rem;
+        text-align : right;
+    }
+    .price h2{
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+    .details>div{
         flex-direction: column;
     }
-  } */
+}
+@media screen and (max-width: 380px){
+    .price-label {
+        font-size: 0.7rem;
+        text-align : right;
+    }
+    .price h2{
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+    
+}

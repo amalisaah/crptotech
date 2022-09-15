@@ -4,7 +4,31 @@
 :root {
   --primary: #118c4f;
   --background: #f5f8ff;
-}
+} 
+
+/*light*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .primary {
   color: var(--primary);
@@ -50,7 +74,7 @@ button {
   cursor: pointer; 
   border: none;
   color: #fff;
-  background-color: #04AA6D;
+  /* background-color: #04AA6D; */
   font-size: 1.1rem;
   font-weight: 600;
 }

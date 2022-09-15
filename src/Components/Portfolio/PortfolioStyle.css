@@ -16,7 +16,7 @@
     flex-direction: column;
     /* border: 1px solid rgb(165, 170, 117); */
     border-radius: 8px;
-    background-color: rgb(238, 234, 229);
+    background-color: #f7931a;
     width: 40%;
     height: 100%;
     text-align: center;
@@ -28,6 +28,10 @@
     font-weight: 700;
     color: green;
 }
+.balance h3 {
+    font-size: 2rem;
+    color: #4d4d4d;
+}
 
 .add {
     border: none;
@@ -35,6 +39,7 @@
     box-shadow: 0 8px #999;
     padding: 15px 25px;
     font-size: 24px;
+    background-color: #329239;
 }
 .add:active {
     background-color: #3e8e41;
@@ -44,6 +49,9 @@
 .p-lower {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+}
+.p-lower th {
+    color: #4d4d4d;
 }
 td, tbody th {
     /* border-bottom: 1px solid gray; */
@@ -66,13 +74,13 @@ td:not(.name) {
     .balance {
         /* border: 1px solid rgb(165, 170, 117); */
         border-radius: 7px;
-        background-color: rgb(238, 234, 229);
+        /* background-color: rgb(238, 234, 229); */
         width: 35%;
     }
     .balance p {
         font-size: x-large;
         font-weight: 600;
-        color: green;
+        /* color: green; */
     }
     
 }
@@ -91,7 +99,7 @@ td:not(.name) {
     .balance {
         /* border: 1px solid rgb(165, 170, 117); */
         border-radius: 9px;
-        background-color: rgb(238, 234, 229);
+        /* background-color: rgb(238, 234, 229); */
         width: 75%;
         height: 225px;
     }

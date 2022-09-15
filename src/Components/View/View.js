@@ -10,7 +10,7 @@ const View = (props)=>{
     
 
     return ( 
-        Object.keys (data).length == 0 ? <h3 style={{textAlign:'center',lineHeight:'50vh'}}><em>Please go back to coin page and select coin</em></h3> :
+        Object.keys (data).length === 0 ? <h3 style={{textAlign:'center',lineHeight:'50vh'}}><em>Please go back to coin page and select coin</em></h3> :
         <div className='view'>
             <div className='details details-top'>
                 <div className='card card-left'>

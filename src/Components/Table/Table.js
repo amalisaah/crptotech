@@ -16,7 +16,7 @@ const Table = ({data,head,onClick,addfav,SelCoin,star,favourite,watch})=>{
     const addWish=(e)=>{ //creates array of wishlists
         const nam = e.target.id
         addfav(nam)
-        e.target.className=e.target.className== unwatched ? watched: unwatched;
+        e.target.className=e.target.className=== unwatched ? watched: unwatched;
         console.log(e.target.className)
         // e.target.className= Object.values(watch).includes(nam) ? star: unwatched;
         // console.log(nam)

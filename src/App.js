@@ -97,7 +97,7 @@ function App() {
 
   const [star,Setstar]=useState('material-icons watched')
   const favourite =()=>{
-    Setstar(prev=>star=='material-icons unwatched'?"material-icons watched" :'material-icons unwatched' )
+    Setstar(prev=>star==='material-icons unwatched'?"material-icons watched" :'material-icons unwatched' )
   }
  
 
@@ -139,7 +139,7 @@ function App() {
 
     const buyCoin =()=>{
       setBuy(prev=>([...prev,{name:form.name,num:form.num,price:form.amt}]))
-      // console.log(buy)
+      console.log(buy)
     }
 
 

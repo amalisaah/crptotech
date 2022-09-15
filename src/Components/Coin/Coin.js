@@ -26,7 +26,7 @@ const Coin = (props)=>{
 
 
 
-    // useEffect(()=>{console.log(isVisible)},[])
+    
     const SelCoin=(id)=>{
         props.SelCoin(id)
     }

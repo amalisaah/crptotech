@@ -14,7 +14,7 @@
     position: sticky;
     top: 90px;
     left: 0;
-    z-index: 10;
+    z-index: 5;
   }
   thead th {
     background-color: azure;

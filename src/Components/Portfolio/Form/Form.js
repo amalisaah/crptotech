@@ -7,7 +7,7 @@ const Form =(props)=>{
     
     let data=props.data; //option values
     const dataName= data && data.map(b=>b.name)
-    const amt = props.form.amt //total amt
+    // const amt = props.form.amt //total amt
 
     const Focus =()=>{ //hides form
         props.focus(false) 
@@ -30,7 +30,7 @@ const Form =(props)=>{
         
     // }
 
-    const purchase=(e)=>{
+    const purchase=()=>{
         if (dataName.includes(props.form.name) && props.form.num>0){
             // Focus(); 
             props.buyCoin()           
@@ -66,11 +66,11 @@ const Form =(props)=>{
             </div>
             <div className='block'>
                 <label htmlFor="price-per">Price per Coin</label>
-                <input type="number" id="price-per" name="quantity" placeholder='0.0' disabled value={amt} />  
+                <input type="number" id="price-per" name="quantity" placeholder='0.0' disabled value={props.form.amt} />  
             </div>
             <div className='spent'>
                 <h3>Total Spent</h3>
-                {amt}
+                {props.form.amt}
             </div>
             <button className='form-btn' onClick={purchase} >Purchase</button>
             {/* {b && <div> we are good to go</div>} */}

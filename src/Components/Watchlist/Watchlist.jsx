@@ -104,7 +104,7 @@ const Watchlist = (props)=> {
                 <td className="table-data-w market-vol">{Data.quote.USD.volume_change_24h < 0 ? (
                         <span className='red'>
                             <FiArrowDownLeft className='icon' /> 
-                            {Data.quote.USD.volume_change_24h.toFix.toFixed(2)}%
+                            {Data.quote.USD.volume_change_24h.toFixed(2)}%
                         </span>
                     ) : (
                         <span className='green'>

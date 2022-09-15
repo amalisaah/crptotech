@@ -24,7 +24,7 @@ const Portfolio = (props)=>{
     const buyCoin=()=>{props.buyCoin()} 
 
     const buy=props.buy
-    console.log(buy)
+    // console.log(buy)
 
 
 

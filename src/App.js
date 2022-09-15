@@ -72,6 +72,7 @@ function App() {
 
 
   const cryptoId = (data, name) => {
+    if (name)
     return data.find(element => element.name === name).id;
   };
   const getCryptotById = (name) => {
@@ -97,6 +98,7 @@ function App() {
       if(!exists) return [...prev,coin] 
       else return deleteCoinById(watch,coin.id)
     })
+    console.log(watch)
   }
 
 
@@ -123,15 +125,21 @@ function App() {
     const changeFormNum=(num)=>{
       setForm(prev=>({...prev,num:num}))
     }
-  
+    // const changeFormAmt=(amt)=>{
+    //   setForm(prev=>({...prev,amt:amt}))
+    // }
+    
 
 /* Values for Port */ 
     const [buy,setBuy]=useState([])
+
+    // useEffect(()=>{getValue()},[buy])
     const getValue=(name)=>{
       id=cryptoId (data, name);
       // console.log(id)
       if (Number(form.num)>=0.1)
         addAssert()
+      else setForm(prev=>({...prev,amt:0}))
     }
 
     const buyCoin =()=>{

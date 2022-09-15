@@ -46,7 +46,29 @@
     transform: translateY(4px);
     transition: all 4ms;
 }
-/* .added{
-    color:red;
-} */
+.watched{
+    color:yellow;
+}
+.unwatched {
+  color:#666
+}
+#Add,.Adds {display: none;}
 
+@media screen and (max-width: 760px) {
+  #Add, .Adds {display: table-cell;}
+
+  .Purchase,#Purchase {display: none}
+
+  .Adds {cursor: pointer;}
+
+}
+@media screen and (max-width: 706px) {
+
+  #Market-Cap,.market-cap {display: none}
+
+}
+@media screen and (max-width: 575px) {
+
+  .market-vol,#Volume {display: none}
+  
+}

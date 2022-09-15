@@ -7,9 +7,10 @@ import Home from "./Components/Home/Home";
 import Coin from "./Components/Coin/Coin";
 import Portfolio from "./Components/Portfolio/Portfolio";
 import View from "./Components/View/View";
-// import Form from './Components/Portfolio/Form/Form';
 import Watchlist from './Components/Watchlist/Watchlist';
-// import Select from './Components/Portfolio/Select/Select';
+import {getCryptotById} from './views/helperFunction/helperFunctions';
+import {deleteCoinById} from './views/helperFunction/helperFunctions';
+// import {cryptoId} from './views/helperFunction/helperFunctions';
 
 
 
@@ -21,8 +22,8 @@ function App() {
   
   const[data,setData]=useState();
   let id;
-  // let am
-  // Get all available Crytpo Currencies
+ 
+  //////////// Get all available Crytpo Currencies///////////////////////
   const baseUrl = 'https://cryptotech-backend.herokuapp.com';
     const getAllCrypto = async () => {
         try {
@@ -75,24 +76,17 @@ function App() {
     if (name)
     return data.find(element => element.name === name).id;
   };
-  const getCryptotById = (name) => {
-    const coin=data.find(element => element.name === name);
-    return coin  
-  }  
-  
-  const deleteCoinById = (data,id) => {
-    data.splice(data.findIndex(element => element.id === id), 1)
-    return data
-  };
+
 
 
 
 
  
-/*FOR MANAGING WATCHLIST*/
+/////////////*FOR MANAGING WATCHLIST*////////////////////
+
   const[watch,setWatch]=useState([])
   const addWatch=(id)=>{
-    const coin=getCryptotById(id)
+    const coin=getCryptotById(data,id)
     const exists=watch.find(element => element.id === coin.id)
     setWatch(prev=>{
       if(!exists) return [...prev,coin] 
@@ -101,8 +95,14 @@ function App() {
     console.log(watch)
   }
 
+  const [star,Setstar]=useState('material-icons watched')
+  const favourite =()=>{
+    Setstar(prev=>star=='material-icons unwatched'?"material-icons watched" :'material-icons unwatched' )
+  }
+ 
 
-/*FOR MANAGING FORM VISIBILITY*/
+
+/////////////*FOR MANAGING FORM VISIBILITY*///////////////////
   const [isVisible,setIsVisible]=useState(false)
     const Visiblity =(b)=>{
       setIsVisible(b)
@@ -112,7 +112,7 @@ function App() {
 /*COIN DETAILS*/
   const [coin,setCoin]=useState([])
     const SelCoin=(id)=>{
-      const coin=getCryptotById(id) 
+      const coin=getCryptotById(data,id) 
       setCoin(coin)
     }
 
@@ -156,17 +156,12 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='watchlist' element={<Watchlist data={data} watch={watch} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}/>}></Route>
         <Route path='portfolio' element={<Portfolio data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} />}>
-          {/* <Route path='form' element={<Form/>} /> */}
+          
         </Route>
-        <Route path='view' element={<View coin={coin}   changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}   />} />
-        <Route path='coin' element={<Coin data={data} addfav={addWatch} Visiblity={Visiblity} isVisible={isVisible} SelCoin={SelCoin} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}/>}></Route>
+        <Route path='view' element={<View coin={coin}   changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} watch={watch}  />} />
+        <Route path='coin' element={<Coin data={data} addfav={addWatch} Visiblity={Visiblity} isVisible={isVisible} SelCoin={SelCoin} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} star={star} favourite={favourite} watch={watch} />}></Route>
  
       </Routes>
-      
-      {/* path='coin'/> */}
-      
-      {/*  */}
-      {/* <Select /> */}
       <Footer />
     </Router>       
   );

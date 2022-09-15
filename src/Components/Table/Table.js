@@ -1,20 +1,27 @@
 import React from 'react';
 import { FiArrowUpRight, FiArrowDownLeft  } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import { FaStar } from 'react-icons/fa';
-import './TableStyle.css'
+// import { FaStar } from 'react-icons/fa';
+import './TableStyle.css';
 
-const Table = ({data,head,onClick,addfav,SelCoin})=>{
+
+const Table = ({data,head,onClick,addfav,SelCoin,star,favourite,watch})=>{
 
     const handleClick =(e)=>{ //display form
         onClick(true)
         
     }
-  
+    const unwatched="material-icons unwatched"
+    const watched="material-icons watched"
     const addWish=(e)=>{ //creates array of wishlists
         const nam = e.target.id
         addfav(nam)
+        e.target.className=e.target.className== unwatched ? watched: unwatched;
+        console.log(e.target.className)
+        // e.target.className= Object.values(watch).includes(nam) ? star: unwatched;
         // console.log(nam)
+        // console.log (Object.values(watch).includes(nam))
+        
         
     }
     
@@ -33,7 +40,7 @@ const Table = ({data,head,onClick,addfav,SelCoin})=>{
                 <tr className="table-row table-title">
                 {head.map((topic,index) => (
                     
-                <th className='table-heading' key={index}>{topic}</th>))}
+                <th className='table-heading' key={index} id={topic}>{topic}</th>))}
                 </tr>
             </thead>
             
@@ -42,16 +49,18 @@ const Table = ({data,head,onClick,addfav,SelCoin})=>{
             {data.map((Data,index)=>(
             <tr className="table-row" key={index}>
                <td className="table-data"  >
-                    <button className="add-to-fav" aria-label="Add to favourite" style={{color:'yellow'}}>
-                        <FaStar />
+                    <button className="add-to-fav" aria-label="Add to favourite" >
+                        <i className="material-icons unwatched" onClick={addWish} id={Data.name} title='add to watchlist'>star</i>
                     </button>
                 </td> 
-                <th className="table-data rank" scope="row" onClick={addWish} id={Data.name}>{index+1}</th>
+                <th className="table-data rank" scope="row">{index+1}</th>
+                <th className="table-data rank Adds" scope="row" id={Data.name} title='click to buy' onClick={handleClick }>+</th>
+
                  <td className="table-data name">
                   {/*  <div className="wrapper">
                     <img src={Data.image} width="20" height="20" alt="coin logo"  />*/}
 
-                    <h4 onClick={showCoin}>
+                    <h4 onClick={showCoin} title='view more details'>
                         <Link to='/view' className="coin-name" id={Data.name}> {Data.name} <span className="span">{Data.symbol.toUpperCase()}</span></Link>
                     </h4>
                     {/* </div> */}
@@ -71,7 +80,7 @@ const Table = ({data,head,onClick,addfav,SelCoin})=>{
                          )}
                 </td>
 
-                <td className="table-data last-update 1h">{Data.quote.percent_change_7d < 0 ? (
+                <td className="table-data last-update sevd">{Data.quote.percent_change_7d < 0 ? (
                         <span className='red'>
                             <FiArrowDownLeft className='icon' /> 
                             {Data.quote.USD.percent_change_7d.toFixed(2)}%
@@ -87,7 +96,7 @@ const Table = ({data,head,onClick,addfav,SelCoin})=>{
                 <td className="table-data market-cap">${(Data.quote.USD.market_cap.toFixed(0)).toLocaleString()}</td>
                 <td className="table-data market-vol">%{Data.quote.USD.volume_change_24h.toFixed(2)}</td>
                 
-                <td> <button className='table-btn' onClick={handleClick} id={Data.name}>Buy</button></td>
+                <td className='Purchase'> <button className='table-btn' onClick={handleClick} >Buy</button></td>
             </tr>
            
         ))}

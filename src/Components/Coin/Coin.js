@@ -13,6 +13,11 @@ const Coin = (props)=>{
     const getCoin=(val)=>{
         props.addfav(val)
     }
+    const favourite=()=>{
+        props.favourite()
+    }
+
+
 
     //forms
     const isVisible =props.isVisible;
@@ -22,7 +27,12 @@ const Coin = (props)=>{
     const changeFormNum=(num)=>{props.changeFormNum(num)} 
     const changeFormName=(name)=>{props.changeFormName(name)}
 
+    const getValue =(name)=>{
+        props.getValue(name)
+    }
+    const buyCoin=()=>{props.buyCoin()} 
 
+    const buy=props.buy
 
 
 
@@ -36,11 +46,11 @@ const Coin = (props)=>{
    
     if (!data) return (<p>Loading ...</p>);
 
-    const head = ['Fav','#','Name','Price','24H %','7d %','Market Cap','Market Volume','Purchase']
+    const head = ['Fav','#','Add','Name','Price','24H %','7d %','Market-Cap','Volume','Purchase']
     return(
     <>
-        <Table data={data} head={head} onClick={Visiblity} addfav={getCoin} SelCoin={SelCoin}/>
-        <Form show={isVisible} focus={Visiblity} data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form}/>
+        <Table data={data} head={head} onClick={Visiblity} addfav={getCoin} SelCoin={SelCoin} star={props.star} favourite={favourite} watch={props.watch}/>
+        <Form show={isVisible} focus={Visiblity} data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form} getValue={getValue} buyCoin={buyCoin}/>
     </>
     )
 }

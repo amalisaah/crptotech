@@ -4,7 +4,7 @@
 .table-row:not(.table-title) { height: 90px; }
 
 .add-to-fav {
-  color: hsl(223, 10%, 52%);
+  /* color: hsl(223, 10%, 52%); */
   font-size: 18px;
   border: var(--background);
   background: var(--background);
@@ -12,7 +12,7 @@
 }
 
 .add-to-fav:hover {
-  color:rgba(148, 148, 40, 0.5);
+  /* color:rgba(148, 148, 40, 0.5); */
   background-color: inherit;
 }
 

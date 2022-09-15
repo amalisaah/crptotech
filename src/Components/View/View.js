@@ -1,15 +1,16 @@
 import React from 'react';
 import './View.css';
-import { FaStar } from 'react-icons/fa';
 import { FiArrowUpRight, FiArrowDownLeft  } from 'react-icons/fi';
 
 
 const View = (props)=>{
     
     const data=props.coin
+    console.log(data)
     
 
     return ( 
+        Object.keys (data).length === 0 ? <h3 style={{textAlign:'center',lineHeight:'50vh'}}><em>Please go back to coin page and select coin</em></h3> :
         <div className='view'>
             <div className='details details-top'>
                 <div className='card card-left'>
@@ -18,9 +19,9 @@ const View = (props)=>{
                         <h1 className="coin-name-w">
                         {data.name} <span className="span">{data.symbol.toUpperCase()}</span>
                         </h1>
-                        <button className="add-to-fav view-btn" aria-label="Add to favourite" >
-                            <FaStar />
-                        </button>  
+                        <button className="add-to-fav" aria-label="Add to favourite" >
+                            <i className="material-icons unwatched"  title='add to watchlist'>star</i>
+                        </button> 
                     </div>
                     <div className='view-btns'>
                         <button className='view-btn rank'>Rank {data.cmc_rank}</button>
@@ -81,27 +82,27 @@ const View = (props)=>{
             </div>
 
             <div className='details bulk '>
-                <div>
+                {data.quote.USD.market_cap && <div>
                     <h3 className='title'>Market Cap</h3>
                     <div className='price'>${data.quote.USD.market_cap.toFixed(0).toLocaleString()}</div>
-                </div>
-                <div>
+                </div>}
+                {data.circulating_supply && <div>
                     <h3 className='title'>Circulating Supply</h3>
                     <div className='price'>${(data.circulating_supply.toFixed(0)).toLocaleString()}</div>
-                </div>
-                <div>
+                </div>}
+                {data.max_supply && <div>
                     <h3 className='title'>Total Supply</h3>
                     <div className='price'>${(data.max_supply.toFixed(0)).toLocaleString()}</div>
-                </div>
-                <div>
+                </div>}
+                {data.quote.USD.fully_diluted_market_cap && <div>
                     <h3 className='title'>Fully Diluted Market Cap</h3>
                     <div className='price'>${data.quote.USD.fully_diluted_market_cap.toLocaleString()}</div>
-                </div>
-                <div>
+                </div>}
+                {data.quote.USD.volume_24h && <div>
                     <h3 className='title'>24h Volume</h3>
                     <div className='price'>${data.quote.USD.volume_24h.toLocaleString()}</div>
                 </div>
-                
+                }
             </div>
 
             <div className='details chart'>

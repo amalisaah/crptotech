@@ -125,15 +125,10 @@ function App() {
     const changeFormNum=(num)=>{
       setForm(prev=>({...prev,num:num}))
     }
-    // const changeFormAmt=(amt)=>{
-    //   setForm(prev=>({...prev,amt:amt}))
-    // }
-    
+  
 
 /* Values for Port */ 
     const [buy,setBuy]=useState([])
-
-    // useEffect(()=>{getValue()},[buy])
     const getValue=(name)=>{
       id=cryptoId (data, name);
       // console.log(id)

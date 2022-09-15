@@ -17,10 +17,8 @@ const Form =(props)=>{
     const changeFormNum=(e)=>{
         const num=e.target.value
         props.changeFormNum(num)
-        if (dataName.includes(props.form.name)){
+        if (dataName.includes(props.form.name))
         props.getValue(props.form.name)
-        console.log(props.form.amt)
-    }
         
     } 
     const changeFormName=(e)=>{

@@ -1,6 +1,7 @@
 import React from 'react';
 import './View.css';
-import { FiArrowUpRight, FiArrowDownLeft  } from 'react-icons/fi';
+import { FiArrowUp, FiArrowDown  } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 
 
 const View = (props)=>{
@@ -10,7 +11,7 @@ const View = (props)=>{
     
 
     return ( 
-        Object.keys (data).length === 0 ? <h3 style={{textAlign:'center',lineHeight:'50vh'}}><em>Please go back to coin page and select coin</em></h3> :
+        Object.keys (data).length === 0 ? <h3 style={{textAlign:'center',lineHeight:'50vh'}}><em><Link to='/coin'>Please go back to coin page and select coin</Link></em></h3> :
         <div className='view'>
             <div className='details details-top'>
                 <div className='card card-left'>
@@ -25,7 +26,7 @@ const View = (props)=>{
                     </div>
                     <div className='view-btns'>
                         <button className='view-btn rank'>Rank {data.cmc_rank}</button>
-                        <button className='view-btn cap'>{data.quote.USD.market_cap_dominance}</button>
+                        <button className='view-btn cap' title='market-cap dominance'>{data.quote.USD.market_cap_dominance}</button>
                     </div>
                 </div>
 
@@ -35,16 +36,16 @@ const View = (props)=>{
                        <div className='price'>
                             <h2>${data.quote.USD.price.toLocaleString()}</h2>
 
-                            <button className='rate view-btn'>{data.quote.percent_change_7d < 0 ? (
-                                <span className='red-b'>
-                                    <FiArrowDownLeft className='icon' /> 
+                            <button className='rate view-b' title='%change in 7 days'>{data.quote.USD.percent_change_7d < 0 ? (
+                                <p><span className='red-b'> 
+                                    <FiArrowDown className='icon' /> 
                                     {data.quote.USD.percent_change_7d.toFixed(2)}
-                                </span>
+                                </span></p>
                                  ) : (
-                                <span className='green-b'>
-                                    <FiArrowUpRight className='icon' /> 
+                                <p><span className='green-b'>
+                                    <FiArrowUp className='icon' /> 
                                     {data.quote.USD.percent_change_7d.toFixed(2)}
-                                </span>
+                                </span></p>
                                  )}
                             </button>
                         </div>
@@ -82,25 +83,29 @@ const View = (props)=>{
             </div>
 
             <div className='details bulk '>
-                {data.quote.USD.market_cap && <div>
-                    <h3 className='title'>Market Cap</h3>
-                    <div className='price'>${data.quote.USD.market_cap.toFixed(0).toLocaleString()}</div>
-                </div>}
-                {data.circulating_supply && <div>
-                    <h3 className='title'>Circulating Supply</h3>
-                    <div className='price'>${(data.circulating_supply.toFixed(0)).toLocaleString()}</div>
-                </div>}
-                {data.max_supply && <div>
-                    <h3 className='title'>Total Supply</h3>
-                    <div className='price'>${(data.max_supply.toFixed(0)).toLocaleString()}</div>
-                </div>}
-                {data.quote.USD.fully_diluted_market_cap && <div>
-                    <h3 className='title'>Fully Diluted Market Cap</h3>
-                    <div className='price'>${data.quote.USD.fully_diluted_market_cap.toLocaleString()}</div>
-                </div>}
-                {data.quote.USD.volume_24h && <div>
+                <div>
+                    {data.quote.USD.market_cap && <div className='detail'>
+                        <h3 className='title'>Market Cap</h3>
+                        <p className='price'>${data.quote.USD.market_cap.toFixed(0).toLocaleString()}</p>
+                    </div>}
+                    {data.circulating_supply && <div className='detail'>
+                        <h3 className='title'>Circulating Supply</h3>
+                        <p className='price'>{(data.circulating_supply.toFixed(0)).toLocaleString()}</p>
+                    </div>}
+                </div>
+                <div>
+                    {data.max_supply && <div className='detail'>
+                        <h3 className='title'>Total Supply</h3>
+                        <p className='price'>{(data.max_supply.toFixed(0)).toLocaleString()}</p>
+                    </div>}
+                    {data.quote.USD.fully_diluted_market_cap && <div className='detail'>
+                        <h3 className='title'>Fully Diluted Market Cap</h3>
+                        <p className='price'>${data.quote.USD.fully_diluted_market_cap.toLocaleString()}</p>
+                    </div>}
+                </div>
+                {data.quote.USD.volume_24h && <div className='detail'>
                     <h3 className='title'>24h Volume</h3>
-                    <div className='price'>${data.quote.USD.volume_24h.toLocaleString()}</div>
+                    <p className='price'>${data.quote.USD.volume_24h.toLocaleString()}</p>
                 </div>
                 }
             </div>

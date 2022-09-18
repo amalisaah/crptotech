@@ -1,46 +1,24 @@
 
 
 
-.table-row:not(.table-title) { height: 90px; }
 
-.add-to-fav {
-  /* color: hsl(223, 10%, 52%); */
-  font-size: 18px;
-  border: var(--background);
-  background: var(--background);
-  
-}
 
-.add-to-fav:hover {
-  /* color:rgba(148, 148, 40, 0.5); */
-  background-color: inherit;
-}
 
-.coin-name {
-  /* font-size: 1.5rem;  */
-  /* display: flex; */
-  /* align-items: center; */
-  gap: 0.4rem;
-  height: 90px;
-} 
 
 /* .wrapper {
   display: flex;
   gap: 0.4rem;
 } */
-.market-table .coin-name .span {
-  color: hsl(223, 10%, 52%);
-  /* font-size: var(--fs-7); */
-}
 
-@media screen and (max-width: 490px) {
+
+/* @media screen and (max-width: 490px) {
   table .market-vol {
-      display: none;
+    display: none;
   }
-}
+} */
 
-@media screen and (max-width: 478px) {
+/* @media screen and (max-width: 478px) {
   .market-cap, .market-vol {
       display: none;
   }
-}
+} */

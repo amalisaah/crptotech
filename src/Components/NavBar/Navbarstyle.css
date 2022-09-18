@@ -99,8 +99,10 @@ header .container {
 
 @media screen and (max-width:400px) {
   .nav-menu {
-    width: auto;
-    
+    width: auto; 
+  }
+  header .container {
+    padding: 0%;
   }
 }
 @media screen and (max-width:320px) {

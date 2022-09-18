@@ -11,6 +11,7 @@ const View = (props)=>{
     
 
     return ( 
+        data &&
         Object.keys (data).length === 0 ? <h3 style={{textAlign:'center',lineHeight:'50vh'}}><em><Link to='/coin'>Please go back to coin page and select coin</Link></em></h3> :
         <div className='view'>
             <div className='details details-top'>

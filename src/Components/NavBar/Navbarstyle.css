@@ -73,7 +73,7 @@ header .container {
       /* right: -100%; */
       display: none;
       width: 50%;
-      height: 70vh;
+      /* height: 70vh; */
       transition: 0.4s;
       z-index: 200;
       background: rgba(224, 230, 221, 0.7);

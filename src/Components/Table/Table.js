@@ -54,7 +54,7 @@ const Table = ({data,head,onClick,addfav,SelCoin,star,favourite,watch})=>{
                         <i className="material-icons unwatched" onClick={addWish} id={Data.name} title='add to watchlist'>star</i>
                     </button>
                 </td> 
-                <th className="table-data rank num" scope="row">{index+1}</th>
+                <th className="table-data  num" scope="row">{index+1}</th>
                 <th className="table-data rank Adds" scope="row" id={Data.name} title='click to buy' onClick={handleClick }>+</th>
 
                  <td className="table-data name">

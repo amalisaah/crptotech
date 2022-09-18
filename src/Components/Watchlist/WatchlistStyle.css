@@ -1,3 +1,6 @@
+.div-body-w {
+    display: none;
+}
 td, tbody th {
     border-bottom: 1px solid gray;
 
@@ -6,8 +9,14 @@ td:not(.name) {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
 }
-@media screen and (max-width:1240px) {
-    
+.add-to-fav-w {
+    background-color: inherit;
+}
+
+@media screen and (max-width:1325px) {
+    .table-head-w #Add,.table-body-w .Adds {display: table-cell;}
+
+    .table-body-w .Purchase, .table-head-w #Purchase {display: none}
     td, tbody th {
         border-bottom: 1px solid gray;
 
@@ -23,4 +32,119 @@ td:not(.name) {
         padding: .25rem;
         background-color: azure;
       }
-}  
+} 
+@media screen and (max-width:1285px) {
+    
+    .div-body-w {
+        display: block;
+    }
+    .market-table-w {
+        display: none;
+    }
+    .div-body-w .Adds {display: block;}
+    .Adds:hover {
+        cursor: pointer;
+        background-color: azure;;
+        font-size: xx-large;
+      }
+    .div-row-w {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        /* height: 150px; */
+        gap: 0.4rem;
+        border-bottom: solid 1px #4d4d4d;
+        width: 100%;
+    }
+    .div-row-w div {
+        padding: 0.2rem;
+    }
+    .un {
+        display: flex;
+        flex-direction: column;
+    }
+    .div-row-w .centage {
+        display: flex;
+    }
+    .div-data-w.name h4 {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+    .div-data-w.name h4 span {
+        font-size: 1.6rem;
+        font-weight: 500;
+
+    }
+    .centage .div-data-w {
+        padding: 0.3rem;
+    }
+    .div-row-w h3 {
+        color: #0d579b
+    }
+} 
+@media screen and (max-width: 685px) {
+
+    .div-data-w.name h4 {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+    .div-data-w.name h4 span {
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+    .div-data-w {
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+    
+    
+  }
+
+@media screen and (max-width: 560px) {
+
+    .div-data-w.last-update {
+        font-size: 0.8rem;
+    }
+    .div-row-w h3 {
+        font-size: 0.8rem;
+    }
+    
+  }
+@media screen and (max-width: 470px) {
+
+    .div-data-w.name h4 {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    .div-data-w.name h4 span {
+        font-size: 0.7rem;
+        font-weight: 500;
+    }
+    .div-data-w.last-update {
+        font-size: 0.6rem;
+    }
+    .div-row-w h3 {
+        font-size: 0.6rem;
+    } 
+    
+}
+@media screen and (max-width: 390px) {
+
+    .div-data-w.name h4 {
+        font-size: 0.6rem;
+        font-weight: 400;
+    }
+    .div-data-w.name h4 span {
+        font-size: 0.5rem;
+        font-weight: 300;
+    }
+    .div-data-w.last-update {
+        font-size: 0.4rem;
+    }
+    .div-row-w h3 {
+        font-size: 0.4rem;
+    } 
+    .div-row-w div {
+        padding: 0.05rem;
+    }
+}

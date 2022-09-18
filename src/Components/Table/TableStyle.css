@@ -82,9 +82,6 @@ table {
   color: hsl(223, 10%, 52%);
   /* font-size: var(--fs-7); */
 }
-th.table-data.rank.num:hover {
-  background-color: azure;
-}
 
 @media screen and (max-width: 890px) {
   #Add, .Adds {display: table-cell;}

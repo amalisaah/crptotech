@@ -97,11 +97,25 @@ header .container {
   }
 }
 
-/* @media screen and (max-width:500px) {
-  header {
-    position :relative;
+@media screen and (max-width:400px) {
+  .nav-menu {
+    width: auto;
+    
   }
-} */
+}
+@media screen and (max-width:320px) {
+  .container h1 {
+    font-size: 1.7rem;
+  }
+  .container .select {
+    padding: 2px;
+  }
+}
+@media screen and (max-width:290px) {
+  .container h1 {
+    font-size: 1.2rem;
+  }
+}
 
 
 

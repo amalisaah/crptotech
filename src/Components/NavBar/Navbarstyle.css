@@ -73,7 +73,7 @@ header .container {
       /* right: -100%; */
       display: none;
       width: 50%;
-      height: 70vh;
+      /* height: 70vh; */
       transition: 0.4s;
       z-index: 200;
       background: rgba(224, 230, 221, 0.7);
@@ -97,11 +97,27 @@ header .container {
   }
 }
 
-/* @media screen and (max-width:500px) {
-  header {
-    position :relative;
+@media screen and (max-width:400px) {
+  .nav-menu {
+    width: auto; 
   }
-} */
+  header .container {
+    padding: 0%;
+  }
+}
+@media screen and (max-width:320px) {
+  .container h1 {
+    font-size: 1.7rem;
+  }
+  .container .select {
+    padding: 2px;
+  }
+}
+@media screen and (max-width:290px) {
+  .container h1 {
+    font-size: 1.2rem;
+  }
+}
 
 
 

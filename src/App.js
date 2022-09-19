@@ -114,6 +114,8 @@ function App() {
     const SelCoin=(id)=>{
       const coin=getCryptotById(data,id) 
       setCoin(coin)
+      console.log(coin)
+
     }
 
 /*Manage FORMS */
@@ -154,11 +156,11 @@ function App() {
       <Routes>
         {/* <Route path='/' element={(<h2>SITE UNDER CONSTRUCTION COME BACK LATER</h2>)}/> */}
         <Route path='/' element={<Home/>}/>
-        <Route path='watchlist' element={<Watchlist data={data} watch={watch} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}/>}></Route>
-        <Route path='portfolio' element={<Portfolio data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} />}>
+        <Route path='watchlist' element={<Watchlist watch={watch} data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} SelCoin={SelCoin} />}></Route>
+        <Route path='portfolio' element={<Portfolio data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} />}>
           
         </Route>
-        <Route path='view' element={<View coin={coin}   changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} watch={watch}  />} />
+        <Route path='view' element={<View coin={coin}  data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} watch={watch}  />} />
         <Route path='coin' element={<Coin data={data} addfav={addWatch} Visiblity={Visiblity} isVisible={isVisible} SelCoin={SelCoin} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} star={star} favourite={favourite} watch={watch} />}></Route>
  
       </Routes>

@@ -73,7 +73,7 @@ const Form =(props)=>{
                 {props.form.amt}
             </div>
             <button className='form-btn' onClick={purchase} >Purchase</button>
-            {/* {b && <div> we are good to go</div>} */}
+            
             
         </div>
     )

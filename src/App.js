@@ -158,7 +158,7 @@ function App() {
         <Route path='portfolio' element={<Portfolio data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} />}>
           
         </Route>
-        <Route path='view' element={<View coin={coin}   changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} watch={watch}  />} />
+        <Route path='view' element={<View coin={coin}  data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} watch={watch}  />} />
         <Route path='coin' element={<Coin data={data} addfav={addWatch} Visiblity={Visiblity} isVisible={isVisible} SelCoin={SelCoin} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} star={star} favourite={favourite} watch={watch} />}></Route>
  
       </Routes>

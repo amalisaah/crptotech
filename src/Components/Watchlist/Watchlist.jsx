@@ -42,7 +42,6 @@ const Watchlist = (props)=> {
                 <th className='table-heading' key={index} id={topic}>{topic}</th>))}
                 </tr>
             </thead>
-            {watch.length===0 && <p>Add items to Watchlist to view here</p>}
             {data && 
             (<tbody className="table-body-w">
             {watch.map((Data,index)=>(

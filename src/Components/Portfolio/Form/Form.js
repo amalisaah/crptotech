@@ -7,28 +7,24 @@ const Form =(props)=>{
     
     let data=props.data; //option values
     const dataName= data && data.map(b=>b.name)
+
     // const amt = props.form.amt //total amt
 
     const Focus =()=>{ //hides form
         props.focus(false) 
     }
-    // const [aot,setB]=useState('');
-    //Data Values
+    
     const changeFormNum=(e)=>{
         const num=e.target.value
         props.changeFormNum(num)
-        if (dataName.includes(props.form.name))
-        props.getValue(props.form.name)
+        
         
     } 
     const changeFormName=(e)=>{
         const num=e.target.value
         props.changeFormName(num)
     } 
-    // const changeFormAmt=(amt)=>{
-        // props.getValue(props.form.name)
-        
-    // }
+   
 
     const purchase=()=>{
         if (dataName.includes(props.form.name) && props.form.num>0){
@@ -66,11 +62,11 @@ const Form =(props)=>{
             </div>
             <div className='block'>
                 <label htmlFor="price-per">Price per Coin</label>
-                <input type="number" id="price-per" name="quantity" placeholder='0.0' disabled value={props.form.amt} />  
+                <input type="number" id="price-per" name="quantity" placeholder='0.0' disabled value={dataName.includes(props.form.name) && props.form.num > 0 ? (parseFloat(props.form.amt) / parseFloat(props.form.num)).toFixed(2) : 0} />  
             </div>
             <div className='spent'>
                 <h3>Total Spent</h3>
-                {props.form.amt}
+                {dataName.includes(props.form.name) && props.form.num >=0.01 ? props.form.amt : 0}
             </div>
             <button className='form-btn' onClick={purchase} >Purchase</button>
             

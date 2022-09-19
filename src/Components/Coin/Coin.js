@@ -27,9 +27,7 @@ const Coin = (props)=>{
     const changeFormNum=(num)=>{props.changeFormNum(num)} 
     const changeFormName=(name)=>{props.changeFormName(name)}
 
-    const getValue =(name)=>{
-        props.getValue(name)
-    }
+    
     const buyCoin=()=>{props.buyCoin()} 
 
     
@@ -50,7 +48,7 @@ const Coin = (props)=>{
     return(
     <>
         <Table data={data} head={head} onClick={Visiblity} addfav={getCoin} SelCoin={SelCoin} star={props.star} favourite={favourite} watch={props.watch}/>
-        <Form show={isVisible} focus={Visiblity} data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form} getValue={getValue} buyCoin={buyCoin} />
+        <Form show={isVisible} focus={Visiblity} data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form} buyCoin={buyCoin} />
     </>
     )
 }

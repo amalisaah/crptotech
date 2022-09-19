@@ -20,7 +20,8 @@ import {deleteCoinById} from './views/helperFunction/helperFunctions';
 function App() {
   
   
-  const[data,setData]=useState();
+  const[data,setData]=useState([]);
+
   let id;
  
   //////////// Get all available Crytpo Currencies///////////////////////
@@ -69,11 +70,16 @@ function App() {
 }
 
   /*SET DATA ONLY ON FIRST RENDER*/
-  useEffect(()=>{getAllCrypto()},[])
-
+ 
+  useEffect(()=>{
+    getAllCrypto()
+  
+  },[])
+ 
 
   const cryptoId = (data, name) => {
-    if (name)
+    const dataName= data && data.map(b=>b.name)
+    if (dataName.includes(form.name))
     return data.find(element => element.name === name).id;
   };
 
@@ -101,14 +107,6 @@ function App() {
   }
  
 
-
-/////////////*FOR MANAGING FORM VISIBILITY*///////////////////
-  const [isVisible,setIsVisible]=useState(false)
-    const Visiblity =(b)=>{
-      setIsVisible(b)
-    }
-
-
 /*COIN DETAILS*/
   const [coin,setCoin]=useState([])
     const SelCoin=(id)=>{
@@ -118,26 +116,31 @@ function App() {
 
     }
 
-/*Manage FORMS */
+///////////////*Manage FORMS *//////////////////////////
+
+/*FOR MANAGING FORM VISIBILITY*/
+    const [isVisible,setIsVisible]=useState(false)
+    const Visiblity =(b)=>{
+      setIsVisible(b)
+    }
+
+      /* Values for Port */ 
     const [form,setForm]=useState({name:'',num:'', amt:0}) 
     const changeFormName=(name)=>{
       setForm(prev=>({...prev,name:name}))
     }
-    // const [formNum,setFormNum]=useState({name:'',num:0}) 
+
     const changeFormNum=(num)=>{
       setForm(prev=>({...prev,num:num}))
     }
   
-
-/* Values for Port */ 
     const [buy,setBuy]=useState([])
-    const getValue=(name)=>{
-      id=cryptoId (data, name);
-      // console.log(id)
-      if (Number(form.num)>=0.1)
-        addAssert()
-      else setForm(prev=>({...prev,amt:0}))
-    }
+
+    useEffect(()=>{
+      id=cryptoId (data, form.name)
+      id && form.num >= 0.001 && addAssert()  
+    },[form])
+
 
     const buyCoin =()=>{
       setBuy(prev=>([...prev,{name:form.name,num:form.num,price:form.amt}]))
@@ -156,12 +159,12 @@ function App() {
       <Routes>
         {/* <Route path='/' element={(<h2>SITE UNDER CONSTRUCTION COME BACK LATER</h2>)}/> */}
         <Route path='/' element={<Home/>}/>
-        <Route path='watchlist' element={<Watchlist watch={watch} data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} SelCoin={SelCoin} />}></Route>
-        <Route path='portfolio' element={<Portfolio data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} />}>
+        <Route path='watchlist' element={<Watchlist watch={watch} data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} buyCoin={buyCoin} buy={buy} SelCoin={SelCoin} />}></Route>
+        <Route path='portfolio' element={<Portfolio data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} buyCoin={buyCoin} buy={buy} />}>
           
         </Route>
-        <Route path='view' element={<View coin={coin}  data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} watch={watch}  />} />
-        <Route path='coin' element={<Coin data={data} addfav={addWatch} Visiblity={Visiblity} isVisible={isVisible} SelCoin={SelCoin} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} star={star} favourite={favourite} watch={watch} />}></Route>
+        <Route path='view' element={<View coin={coin}  data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}  buyCoin={buyCoin} buy={buy} watch={watch}  />} />
+        <Route path='coin' element={<Coin data={data} addfav={addWatch} Visiblity={Visiblity} isVisible={isVisible} SelCoin={SelCoin} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}  buyCoin={buyCoin} buy={buy} star={star} favourite={favourite} watch={watch} />}></Route>
  
       </Routes>
       <Footer />

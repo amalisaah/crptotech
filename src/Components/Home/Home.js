@@ -21,7 +21,6 @@ const Home = () => {
         })
     }, [])
 
-    console.log(data)
 
     if (!data) return (<h2>Loading ...</h2>);
 

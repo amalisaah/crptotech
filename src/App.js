@@ -114,6 +114,8 @@ function App() {
     const SelCoin=(id)=>{
       const coin=getCryptotById(data,id) 
       setCoin(coin)
+      console.log(coin)
+
     }
 
 /*Manage FORMS */
@@ -154,7 +156,7 @@ function App() {
       <Routes>
         {/* <Route path='/' element={(<h2>SITE UNDER CONSTRUCTION COME BACK LATER</h2>)}/> */}
         <Route path='/' element={<Home/>}/>
-        <Route path='watchlist' element={<Watchlist watch={watch} data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy}  />}></Route>
+        <Route path='watchlist' element={<Watchlist watch={watch} data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} SelCoin={SelCoin} />}></Route>
         <Route path='portfolio' element={<Portfolio data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} getValue={getValue} buyCoin={buyCoin} buy={buy} />}>
           
         </Route>

@@ -1,6 +1,6 @@
 import React from "react";
 import { FiArrowUpRight, FiArrowDownLeft  } from 'react-icons/fi';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import Form from "../Portfolio/Form/Form";
 import './WatchlistStyle.css'
@@ -17,9 +17,7 @@ const Watchlist = (props)=> {
             props.Visiblity(b)
         }
         const handleClick= ()=>{Visiblity(true)}
-    
-    
-    
+
     
         const changeFormNum=(num)=>{props.changeFormNum(num)} 
         const changeFormName=(name)=>{props.changeFormName(name)}
@@ -63,8 +61,8 @@ const Watchlist = (props)=> {
                 {/*  <div className="wrapper">
                     <img src={Data.image} width="20" height="20" alt="coin logo"  />*/}
                 
-                    <h4>
-                        <Link to='/view' className="coin-name">{Data.name} <span className="span">{Data.symbol.toUpperCase()}</span></Link>
+                    <h4 >
+                        {Data.name} <span className="span">{Data.symbol.toUpperCase()}</span>
                     </h4>
                     {/* </div> */}
                 </td> 
@@ -151,7 +149,7 @@ const Watchlist = (props)=> {
                             <img src={Data.image} width="20" height="20" alt="coin logo"  />*/}
                         
                             <h4>
-                                <Link to='/view' className="coin-name">{Data.name} <span className="span">{Data.symbol.toUpperCase()}</span></Link>
+                                {Data.name} <span className="span">{Data.symbol.toUpperCase()}</span>
                             </h4>
                             {/* </div> */}
                         </div> 

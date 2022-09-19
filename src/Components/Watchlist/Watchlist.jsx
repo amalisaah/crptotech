@@ -10,18 +10,24 @@ const Watchlist = (props)=> {
     const head = ['Fav','#','Add','Name','Price','1H %','24H %','7d %','Market Cap','Volume change','Volume','Circulating Supply','Purchase']
 
         /*FORMS*/
-    const data = props.data
-    const isVisible =props.isVisible;
-    const Visiblity =(b)=>{
-        props.Visiblity(b)
-    }
+        const data=props.data
 
-    const handleClick =()=>{
-        Visiblity(true)    
-    }
-    const changeFormNum=(num)=>{props.changeFormNum(num)} 
-    const changeFormName=(name)=>{props.changeFormName(name)}
-    // form={formName}
+        const isVisible =props.isVisible;
+        const Visiblity =(b)=>{
+            props.Visiblity(b)
+        }
+        const handleClick= ()=>{Visiblity(true)}
+    
+    
+    
+    
+        const changeFormNum=(num)=>{props.changeFormNum(num)} 
+        const changeFormName=(name)=>{props.changeFormName(name)}
+    
+        const getValue =(name)=>{
+            props.getValue(name)
+        }
+        const buyCoin=()=>{props.buyCoin()}
 
 
 
@@ -222,7 +228,7 @@ const Watchlist = (props)=> {
             </div>)}
         </div>
     
-    <Form show={isVisible} focus={Visiblity} data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form}/>
+    <Form show={isVisible} focus={Visiblity}  data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form} getValue={getValue} buyCoin={buyCoin}/>
     </>
         
     )

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './PortfolioStyle.css';
 // import Table from '../Table/Table';
 import Form from './Form/Form';
@@ -7,13 +7,16 @@ const head = ['#','Name','Quantity','Price']
 
 const Portfolio = (props)=>{
 
-    const data =props.data;
+    const data=props.data
 
-    const [visible,setVisible]=useState(false);
-
-    const Visiblity=(value)=>{
-        setVisible(value)
+    const isVisible =props.isVisible;
+    const Visiblity =(b)=>{
+        props.Visiblity(b)
     }
+    const handleClick= ()=>{Visiblity(true)}
+
+
+
 
     const changeFormNum=(num)=>{props.changeFormNum(num)} 
     const changeFormName=(name)=>{props.changeFormName(name)}
@@ -21,7 +24,7 @@ const Portfolio = (props)=>{
     const getValue =(name)=>{
         props.getValue(name)
     }
-    const buyCoin=()=>{props.buyCoin()} 
+    const buyCoin=()=>{props.buyCoin()}
 
     const buy=props.buy
     // console.log(buy)
@@ -40,7 +43,7 @@ const Portfolio = (props)=>{
                     <h3>24h</h3>
                     <p>$21,282.81</p>
                 </div>
-                <button className='add' onClick={()=>setVisible(true)}> Buy More</button>
+                <button className='add' onClick={handleClick}> Buy More</button>
             </div>
 
             <div className='p-lower'>
@@ -66,7 +69,7 @@ const Portfolio = (props)=>{
                     </tbody>
                 </table>
             </div>
-            <Form show={visible} focus={Visiblity} data={data} changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form} getValue={getValue} buyCoin={buyCoin} />
+            <Form show={isVisible} focus={Visiblity}  data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form} getValue={getValue} buyCoin={buyCoin} />
             {/* <Outlet/> */}
         </div>
     )

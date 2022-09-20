@@ -1,5 +1,5 @@
 import { assert } from 'chai';
-import { getCryptoById, deleteCryptoById, cryptoId, router } from '../src/views/helperFunction/helperFunctions.js';
+import { getCryptoById, deleteCryptoById, cryptoId, cryptoPrice, cryptoPriceSum } from '../src/views/helperFunction/helperFunctions.js';
 
 describe('Helper Functions', () => {
     describe('getCryptoById', () => {
@@ -43,16 +43,58 @@ describe('Helper Functions', () => {
         })
     });
 
-    describe('router', () => {
-        it('routes through a range of 4 to call specific fetch functions', ()=> {
+    // describe('router', () => {
+    //     it('routes through a range of 4 to call specific fetch functions', ()=> {
+    //         //Setup
+    //         let num = 1;
+    //         const expect = Object;
+    //         //Exercise
+    //         const beta= router(num);
+
+    //         //Verify
+    //         assert.include(beta, expect);
+    //     })
+    // });
+
+    describe('cryptoPrice', () => {
+        it('Adds a crypto price to an existing crypto', ()=> {
             //Setup
-            let num = 1;
-            const expect = Object;
+            const crypto = {name: 'btc', id: 1, price: 11};
+            let cryptoObj = [{name: 'btc', id: 1, price: 10}, {name: 'ethereum', id: 2, price: 9}];
+            const expect = [{ name: 'btc', id: 1, price: 21 }, { name: 'ethereum', id: 2, price: 9 }]
             //Exercise
-            const beta= router(num);
+            const beta= cryptoPrice(cryptoObj, crypto);
 
             //Verify
-            assert.include(beta, expect);
+            assert.deepEqual(beta, expect);
+            assert.isArray(beta);
+        })
+
+        it('Adds a new crypto Object', ()=> {
+            //Setup
+            const crypto = {name: 'ether', id: 3, price: 5};
+            let cryptoObj = [{name: 'btc', id: 1, price: 10}, {name: 'ethereum', id: 2, price: 9}];
+            const expect = [{ name: 'ether', id: 3, price: 5 }, { name: 'btc', id: 1, price: 10 }, { name: 'ethereum', id: 2, price: 9 }]
+            //Exercise
+            const beta= cryptoPrice(cryptoObj, crypto);
+
+            //Verify
+            assert.deepEqual(beta, expect);
+            assert.isArray(beta);
+        })
+    });
+
+    describe('cryptoPriceSum', () => {
+        it('Sums Up the price of all Cryptos', ()=> {
+            //Setup
+            let cryptoObj = [{name: 'btc', id: 1, price: 10}, {name: 'ethereum', id: 2, price: 9}];
+            const expect = 19
+            //Exercise
+            const beta= cryptoPriceSum(cryptoObj);
+
+            //Verify
+            assert.equal(beta, expect);
+            assert.isNumber(beta);
         })
     });
 })

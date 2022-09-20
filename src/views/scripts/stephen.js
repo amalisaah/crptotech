@@ -6,8 +6,8 @@ export const getAllCrypto = async () => {
     try {
     const res = await fetch(baseUrl)
     if (res.ok) {
-    const data = await res.json() 
-    console.log(data)  
+    const data = await res.json()
+    return data 
     } else {
         alert("Cannot get data")
     }
@@ -28,7 +28,7 @@ export const sortCryptoNameA = async () => {
     const res = await fetch(urlToFetch)
     if (res.ok) {
     const data = await res.json();
-    console.log(data)  
+    return data
     } else {
         alert("Cannot get data")
     }
@@ -47,8 +47,8 @@ export const sortCryptoNameD = async () => {
     try {
     const res = await fetch(urlToFetch)
     if (res.ok) {
-    const data = await res.json();  
-    console.log(data)  
+    const data = await res.json();
+    return data 
     } else {
         alert("Cannot get data")
     }
@@ -68,9 +68,8 @@ export const sortCryptoPriceA = async () => {
     try {
     const res = await fetch(urlToFetch)
     if (res.ok) {
-    const data = await res.json();  
-    console.log(data)  
-    console.log("This is received at front end");
+    const data = await res.json();
+    return data
     } else {
         alert("Cannot get data")
     }
@@ -90,7 +89,7 @@ export const sortCryptoPriceD = async () => {
     const res = await fetch(urlToFetch)
     if (res.ok) {
     const data = await res.json();
-    console.log(data)  
+    return data  
     } else {
         alert("Cannot get data")
     }
@@ -110,7 +109,7 @@ export const getCryptoInfo = async () => {
     const res = await fetch(urlToFetch)
     if (res.ok) {
     const data = await res.json();
-    console.log(data)  
+    return data  
     } else {
         alert("Cannot get data")
     }

@@ -3,7 +3,7 @@ import './PortfolioStyle.css';
 // import Table from '../Table/Table';
 import Form from './Form/Form';
 
-const head = ['#','Name','Quantity','Price']
+const head = ['#','Name','Quantity','Price'] 
 
 const Portfolio = (props)=>{
 
@@ -21,9 +21,7 @@ const Portfolio = (props)=>{
     const changeFormNum=(num)=>{props.changeFormNum(num)} 
     const changeFormName=(name)=>{props.changeFormName(name)}
 
-    const getValue =(name)=>{
-        props.getValue(name)
-    }
+    
     const buyCoin=()=>{props.buyCoin()}
 
     const buy=props.buy
@@ -69,7 +67,7 @@ const Portfolio = (props)=>{
                     </tbody>
                 </table>
             </div>
-            <Form show={isVisible} focus={Visiblity}  data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form} getValue={getValue} buyCoin={buyCoin} />
+            <Form show={isVisible} focus={Visiblity}  data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form}  buyCoin={buyCoin} />
             {/* <Outlet/> */}
         </div>
     )

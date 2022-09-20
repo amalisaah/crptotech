@@ -22,9 +22,6 @@ const Watchlist = (props)=> {
         const changeFormNum=(num)=>{props.changeFormNum(num)} 
         const changeFormName=(name)=>{props.changeFormName(name)}
     
-        const getValue =(name)=>{
-            props.getValue(name)
-        }
         const buyCoin=()=>{props.buyCoin()}
 
 
@@ -226,7 +223,7 @@ const Watchlist = (props)=> {
             </div>)}
         </div>
     
-    <Form show={isVisible} focus={Visiblity}  data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form} getValue={getValue} buyCoin={buyCoin}/>
+    <Form show={isVisible} focus={Visiblity}  data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form}  buyCoin={buyCoin}/>
     </>
         
     )

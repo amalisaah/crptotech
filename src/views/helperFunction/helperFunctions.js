@@ -7,8 +7,9 @@ export const getCryptotById = (data, id) => {
 
 // This function deletes data based
 export const deleteCoinById = (data, id) => {
-     data.splice(data.findIndex(element => element.id === id), 1)
-     return data
+    //  data.splice(data.findIndex(element => element.name === id), 1)
+    return data.filter(element => element.name !== id)
+    //  return data
 };
 
 // //Function for Routing between endPoints

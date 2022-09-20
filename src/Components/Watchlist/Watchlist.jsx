@@ -1,14 +1,18 @@
 import React from "react";
 import { FiArrowUpRight, FiArrowDownLeft  } from 'react-icons/fi';
 // import { Link } from 'react-router-dom';
-import { FaStar } from 'react-icons/fa';
+// import { FaStar } from 'react-icons/fa';
 import Form from "../Portfolio/Form/Form";
 import './WatchlistStyle.css'
 
 const Watchlist = (props)=> {
     const watch =props.watch
     const head = ['Fav','#','Add','Name','Price','1H %','24H %','7d %','Market Cap','Volume change','Volume','Circulating Supply','Purchase']
-
+    const remWish=(e)=>{ //creates array of wishlists
+        const nam = e.target.id;
+        props.remfav(nam);
+        
+    }
         /*FORMS*/
         const data=props.data
 
@@ -48,9 +52,9 @@ const Watchlist = (props)=> {
             {watch.map((Data,index)=>(
             <tr className="table-row-w" key={index}>
             <td className="table-data-w">
-                    <button className="add-to-fav-w" aria-label="Add to favourite"  style={{color:'yellow'}}>
-                        <FaStar id={Data.name}/>
-                    </button>
+                        <button className="add-to-fav-w" aria-label="Add to favourite"  style={{color:'yellow'}}>               
+                            <i className="material-icons watched" onClick={remWish} id={Data.name} title='remove from watchlist'>star</i>
+                        </button>
                 </td> 
                 <th className="table-data-w num" scope="row">{index+1}</th>
                 <th className="table-data-w Adds" scope="row" id={Data.name} title='click to buy' onClick={handleClick }>+</th>
@@ -135,8 +139,8 @@ const Watchlist = (props)=> {
             {watch.map((Data,index)=>(
                 <div className="div-row-w" key={index}>
                     <div className="div-data-w">
-                        <button className="add-to-fav-w" aria-label="Add to favourite"  style={{color:'yellow'}}>
-                            <FaStar id={Data.name}/>
+                        <button className="add-to-fav-w" aria-label="Add to favourite"  style={{color:'yellow'}}>               
+                            <i className="material-icons watched" onClick={remWish} id={Data.name} title='remove from watchlist'>star</i>
                         </button>
                     </div> 
                     <div className="div-data-w Adds"  id={Data.name} title='click to buy' onClick={handleClick }>+</div>

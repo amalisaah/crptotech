@@ -91,15 +91,27 @@ function App() {
 /////////////*FOR MANAGING WATCHLIST*////////////////////
 
   const[watch,setWatch]=useState([])
+
   const addWatch=(id)=>{
     const coin=getCryptotById(data,id)
-    const exists=watch.find(element => element.id === coin.id)
+    const exists=watch.find(element => element.name === coin.name)
     setWatch(prev=>{
       if(!exists) return [...prev,coin] 
-      else return deleteCoinById(watch,coin.id)
+      else return deleteCoinById(watch,coin.name)
     })
-    console.log(watch)
+    // console.log(watch)
   }
+
+  const remWatch=(id)=>{
+    console.log(id)
+    setWatch(prev=>{
+      
+      return deleteCoinById(watch,id)
+    })
+    
+  }
+  
+  
 
   const [star,Setstar]=useState('material-icons watched')
   const favourite =()=>{
@@ -141,14 +153,13 @@ function App() {
     useEffect(()=>{
       if (id && form.num >= 0.001 ){
         addAssert() 
-        console.log(id)
       }
     })
 
 
     const buyCoin =()=>{
       setBuy(prev=>([...prev,{name:form.name,num:form.num,price:form.amt}]))
-      console.log(buy)
+      // console.log(buy)
     }
 
 
@@ -163,7 +174,7 @@ function App() {
       <Routes>
         {/* <Route path='/' element={(<h2>SITE UNDER CONSTRUCTION COME BACK LATER</h2>)}/> */}
         <Route path='/' element={<Home/>}/>
-        <Route path='watchlist' element={<Watchlist watch={watch} data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} buyCoin={buyCoin} buy={buy} SelCoin={SelCoin} />}></Route>
+        <Route path='watchlist' element={<Watchlist watch={watch} remfav={remWatch}data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} buyCoin={buyCoin} buy={buy} SelCoin={SelCoin} />}></Route>
         <Route path='portfolio' element={<Portfolio data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} buyCoin={buyCoin} buy={buy} />}>
           
         </Route>

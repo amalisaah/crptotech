@@ -57,4 +57,5 @@ let calc_24h = data.quote.USD.percent_change_24h.toFixed(3) * amt;
 let calc_30d = data.quote.USD.percent_change_30d.toFixed(3) * amt;
 
 const statistics = [calc_1h, calc_24h, calc_30d].forEach(stat => stat > 0 ? 'Profit' : 'Loss');
+return statistics;
 };

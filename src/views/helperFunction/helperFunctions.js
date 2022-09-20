@@ -1,12 +1,12 @@
 // import { sortCryptoNameA, sortCryptoNameD, sortCryptoPriceA, sortCryptoPriceD, getAllCrypto  } from "../../views/scripts/stephen.js";
 
 // This function returns data based on specified ID
-export const getCryptotById = (data, id) => {
-    return data.find(element => element.id === id)
+export const getCryptoById = (data, id) => {
+    return data.find(element => element.name === id)
 };
 
 // This function deletes data based
-export const deleteCoinById = (data, id) => {
+export const deleteCryptoById = (data, id) => {
     //  data.splice(data.findIndex(element => element.name === id), 1)
     return data.filter(element => element.name !== id)
     //  return data

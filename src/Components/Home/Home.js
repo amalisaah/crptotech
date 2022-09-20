@@ -4,7 +4,8 @@ import axios from 'axios';
 import { FiArrowUpRight, FiArrowDown } from 'react-icons/fi';
 import './Homestyle.css';
 import imge1 from "./assets/about-banner.png";
-import imge2 from "./assets/images.png";
+// import imge2 from "./assets/images.png";
+import vid from './assets/video.mp4'
 
 const Home = () => {
 
@@ -75,7 +76,7 @@ const Home = () => {
                 {/* Right */}
 
                 <div >
-                    <img src={imge1} width="100%" alt="hero banner" /> 
+                    <img src={imge1} width="100%" alt="laptop" /> 
                 </div>
             </div>
             <div className='container'>
@@ -91,7 +92,11 @@ const Home = () => {
                 {/* Right */}
 
                 <div >
-                    <img src={imge2} width="100%" alt="hero banner" /> 
+                    {/* <img src={imge2} width="100%" alt="hero banner" />  */}
+                    <video width='100%' height="240" src={vid} autoPlay={true} loop muted />
+                        
+                    
+                    {/* </video> */}
                 </div>
             </div>
         </div>

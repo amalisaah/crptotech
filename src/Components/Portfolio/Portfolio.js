@@ -3,6 +3,7 @@ import './PortfolioStyle.css';
 // import Table from '../Table/Table';
 import Form from './Form/Form';
 
+
 const head = ['#','Name','Quantity','Price'] 
 
 const Portfolio = (props)=>{
@@ -23,9 +24,10 @@ const Portfolio = (props)=>{
 
     
     const buyCoin=()=>{props.buyCoin()}
-
     const buy=props.buy
-    // console.log(buy)
+
+    
+    buy.length>0 && console.log()
 
 
 
@@ -35,11 +37,11 @@ const Portfolio = (props)=>{
             <div className='summary'>
                 <div className='balance'>
                     <h3>Current Balance</h3>
-                    <p>$21,282.81</p>
+                    <p>{props.total}</p>
                 </div>
                 <div className='balance gain'>
                     <h3>24h</h3>
-                    <p>$21,282.81</p>
+                    <p>--</p>
                 </div>
                 <button className='add' onClick={handleClick}> Buy More</button>
             </div>
@@ -67,7 +69,7 @@ const Portfolio = (props)=>{
                     </tbody>
                 </table>
             </div>
-            <Form show={isVisible} focus={Visiblity}  data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form}  buyCoin={buyCoin} />
+            <Form show={isVisible} focus={Visiblity}  data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form}  buyCoin={buyCoin} buy={buy} total={props.total} />
             {/* <Outlet/> */}
         </div>
     )

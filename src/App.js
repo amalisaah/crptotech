@@ -11,6 +11,7 @@ import Watchlist from './Components/Watchlist/Watchlist';
 import {getCryptotById} from './views/helperFunction/helperFunctions';
 import {deleteCoinById} from './views/helperFunction/helperFunctions';
 // import {cryptoId} from './views/helperFunction/helperFunctions';
+import {cryptoPriceSum} from './views/helperFunction/helperFunctions';
 
 
 
@@ -158,10 +159,15 @@ function App() {
 
 
     const buyCoin =()=>{
-      setBuy(prev=>([...prev,{name:form.name,num:form.num,price:form.amt}]))
-      // console.log(buy)
+      setBuy(prev=>([...prev,{name:form.name,num:form.num,price:Number(form.amt)}]))
+      console.log(buy)
     }
-
+    const [total,setTotal]= useState(0)
+    useEffect(()=>{
+      buy.length>0 && setTotal(cryptoPriceSum(buy))
+      console.log(total)
+    },[form,buy,total])
+    
 
 
 
@@ -175,7 +181,7 @@ function App() {
         {/* <Route path='/' element={(<h2>SITE UNDER CONSTRUCTION COME BACK LATER</h2>)}/> */}
         <Route path='/' element={<Home/>}/>
         <Route path='watchlist' element={<Watchlist watch={watch} remfav={remWatch}data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} buyCoin={buyCoin} buy={buy} SelCoin={SelCoin} />}></Route>
-        <Route path='portfolio' element={<Portfolio data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} buyCoin={buyCoin} buy={buy} />}>
+        <Route path='portfolio' element={<Portfolio data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} buyCoin={buyCoin} buy={buy} total={total}  />}>
           
         </Route>
         <Route path='view' element={<View coin={coin}  data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}  buyCoin={buyCoin} buy={buy} watch={watch}  />} />

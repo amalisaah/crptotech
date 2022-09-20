@@ -35,3 +35,8 @@ export const deleteCoinById = (data, id) => {
 export const cryptoId = (data, name) => {
     return data.find(element => element.name === name).id;
 };
+
+export const cryptoPriceSum = (data) => {
+    const totalPrice = data.reduce((a, b) =>  a + b.price,0 );
+    return Number(totalPrice);
+};

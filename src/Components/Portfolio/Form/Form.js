@@ -33,6 +33,7 @@ const Form =(props)=>{
             props.changeFormName('');
             props.changeFormNum('');
             
+            
             // console.log(amt)
 
             

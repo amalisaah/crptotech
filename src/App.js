@@ -22,7 +22,7 @@ function App() {
   
   const[data,setData]=useState([]);
 
-  let id;
+  const [id,setId]=useState(0);
  
   //////////// Get all available Crytpo Currencies///////////////////////
   const baseUrl = 'https://cryptotech-backend.herokuapp.com';
@@ -128,18 +128,22 @@ function App() {
     const [form,setForm]=useState({name:'',num:'', amt:0}) 
     const changeFormName=(name)=>{
       setForm(prev=>({...prev,name:name}))
+      setId(cryptoId (data, form.name))
     }
 
     const changeFormNum=(num)=>{
       setForm(prev=>({...prev,num:num}))
+      setId(cryptoId (data, form.name))
     }
   
     const [buy,setBuy]=useState([])
 
     useEffect(()=>{
-      id=cryptoId (data, form.name)
-      id && form.num >= 0.001 && addAssert()  
-    },[form])
+      if (id && form.num >= 0.001 ){
+        addAssert() 
+        console.log(id)
+      }
+    })
 
 
     const buyCoin =()=>{

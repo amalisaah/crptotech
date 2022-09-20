@@ -15,6 +15,7 @@ const addAssert = async () => {
     const res = await fetch(urlToFetch)
     if (res.ok) {
     const data = await res.json();
+    return data
     } else {
         alert("Cannot get data")
     }

@@ -2,6 +2,9 @@ import React from 'react';
 import './PortfolioStyle.css';
 // import Table from '../Table/Table';
 import Form from './Form/Form';
+import PieChart from "./PieChart.js";
+
+
 
 
 const head = ['#','Name','Quantity','Price'] 
@@ -27,9 +30,27 @@ const Portfolio = (props)=>{
     const buy=props.buy
 
     
-    buy.length>0 && console.log()
+    // buy.length>0 && console.log()
 
-
+////////////////// PIE CHART ///////////////////////////////////////////
+const userData = {
+    labels: buy.map((data) => data.name),
+    datasets: [
+      {
+        label: "Coins Owned",
+        data: buy.length > 0 && buy.map((data) => data.price),
+        backgroundColor: [
+          "rgba(75,192,192,1)",
+          "#3cf0f1",
+          "#50AF95",
+          "#43ba2f",
+          "#2a71d0",
+        ],
+        borderColor: "black",
+        borderWidth: 2,
+      },
+    ],
+  };
 
 
     return(
@@ -37,7 +58,7 @@ const Portfolio = (props)=>{
             <div className='summary'>
                 <div className='balance'>
                     <h3>Current Balance</h3>
-                    <p>{props.total}</p>
+                    <p>{props.total.toFixed(3)}</p>
                 </div>
                 <div className='balance gain'>
                     <h3>24h</h3>
@@ -47,7 +68,12 @@ const Portfolio = (props)=>{
             </div>
 
             <div className='p-lower'>
-                <div></div>
+
+                <div className="pie" style={{ width: "90%" }}>
+                    <div style={{ width: "100%" }}>
+                         <PieChart chartData={userData} />
+                    </div>
+                </div>
                 <table className='p-table'>
                     <thead className="table-head-w">
                         <tr className="table-row table-title">

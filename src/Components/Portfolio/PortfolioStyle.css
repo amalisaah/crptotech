@@ -49,9 +49,14 @@
 .p-lower {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    overflow-x: scroll;
 }
 .p-lower th {
     color: #4d4d4d;
+}
+.p-table{
+    width:100%;
+    
 }
 td, tbody th {
     /* border-bottom: 1px solid gray; */
@@ -85,6 +90,13 @@ td:not(.name) {
     
 }
 
+@media screen and (max-width:585px){
+    .p-lower {
+        display: flex;
+        /* grid-template-columns: repeat(2, 1fr); */
+    }
+}
+
 @media screen and (max-width:515px){
 .summary {
         display: flex;
@@ -106,7 +118,7 @@ td:not(.name) {
         height: 225px;
     }
     .p-lower {
-        display: flex;
+        flex-direction: column;
         /* grid-template-columns: repeat(2, 1fr); */
     }
     .add {

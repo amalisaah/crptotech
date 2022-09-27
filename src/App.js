@@ -17,8 +17,16 @@ import {cryptoPriceSum} from './views/helperFunction/helperFunctions';
 
 
 
+// import PieChart from "C:\Users\First\Desktop\Capstone\cap\capstone\src\Components\Portfolio\PieChart.js";
 
 function App() {
+
+  
+
+
+
+
+
   
   
   const[data,setData]=useState([]);
@@ -178,7 +186,7 @@ function App() {
    
       <Navbar/>
       <Routes>
-        {/* <Route path='/' element={(<h2>SITE UNDER CONSTRUCTION COME BACK LATER</h2>)}/> */}
+        
         <Route path='/' element={<Home/>}/>
         <Route path='watchlist' element={<Watchlist watch={watch} remfav={remWatch}data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} buyCoin={buyCoin} buy={buy} SelCoin={SelCoin} />}></Route>
         <Route path='portfolio' element={<Portfolio data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} buyCoin={buyCoin} buy={buy} total={total}  />}>

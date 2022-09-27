@@ -53,7 +53,7 @@ const userData = {
   };
 
 
-    return(
+    return (
         <div className='portfolio' >
             <div className='summary'>
                 <div className='balance'>
@@ -69,36 +69,38 @@ const userData = {
 
             <div className='p-lower'>
 
-                <div className="pie" style={{ width: "90%" }}>
-                    <div style={{ width: "100%" }}>
+                <div  style={{ width: "90%" }}>
+                    <div className="pie" >
                          <PieChart chartData={userData} />
                     </div>
                 </div>
-                <table className='p-table'>
-                    <thead className="table-head-w">
-                        <tr className="table-row table-title">
-                        {head.map((topic,index) => (
-                            
-                        <th className='table-heading' key={index}>{topic}</th>))}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {buy.length>0 && buy.map((buys,index)=>
+                <div>
+                    <table className='p-table'>
+                        <thead className="table-head-w">
+                            <tr className="table-row table-title">
+                            {head.map((topic,index) => (
                                 
-                            <tr key={index}>
-                                <td>{index+1}</td>
-                                <td>{buys.name}</td>
-                                <td>{buys.num}</td>
-                                <td>{buys.price}</td>
+                            <th className='table-heading' key={index}>{topic}</th>))}
                             </tr>
-                        )}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {buy.length>0 && buy.map((buys,index)=>
+                                    
+                                <tr key={index}>
+                                    <td>{index+1}</td>
+                                    <td>{buys.name}</td>
+                                    <td>{buys.num}</td>
+                                    <td>{buys.price}</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <Form show={isVisible} focus={Visiblity}  data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form}  buyCoin={buyCoin} buy={buy} total={props.total} />
             {/* <Outlet/> */}
         </div>
-    )
-}
+     )
+    }
 
 export default Portfolio;

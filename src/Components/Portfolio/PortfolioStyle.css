@@ -49,7 +49,12 @@
 .p-lower {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    overflow-x: scroll;
+    overflow-x: auto;
+}
+.pie {
+    /* padding-top: 10%; */
+    margin: auto;
+    max-width: 440px;
 }
 .p-lower th {
     color: #4d4d4d;
@@ -57,10 +62,17 @@
 .p-table{
     width:100%;
     
+    
 }
-td, tbody th {
+.p-table thead {
+    position: static;
+    
+    
+}
+.p-table td, tbody th {
     /* border-bottom: 1px solid gray; */
-    padding: 20px;
+    padding: 1.2rem;
+    height: 45px;
 
 }
 td:not(.name) {

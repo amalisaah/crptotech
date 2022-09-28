@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './TableStyle.css';
 
 
-const Table = ({data,head,onClick,addfav,SelCoin})=>{
+const Table = ({data,head,onClick,addfav,SelCoin,watch})=>{
 
     const handleClick =(e)=>{ //display form
         onClick(true)
@@ -16,8 +16,8 @@ const Table = ({data,head,onClick,addfav,SelCoin})=>{
     const addWish=(e)=>{ //creates array of wishlists
         const nam = e.target.id
         addfav(nam)
-        e.target.className=e.target.className=== unwatched ? watched: unwatched;
-        // console.log(e.target.className)
+        // e.target.className=e.target.className=== unwatched ? watched: unwatched;
+        console.log(e.target.className)
         // e.target.className= Object.values(watch).includes(nam) ? star: unwatched;
         // console.log(nam)
         // console.log (Object.values(watch).includes(nam))
@@ -27,7 +27,7 @@ const Table = ({data,head,onClick,addfav,SelCoin})=>{
     
     const showCoin=(e)=>{SelCoin(e.target.id)}
  
-
+    console.log(watch)
 
 
 
@@ -51,7 +51,7 @@ const Table = ({data,head,onClick,addfav,SelCoin})=>{
             <tr className="table-row" key={index}>
                <td className="table-data"  >
                     <button className="add-to-fav" aria-label="Add to favourite" >
-                        <i className="material-icons unwatched" onClick={addWish} id={Data.name} title='add to watchlist'>star</i>
+                        <i className={watch.find(a=>Object.values(a).includes(Data.name)) ? "material-icons watched" : "material-icons unwatched"} onClick={addWish} id={Data.name} title='add to watchlist'>star</i>
                     </button>
                 </td> 
                 <th className="table-data  num" scope="row">{index+1}</th>

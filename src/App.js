@@ -99,7 +99,38 @@ function App() {
  
 /////////////*FOR MANAGING WATCHLIST*////////////////////
 
-  const[watch,setWatch]=useState([])
+  const[watch,setWatch]=useState(() => {
+    const items = localStorage.getItem('watch')
+    const items1 = items && JSON.parse(items);
+    if (items) return (items1);
+    return [];
+   });
+  useEffect(() => {
+    localStorage.setItem('watch', JSON.stringify(watch));
+  }, [watch]);
+  // useEffect(() => {
+  //   const items = JSON.parse(localStorage.getItem('watch'));
+  //   if (items) {
+  //   //  setWatch(items);
+  //   console.log(items)
+      
+  //   }
+  // }, [watch]);
+
+  useEffect(() => {
+    localStorage.setItem('watch', JSON.stringify(watch));
+  }, [watch]);
+  // useEffect(() => {
+  //   const items = JSON.parse(localStorage.getItem('watch'));
+  //   if (items) {
+  //   //  setWatch(items);
+  //   console.log(items)
+      
+  //   }
+  // }, [watch]);
+
+
+
 
   const addWatch=(id)=>{
     const coin=getCryptotById(data,id)

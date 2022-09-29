@@ -11,8 +11,7 @@ const Table = ({data,head,onClick,addfav,SelCoin,watch})=>{
         onClick(true)
         
     }
-    const unwatched="material-icons unwatched"
-    const watched="material-icons watched"
+    
     const addWish=(e)=>{ //creates array of wishlists
         const nam = e.target.id
         addfav(nam)
@@ -118,8 +117,8 @@ const Table = ({data,head,onClick,addfav,SelCoin,watch})=>{
             <div className="div-row" key={index}>
                <div className="div-data"  >
                     <button className="add-to-fav" aria-label="Add to favourite" >
-                        <i className="material-icons unwatched" onClick={addWish} id={Data.name} title='add to watchlist'>star</i>
-                    </button>
+                        <i className={watch.find(a=>Object.values(a).includes(Data.name)) ? "material-icons watched" : "material-icons unwatched"} onClick={addWish} id={Data.name} title='add to watchlist'>star</i>
+                    </button>   
                 </div> 
                 {/* <th className="div-data rank" scope="row">{index+1}</th>*/}
                 <div className="div-data  Adds"  id={Data.name} title='click to buy' onClick={handleClick }>+</div> 

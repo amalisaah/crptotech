@@ -108,26 +108,9 @@ function App() {
   useEffect(() => {
     localStorage.setItem('watch', JSON.stringify(watch));
   }, [watch]);
-  // useEffect(() => {
-  //   const items = JSON.parse(localStorage.getItem('watch'));
-  //   if (items) {
-  //   //  setWatch(items);
-  //   console.log(items)
-      
-  //   }
-  // }, [watch]);
 
-  useEffect(() => {
-    localStorage.setItem('watch', JSON.stringify(watch));
-  }, [watch]);
-  // useEffect(() => {
-  //   const items = JSON.parse(localStorage.getItem('watch'));
-  //   if (items) {
-  //   //  setWatch(items);
-  //   console.log(items)
-      
-  //   }
-  // }, [watch]);
+
+
 
 
 
@@ -151,12 +134,6 @@ function App() {
     
   }
   
-  
-
-  const [star,Setstar]=useState('material-icons watched')
-  const favourite =()=>{
-    Setstar(prev=>star==='material-icons unwatched'?"material-icons watched" :'material-icons unwatched' )
-  }
  
 
 /*COIN DETAILS*/
@@ -176,8 +153,10 @@ function App() {
       setIsVisible(b)
     }
 
-      /* Values for Port */ 
+      /* Values for Portfolio */ 
     const [form,setForm]=useState({name:'',num:'', amt:0}) 
+
+
     const changeFormName=(name)=>{
       setForm(prev=>({...prev,name:name}))
       setId(cryptoId (data, form.name))
@@ -187,8 +166,18 @@ function App() {
       setForm(prev=>({...prev,num:num}))
       setId(cryptoId (data, form.name))
     }
-  
-    const [buy,setBuy]=useState([])
+   
+    /*COINS BOUGHT*/
+    const [buy,setBuy]=useState(() => {
+      const items = localStorage.getItem('buy')
+      const items1 = items && JSON.parse(items);
+      if (items) return (items1);
+      return [];
+     });
+    //  localStorage.clear('buy')
+    useEffect(() => {
+      localStorage.setItem('buy', JSON.stringify(buy));
+    }, [buy]);
 
     useEffect(()=>{
       if (id && form.num >= 0.001 ){
@@ -223,8 +212,8 @@ function App() {
         <Route path='portfolio' element={<Portfolio data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form} buyCoin={buyCoin} buy={buy} total={total}  />}>
           
         </Route>
-        <Route path='view' element={<View coin={coin}  data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}  buyCoin={buyCoin} buy={buy} watch={watch}  />} />
-        <Route path='coin' element={<Coin data={data} addfav={addWatch} Visiblity={Visiblity} isVisible={isVisible} SelCoin={SelCoin} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}  buyCoin={buyCoin} buy={buy} star={star} favourite={favourite} watch={watch} />}></Route>
+        <Route path='view' element={<View coin={coin} addfav={addWatch} data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}  buyCoin={buyCoin} buy={buy} watch={watch}  />} />
+        <Route path='coin' element={<Coin data={data} addfav={addWatch} Visiblity={Visiblity} isVisible={isVisible} SelCoin={SelCoin} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}  buyCoin={buyCoin} buy={buy}  watch={watch} />}></Route>
  
       </Routes>
       <Footer />

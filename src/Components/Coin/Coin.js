@@ -13,9 +13,7 @@ const Coin = (props)=>{
     const getCoin=(val)=>{
         props.addfav(val)
     }
-    const favourite=()=>{
-        props.favourite()
-    }
+    
 
 
 
@@ -47,7 +45,7 @@ const Coin = (props)=>{
     const head = ['Fav','#','Add','Name','Price','24H %','7d %','Market-Cap','Volume','Purchase']
     return(
     <>
-        <Table data={data} head={head} onClick={Visiblity} addfav={getCoin} SelCoin={SelCoin} star={props.star} favourite={favourite} watch={props.watch}/>
+        <Table data={data} head={head} onClick={Visiblity} addfav={getCoin} SelCoin={SelCoin}  watch={props.watch}/>
         <Form show={isVisible} focus={Visiblity} data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form} buyCoin={buyCoin} />
     </>
     )

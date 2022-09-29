@@ -46,8 +46,9 @@ const userData = {
           "#43ba2f",
           "#2a71d0",
         ],
-        borderColor: "black",
+        borderColor: "white",
         borderWidth: 2,
+        
       },
     ],
   };

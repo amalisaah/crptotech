@@ -21,13 +21,20 @@ const View = (props)=>{
     }
     const handleClick= ()=>{Visiblity(true)}
 
-
-
-
     const changeFormNum=(num)=>{props.changeFormNum(num)} 
     const changeFormName=(name)=>{props.changeFormName(name)}
 
     const buyCoin=()=>{props.buyCoin()}
+
+    /*WATCHLIST*/
+    const addWish=(e)=>{ //creates array of wishlists
+        const nam = e.target.id
+        props.addfav(nam)
+        console.log(e.target.className)
+        
+        
+        
+    }
     
 
     return ( 
@@ -43,7 +50,7 @@ const View = (props)=>{
                             {coin.name} <span className="span">{coin.symbol.toUpperCase()}</span>
                             </h1>
                             <button className="add-to-fav" aria-label="Add to favourite" >
-                                <i className="material-icons unwatched"  title='add to watchlist'>star</i>
+                                <i className={props.watch.find(a=>Object.values(a).includes(coin.name)) ? "material-icons watched" : "material-icons unwatched"} onClick={addWish} id={coin.name} title='add to watchlist'>star</i>
                             </button> 
                         </div>
                         <div className='view-btns'>

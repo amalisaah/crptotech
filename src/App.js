@@ -193,7 +193,7 @@ function App() {
     const [total,setTotal]= useState(0)
     useEffect(()=>{
       buy.length>0 && setTotal(cryptoPriceSum(buy))
-      console.log(total)
+      // console.log(total)
     },[form,buy,total])
     
 

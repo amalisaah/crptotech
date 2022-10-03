@@ -79,7 +79,7 @@ td:not(.name) {
         padding: 0.3rem;
     }
     .div-row-w h3 {
-        color: #0d579b
+        color: var(--color2)
     }
 } 
 @media screen and (max-width: 685px) {

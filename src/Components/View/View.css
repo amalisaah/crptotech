@@ -32,7 +32,7 @@
 }
 
 .rank, .cap,.rank:hover, .cap:hover {
-    background: #0d579b;
+    background: var(--color2);
     /* border-radius: 4px; */
     margin:0 5px;
     width: 8rem;
@@ -41,7 +41,7 @@
     font: inherit;
     cursor: text;
     padding: 2px;
-    background: #0d579b;
+    background: var(--color2);
     
 }
 .price-label {
@@ -106,7 +106,7 @@
     border-right: 3px solid #fff;
 }
 .title {
-    color: #0d579b
+    color: var(--color2)
 }
 .bulk p {
     text-align: center;

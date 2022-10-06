@@ -2,9 +2,10 @@
   display: none;
 }
 .table-body td, .table-head th,.table-body th {
-    border: 0.4rem outset rgb(226, 248, 208);
+    /* border: 0.4rem outset rgb(226, 248, 208); */
+    /* border: none; */
     border-collapse: collapse;
-    text-align: center;
+    text-align: left;
     padding: .25rem;
     /* background-color: var(--background); */
   }
@@ -12,6 +13,10 @@
 .table-row:not(.table-title) {
    height: 90px; 
   border-bottom: 1px solid var(--color3-gray);
+}
+.table-row:not(.table-title):hover{
+  background-color: var(--highlight);
+  z-index: 50;
 }
 
 td:not(:first-child) {
@@ -30,6 +35,7 @@ thead {
 }
 thead th {
   /* background-color: var(--background); */
+  background-color: hsl(240, 5%, 8%);
   /* color: 	#4d4d4d; */
   color: var(--font-white-co);
 }
@@ -40,19 +46,26 @@ table {
   width: 100%;
   
 }
+.red,.green {white-space: nowrap}
 .table-btn {
-  border: none;
-  background-color: #329239;
-  color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 8px #999;
-  padding: 15px 25px;
-  font-size: 24px;
-  transition: all 2s;
+  border: 0.02rem solid var(--color2);
+  /* background-color: #329239; */
+  background-color: inherit;
+  /* color: #ffffff; */
+  color: hsl(223, 10%, 52%);
+  border-radius: 45%;
+  padding: 12px 22px;
+  font-size: 1rem;
+  transition: all 0.5s;
+}
+.table-row:not(.table-title):hover .table-btn {
+  background-color: #3e8e41;
+  color: var(--color1);
 }
 .table-btn:active {
   background-color: #3e8e41;
-  box-shadow: 0 5px #666;
+  color: var(--color1);
+  /* box-shadow: 0 5px #666; */
   transform: translateY(4px);
   transition: all 4ms;
 }
@@ -79,11 +92,11 @@ table {
   gap: 0.4rem;
   height: 90px;
 } 
-.watched{
-  color:yellow;
+.watched {
+  color: yellow;
 }
 .unwatched {
-  color:#666
+  color: #666;
 }
 #Add,.Adds {display: none;}
 
@@ -95,7 +108,7 @@ table {
 @media screen and (max-width: 890px) {
   #Add, .Adds {
     display: table-cell;
-    background-color: var(--black-bg);
+    background-color: inherit;
   }
 
   .Purchase,#Purchase {display: none}
@@ -131,15 +144,15 @@ table {
 
   .market-table {display: none}
   .market-div,#Market-Cap,.market-cap,.market-vol,#Volume {display: block}
-   
-  .div-row {
+  table.market-div, table.market-div tbody.div-body {width:100%}
+  /* .div-row {
     display: flex;
     justify-content: space-between;
     /* height: 80px; */
-    gap: 0.4rem;
+    /* gap: 0.4rem;
     border-bottom: solid 1px #4d4d4d;
-    width: 100%;
-  }
+    width: 100%; 
+  } */
   .mark {
     justify-self: flex-end;
     /* align-self: flex-end; */
@@ -148,7 +161,7 @@ table {
   .div-row div {
     padding: 0.2rem;
   }
-  .material-icons {
+  td .material-icons {
     font-size: 12px;
   }
   .div-data.name h4 {
@@ -159,31 +172,32 @@ table {
   .div-data.name h4 span {
     font-size: 0.8rem;
     font-weight: 400;
+    color: hsl(223, 10%, 52%);
 
   }
   .div-data {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     font-weight: 400;
-    /* text-align: right; */
+    text-align: left;
 
   }
   .one {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     /* align-items: flex-start; */
   }
-  .centage {
+  /* .centage {
     display: flex;
   }
-  .last-update {
-    font-size: 0.8rem;
+  .last-update,.last-price {
+    font-size: 0.6rem;
   }
   .market-vol {
     padding-left: 30px;
   }
-}
+} */
 
-@media screen and (max-width: 335px) {
+/* @media screen and (max-width: 335px) {
 
   .div-row div {
     padding: 0.1rem;
@@ -201,5 +215,5 @@ table {
     font-size: 0.6rem;
     font-weight: 400;
 
-  }
+  } */
 }

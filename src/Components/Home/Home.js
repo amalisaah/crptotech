@@ -23,7 +23,7 @@ const Home = () => {
     }, [])
 
 
-    if (!data) return (<h2>Loading ...</h2>);
+    if (!data) return (<h2 style={{color:'white'}}>Loading ...</h2>);
 
     return (
         <div className='featured'>

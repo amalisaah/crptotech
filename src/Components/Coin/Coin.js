@@ -40,7 +40,7 @@ const Coin = (props)=>{
 
 
    
-    if (!data) return (<p>Loading ...</p>);
+    if (!data) return (<p style={{color:'white'}}>Loading ...</p>);
 
     const head = ['Fav','#','Add','Name','Price','24H %','7d %','Market-Cap','Volume','Purchase']
     return(

@@ -4,10 +4,12 @@
 :root {
   --primary: #118c4f;
   /* --background: #f5f8ff; */
-  --color1: #f7931a;
-  --color2: #0d579b;
-  --color3-gray: #4d4d4d;
-  --grayer-bg-nav: rgba(17, 17, 17,0.8);
+  --color1: hsl(33, 93%, 54%);/*orange*/
+  --color12: hsl(33, 93%, 54%);
+  --shad-btn-co-b:rgb(41, 46, 30);
+  --color2: #0d579b;/*blue*/
+  --color3-gray: #4d4d4d;/*light gray*/
+  --grayer-bg-nav: hsla(0, 0%, 7%, 0.8);
   --font-white-co: hsl(0, 0%, 100%);/*navLink*/
   --cadet-blue-co: hsl(227, 13%, 73%); /*colorBody*/
   --blackest-nav: hsl(240, 5%, 8%);

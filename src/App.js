@@ -40,7 +40,8 @@ function App() {
             const res = await fetch(baseUrl)
             if (res.ok) {
                 const response = await res.json()
-                setData(response.data)   
+                setData(response.data)
+                // console.log(response.data)   
             } else {
                 alert("Cannot get data")
             }

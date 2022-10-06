@@ -26,7 +26,7 @@ const Table = ({data,head,onClick,addfav,SelCoin,watch})=>{
     
     const showCoin=(e)=>{SelCoin(e.target.id)}
  
-    console.log(watch)
+    // console.log(watch)
 
 
 
@@ -54,7 +54,7 @@ const Table = ({data,head,onClick,addfav,SelCoin,watch})=>{
                     </button>
                 </td> 
                 <th className="table-data  num" scope="row">{index+1}</th>
-                <th className="table-data rank Adds" scope="row" id={Data.name} title='click to buy' onClick={handleClick }>+</th>
+                <th className="table-data Adds" scope="row" id={Data.name} title='click to buy' onClick={handleClick }>+</th>
 
                  <td className="table-data name">
                   {/*  <div className="wrapper">

@@ -66,6 +66,7 @@ header .container {
 @media screen and (max-width:1240px) {
   .hamburger {
       display: flex;
+      fill: var(--font-white-co);
   }
 
   

@@ -30,7 +30,7 @@ td:not(.name) {
         border-collapse: collapse;
         text-align: center;
         padding: .25rem;
-        background-color: azure;
+        /* background-color: azure; */
       }
 } 
 @media screen and (max-width:1285px) {

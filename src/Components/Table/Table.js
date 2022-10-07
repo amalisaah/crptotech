@@ -107,89 +107,91 @@ const Table = ({data,head,onClick,addfav,SelCoin,watch})=>{
         ))}
             </tbody>)}
         </table>
-        <table className="market-div">
-            {/* <thead className="table-head">
-                <div className="div-row div-title">
-                {head.map((topic,index) => (
-                    
-                <th className='div-heading' key={index} id={topic}>{topic}</th>))}
-                </div>
-            </thead> */}
-            
-            {data && 
-            (<tbody className="div-body">
-            {data.map((Data,index)=>(
-            <tr className="div-row" key={index}>
-               <td className="div-data"  >
-                    <button className="add-to-fav" aria-label="Add to favourite" >
-                        <i className={watch.find(a=>Object.values(a).includes(Data.name)) ? "material-icons watched" : "material-icons unwatched"} onClick={addWish} id={Data.name} title='add to watchlist'>star</i>
-                    </button>   
-                </td> 
-                {/* <th className="div-data rank" scope="row">{index+1}</th>*/}
-                <td className="div-data  Adds"  id={Data.name} title='click to buy' onClick={handleClick }>+</td> 
-                <td className='one'>
-                    <div className="div-data name">
-                    {/*  <div className="wrapper">
-                        <img src={Data.image} width="20" height="20" alt="coin logo"  />*/}
-
-                        <h4 onClick={showCoin} title='view more details'>
-                            <Link to='/view' className="coin-name" id={Data.name}> {Data.name} <span className="span">{Data.symbol.toUpperCase()}</span></Link>
-                        </h4>
-                        {/* </div> */}
-                    </div> 
-                    <div className='centage'>
-                        <div className="div-data last-update 24h">{Data.quote.USD.percent_change_24h < 0 ? (
-                                <span className='red'>
-                                    <FiArrowDownLeft className='icon' /> 
-                                    {Data.quote.USD.percent_change_24h.toFixed(2)}%
-                                </span>
-                            ) : (
-                                <span className='green'>
-                                    <FiArrowUpRight className='icon' />
-                                    {Data.quote.USD.percent_change_24h.toFixed(2)}%
-                                </span>
-                                )}
-                        </div>
-
-                        <div className="div-data last-update sevd">{Data.quote.percent_change_7d < 0 ? (
-                                <span className='red'>
-                                    <FiArrowDownLeft className='icon' /> 
-                                    {Data.quote.USD.percent_change_7d.toFixed(2)}%
-                                </span>
-                            ) : (
-                                <span className='green'>
-                                    <FiArrowUpRight className='icon' /> 
-                                    {Data.quote.USD.percent_change_7d.toFixed(2)}%
-                                </span>
-                                )} 
-                        </div>
+        <div className='low'>
+            <table className="market-div">
+                {/* <thead className="table-head">
+                    <div className="div-row div-title">
+                    {head.map((topic,index) => (
+                        
+                    <th className='div-heading' key={index} id={topic}>{topic}</th>))}
                     </div>
-                </td> 
-                <td className="div-data last-price">${Data.quote.USD.price.toFixed(2)}</td>
+                </thead> */}
+                
+                {data && 
+                (<tbody className="div-body">
+                {data.map((Data,index)=>(
+                <tr className="div-row" key={index}>
+                <td className="div-data"  >
+                        <button className="add-to-fav" aria-label="Add to favourite" >
+                            <i className={watch.find(a=>Object.values(a).includes(Data.name)) ? "material-icons watched" : "material-icons unwatched"} onClick={addWish} id={Data.name} title='add to watchlist'>star</i>
+                        </button>   
+                    </td> 
+                    {/* <th className="div-data rank" scope="row">{index+1}</th>*/}
+                    <td className="div-data  Adds"  id={Data.name} title='click to buy' onClick={handleClick }>+</td> 
+                    <td className='one'>
+                        <div className="div-data name">
+                        {/*  <div className="wrapper">
+                            <img src={Data.image} width="20" height="20" alt="coin logo"  />*/}
 
-
-                <td className='mark'>
-                    <div className="div-data market-cap">${(Data.quote.USD.market_cap.toFixed(0)).toLocaleString()}</div>
-                    <div className="div-data market-vol">{Data.quote.USD.volume_change_24h < 0 ? (
+                            <h4 onClick={showCoin} title='view more details'>
+                                <Link to='/view' className="coin-name" id={Data.name}> {Data.name} <span className="span">{Data.symbol.toUpperCase()}</span></Link>
+                            </h4>
+                            {/* </div> */}
+                        </div> 
+                        <div className='centage'>
+                            <div className="div-data last-update 24h">{Data.quote.USD.percent_change_24h < 0 ? (
                                     <span className='red'>
                                         <FiArrowDownLeft className='icon' /> 
-                                        {Data.quote.USD.volume_change_24h.toFixed(2)}%
+                                        {Data.quote.USD.percent_change_24h.toFixed(2)}%
                                     </span>
                                 ) : (
                                     <span className='green'>
                                         <FiArrowUpRight className='icon' />
-                                        {Data.quote.USD.volume_change_24h.toFixed(2)}%
+                                        {Data.quote.USD.percent_change_24h.toFixed(2)}%
                                     </span>
                                     )}
                             </div>
-                    
-                    {/* <div className='Purchase'> <button className='div-btn' onClick={handleClick} >Buy</button></div> */}
-                </td>
-            </tr>
-           
-        ))}
-            </tbody>)}
-        </table>
+
+                            <div className="div-data last-update sevd">{Data.quote.percent_change_7d < 0 ? (
+                                    <span className='red'>
+                                        <FiArrowDownLeft className='icon' /> 
+                                        {Data.quote.USD.percent_change_7d.toFixed(2)}%
+                                    </span>
+                                ) : (
+                                    <span className='green'>
+                                        <FiArrowUpRight className='icon' /> 
+                                        {Data.quote.USD.percent_change_7d.toFixed(2)}%
+                                    </span>
+                                    )} 
+                            </div>
+                        </div>
+                    </td> 
+                    <td className="div-data last-price">${Data.quote.USD.price.toFixed(2)}</td>
+
+
+                    <td className='mark'>
+                        <div className="div-data market-cap-d">${(Data.quote.USD.market_cap.toFixed(0)).toLocaleString()}</div>
+                        <div className="div-data market-vol-d">{Data.quote.USD.volume_change_24h < 0 ? (
+                                        <span className='red'>
+                                            <FiArrowDownLeft className='icon' /> 
+                                            {Data.quote.USD.volume_change_24h.toFixed(2)}%
+                                        </span>
+                                    ) : (
+                                        <span className='green'>
+                                            <FiArrowUpRight className='icon' />
+                                            {Data.quote.USD.volume_change_24h.toFixed(2)}%
+                                        </span>
+                                        )}
+                                </div>
+                        
+                        {/* <div className='Purchase'> <button className='div-btn' onClick={handleClick} >Buy</button></div> */}
+                    </td>
+                </tr>
+            
+            ))}
+                </tbody>)}
+            </table>
+        </div>
         </>
         
     )

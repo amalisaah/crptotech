@@ -53,11 +53,12 @@
 .p-lower {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    overflow-x: auto;
+    
     
 }
 .p-lower-right {
     background-color: var(--blackest-nav);
+    overflow-x: auto;
 }
 .pie {
     /* padding-top: 10%; */

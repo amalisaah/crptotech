@@ -48,7 +48,7 @@ td:not(.name) {
     display: none;
 }
 .div-body-w td {
-    height: 90px;
+    height: 120px;
 }
 .div-body-w td div {
     padding-bottom: 0.3rem;
@@ -87,24 +87,32 @@ td:not(.name) {
     color: var(--color2);
     font-size: 1.2rem;
 }
- /*
-@media screen and (max-width: 685px) {
+ 
+@media screen and (max-width: 660px) {
 
+    .div-body-w td {
+        height: 90px;
+    }
     .div-data-w.name h4 {
-        font-size: 1.3rem;
-        font-weight: 600;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    .div-body-w .Adds {
+        font-size: 16px;
     }
     .div-data-w.name h4 span {
         font-size: 0.7rem;
-        font-weight: 500;
+        font-weight: 400;
+    }
+    .div-row-w h3 {
+        font-size: 1rem;
     }
     .div-data-w {
-        font-size: 0.6rem; */
-        /* font-weight: 500; */
-    /* }
+        font-size: 0.7rem; 
+    }
     
     
-  }
+}
 
 @media screen and (max-width: 560px) {
 
@@ -113,28 +121,20 @@ td:not(.name) {
     }
     .div-row-w h3 {
         font-size: 0.8rem;
+        padding-bottom: 0.4rem;
     }
-    
-  }
-@media screen and (max-width: 470px) {
-
     .div-data-w.name h4 {
         font-size: 0.8rem;
-        font-weight: 600;
+        font-weight: 400;
     }
     .div-data-w.name h4 span {
         font-size: 0.7rem;
-        font-weight: 500;
+        font-weight: 400;
     }
-    .div-data-w.last-update {
-        font-size: 0.6rem;
-    }
-    .div-row-w h3 {
-        font-size: 0.6rem;
-    } 
     
 }
-@media screen and (max-width: 390px) {
+
+@media screen and (max-width: 395px) {
 
     .div-data-w.name h4 {
         font-size: 0.6rem;
@@ -148,9 +148,9 @@ td:not(.name) {
         font-size: 0.4rem;
     }
     .div-row-w h3 {
-        font-size: 0.4rem;
+        font-size: 0.5rem;
     } 
     .div-row-w div {
         padding: 0.05rem;
     }
-} */
+} 

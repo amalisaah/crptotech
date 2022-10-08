@@ -3,19 +3,24 @@
 
 :root {
   --primary: #118c4f;
-  --background: #f5f8ff;
+  /* --background: #f5f8ff; */
+  --color1: hsl(33, 93%, 54%);/*orange*/
+  --color12: hsl(33, 93%, 54%);
+  --shad-btn-co-b:rgb(41, 46, 30);
+  --color2: #0d579b;/*blue*/
+  --color3-gray: #4d4d4d;/*light gray*/
+  --grayer-bg-nav: hsla(0, 0%, 7%, 0.8);
+  --font-white-co: hsl(0, 0%, 100%);/*navLink*/
+  --cadet-blue-co: hsl(227, 13%, 73%); /*colorBody*/
+  --blackest-nav: hsl(240, 5%, 8%);
+  --black-bg: hsl(228, 9%, 10%);
+  --highlight: hsl(220, 5%, 30%);
+  --highlight2: hsl(222, 100%, 61%);
+
+  
 } 
 
 /*light*/
-
-
-
-
-
-
-
-
-
 
 
 
@@ -46,7 +51,7 @@ ul {
 
 a {
   text-decoration: none;
-  color: #333;
+  color: var(--font-white-co);
 }
 
 .container {
@@ -64,6 +69,8 @@ body {
   /* width: 100%; */
   /* overflow-x: hidden; */
   /* max-width: 1240px; */
+  background-color: var(--black-bg);
+  color: var(--cadet-blue-co);
 }
 
 /* code {

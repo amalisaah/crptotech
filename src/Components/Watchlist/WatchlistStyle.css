@@ -1,134 +1,140 @@
-.div-body-w {
+/* * {
+    border: solid red 1px;
+} */
+/* .div-body-w {
     display: none;
-}
-td, tbody th {
-    border-bottom: 1px solid gray;
-
+} */
+ td, tbody th {
+    border-bottom: 1px solid var(--color1);
 }
 td:not(.name) {
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-}
+    font-family: 'Inter', sans-serif; 
+    /* font-weight: 600; */
+ }
 .add-to-fav-w {
     background-color: inherit;
 }
+.add-to-fav-w:hover {
+    background-color: inherit;
+}
+.material-icons:hover {
+    color: #666;
+}
 
-@media screen and (max-width:1325px) {
-    .table-head-w #Add,.table-body-w .Adds {display: table-cell;}
+/* @media screen and (max-width:1325px) { */
+    /* .table-head-w #Add,.table-body-w .Adds {display: table-cell;}
 
     .table-body-w .Purchase, .table-head-w #Purchase {display: none}
     td, tbody th {
         border-bottom: 1px solid gray;
 
     }
-    td:not(.name) {
-        font-family: 'Inter', sans-serif;
-        font-weight: 600;
-    }
     .table-body td, .table-head th,.table-body th {
         border: 0 ;
-        border-collapse: collapse;
-        text-align: center;
-        padding: .25rem;
-        background-color: azure;
-      }
-} 
-@media screen and (max-width:1285px) {
+        border-collapse: collapse; */
+        /* text-align: center; */
+        /* padding: .25rem; */
+        /* background-color: azure; */
+      /* } */
+/* }  */
+
     
-    .div-body-w {
-        display: block;
-    }
-    .market-table-w {
-        display: none;
-    }
-    .div-body-w .Adds {display: block;}
-    .Adds:hover {
-        cursor: pointer;
-        background-color: azure;;
-        font-size: xx-large;
-      }
-    .div-row-w {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        /* height: 150px; */
-        gap: 0.4rem;
-        border-bottom: solid 1px #4d4d4d;
-        width: 100%;
-    }
-    .div-row-w div {
-        padding: 0.2rem;
-    }
-    .un {
-        display: flex;
-        flex-direction: column;
-    }
-    .div-row-w .centage {
-        display: flex;
+.div-body-w {
+    display: table;
+    width: 100%;
+    font-size: 1rem;
+}
+.market-table-w {
+    display: none;
+}
+.div-body-w td {
+    height: 120px;
+}
+.div-body-w td div {
+    padding-bottom: 0.3rem;
+}
+    .div-body-w .Adds {
+    display: table-cell;
+    font-size: 24px;
+}
+.Adds:hover {
+    cursor: pointer;
+    /* background-color: azure; */
+    font-size: xx-large;
+}
+.un {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.div-row-w .centage {
+    display: flex;
+} 
+    .div-data-w.name h4 {
+    font-size: 1.5rem;  
+    font-weight: 500;
+} 
+.div-data-w.name h4 span {
+    font-size: 1.2rem; 
+    color: hsl(223, 10%, 52%);
+    font-weight: 500;
+
+}
+.centage .div-data-w {
+    padding: 0.3rem;
+}
+.div-row-w h3 {
+    color: var(--color2);
+    font-size: 1.2rem;
+}
+ 
+@media screen and (max-width: 660px) {
+
+    .div-body-w td {
+        height: 90px;
     }
     .div-data-w.name h4 {
-        font-size: 2rem;
-        font-weight: 600;
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    .div-body-w .Adds {
+        font-size: 16px;
     }
     .div-data-w.name h4 span {
-        font-size: 1.6rem;
-        font-weight: 500;
-
-    }
-    .centage .div-data-w {
-        padding: 0.3rem;
+        font-size: 0.7rem;
+        font-weight: 400;
     }
     .div-row-w h3 {
-        color: #0d579b
-    }
-} 
-@media screen and (max-width: 685px) {
-
-    .div-data-w.name h4 {
-        font-size: 1.3rem;
-        font-weight: 600;
-    }
-    .div-data-w.name h4 span {
-        font-size: 0.7rem;
-        font-weight: 500;
+        font-size: 1rem;
     }
     .div-data-w {
-        font-size: 0.7rem;
-        font-weight: 500;
+        font-size: 0.7rem; 
     }
     
     
-  }
+}
 
 @media screen and (max-width: 560px) {
 
     .div-data-w.last-update {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
     .div-row-w h3 {
         font-size: 0.8rem;
+        padding-bottom: 0.4rem;
     }
-    
-  }
-@media screen and (max-width: 470px) {
-
     .div-data-w.name h4 {
         font-size: 0.8rem;
-        font-weight: 600;
+        font-weight: 400;
     }
     .div-data-w.name h4 span {
         font-size: 0.7rem;
-        font-weight: 500;
+        font-weight: 400;
     }
-    .div-data-w.last-update {
-        font-size: 0.6rem;
-    }
-    .div-row-w h3 {
-        font-size: 0.6rem;
-    } 
     
 }
-@media screen and (max-width: 390px) {
+
+@media screen and (max-width: 395px) {
 
     .div-data-w.name h4 {
         font-size: 0.6rem;
@@ -142,9 +148,9 @@ td:not(.name) {
         font-size: 0.4rem;
     }
     .div-row-w h3 {
-        font-size: 0.4rem;
+        font-size: 0.5rem;
     } 
     .div-row-w div {
         padding: 0.05rem;
     }
-}
+} 

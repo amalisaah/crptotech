@@ -46,8 +46,8 @@ const userData = {
           "#43ba2f",
           "#2a71d0",
         ],
-        borderColor: "white",
-        borderWidth: 2,
+        borderColor: "inherit",
+        borderWidth: 1,
         
       },
     ],
@@ -75,7 +75,7 @@ const userData = {
                          <PieChart chartData={userData} />
                     </div>
                 </div>
-                <div>
+                <div className='p-lower-right'>
                     <table className='p-table'>
                         <thead className="table-head-w">
                             <tr className="table-row table-title">

@@ -4,7 +4,8 @@ header {
   height: 90px;
   border-bottom: 1px solid #eee;
   /* background: #fff; */
-  background: #f7931a;
+  /* background: var(--color1); */
+  background: var(--blackest-nav);
   position: sticky;
   top: 0;
   left: 0;
@@ -19,7 +20,10 @@ header .container {
   padding: 1rem;
 }
 .container h1 {
-  color: #0d579b;
+  color: var(--color1);
+}
+.container h1 a {
+  color: var(--color1);
 }
 
 /* .colors {
@@ -31,12 +35,13 @@ header .container {
   font-size: 1.5rem;
   font-weight: 600;
   /* color: rgb(126, 124, 124); */
-  color: #4d4d4d;
+  /* color: var(color3-gray); */
+  color: var(--font-white-co);
 }
 .nav-menu a.active {
   font-size: 2rem;
   /* color: rgb(83, 81, 81); */
-  color: #0d579b;
+  color: var(--color2);
 }
 
 .nav-menu li {
@@ -61,6 +66,7 @@ header .container {
 @media screen and (max-width:1240px) {
   .hamburger {
       display: flex;
+      fill: var(--font-white-co);
   }
 
   
@@ -76,7 +82,8 @@ header .container {
       /* height: 70vh; */
       transition: 0.4s;
       z-index: 200;
-      background: rgba(224, 230, 221, 0.7);
+      /* background: rgba(224, 230, 221, 0.7); */
+      background: var(--grayer-bg-nav);
       border-left: 1px solid #eee;
   }
 

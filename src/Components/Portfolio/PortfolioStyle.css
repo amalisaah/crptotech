@@ -14,9 +14,9 @@
 .balance {
     display: flex;
     flex-direction: column;
-    /* border: 1px solid rgb(165, 170, 117); */
+    border: 1px solid rgb(165, 170, 117);
     border-radius: 8px;
-    background-color: #f7931a;
+    /* background-color: var(--color1); */
     width: 40%;
     height: 100%;
     text-align: center;
@@ -30,25 +30,34 @@
 }
 .balance h3 {
     font-size: 2rem;
-    color: #4d4d4d;
+    /* color: var(--color3-gray); */
+    /* color: var(--cadet-blue-co); */
+    color: var(--color12);
 }
 
 .add {
     border: none;
     border-radius: 15px;
-    box-shadow: 0 8px #999;
+    /* box-shadow: 0 8px #999; */
     padding: 15px 25px;
     font-size: 24px;
     background-color: #329239;
+    color:var(--color12)
 }
 .add:active {
     background-color: #3e8e41;
-    box-shadow: 0 5px #666;
+    /* box-shadow: 0 5px #666; */
+    box-shadow: 0 0px ;
     transform: translateY(4px);
 }
 .p-lower {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    
+    
+}
+.p-lower-right {
+    background-color: var(--blackest-nav);
     overflow-x: auto;
 }
 .pie {
@@ -57,7 +66,8 @@
     max-width: 440px;
 }
 .p-lower th {
-    color: #4d4d4d;
+    /* color: #4d4d4d; */
+    background-color: inherit;
 }
 .p-table{
     width:100%;
@@ -71,6 +81,7 @@
 }
 .p-table td, tbody th {
     /* border-bottom: 1px solid gray; */
+    border-left: 0;
     padding: 1.2rem;
     height: 45px;
 
@@ -83,8 +94,8 @@ td:not(.name) {
     
     .add {
         border: none;
-        border-radius: 12px;
-        box-shadow: 0 6px #999;
+        border-radius: 8px;
+        box-shadow: 0 4px var(--shad-btn-co-b);
         padding: 10px 20px;
         font-size: 21px;
     } 

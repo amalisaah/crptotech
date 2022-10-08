@@ -131,20 +131,20 @@ const Watchlist = (props)=> {
             </tbody>)}
         </table>
         
-        <div className="market-div-w">
+        <table className="market-div-w">
         {watch.length===0 && <h2 style={{textAlign:'center'}}>Add items to Watchlist to view here</h2>} 
             {data && 
             (
-            <div className="div-body-w">
+            <tbody className="div-body-w">
             {watch.map((Data,index)=>(
-                <div className="div-row-w" key={index}>
-                    <div className="div-data-w">
+                <tr className="div-row-w" key={index}>
+                    <td className="div-data-w">
                         <button className="add-to-fav-w" aria-label="Add to favourite"  style={{color:'yellow'}}>               
                             <i className="material-icons watched" onClick={remWish} id={Data.name} title='remove from watchlist'>star</i>
                         </button>
-                    </div> 
-                    <div className="div-data-w Adds"  id={Data.name} title='click to buy' onClick={handleClick }>+</div>
-                    <div className="un">
+                    </td> 
+                    <td className="div-data-w Adds"  id={Data.name} title='click to buy' onClick={handleClick }>+</td>
+                    <td className="un">
                         <div className="div-data-w name">
                         {/*  <div className="wrapper">
                             <img src={Data.image} width="20" height="20" alt="coin logo"  />*/}
@@ -181,8 +181,8 @@ const Watchlist = (props)=> {
                             )}
                             </div>
                         </div>
-                    </div>
-                    <div>
+                    </td>
+                    <td>
                         <h3>Price</h3>
                         <div className="div-data-w last-price last-update">${Data.quote.USD.price.toFixed(2)}</div>
                         <div className="div-data-w last-update 1h">{Data.quote.percent_change_7d < 0 ? (
@@ -197,8 +197,8 @@ const Watchlist = (props)=> {
                                 </span>
                                 )} 
                         </div>
-                    </div>
-                    <div>
+                    </td>
+                    <td>
                         <h3>Volume</h3>
                         <div className="div-data-w market-vol-w last-update">{Data.quote.USD.volume_24h.toFixed(2)}</div>
                         <div className="div-data-w market-vol-w last-update">{Data.quote.USD.volume_change_24h < 0 ? (
@@ -213,19 +213,20 @@ const Watchlist = (props)=> {
                                 </span>
                                 )}
                         </div>
-                    </div>                   
-                    <div>
+                    </td>                   
+                    <td>
                     <h3>Supply</h3>
                     <div className="div-data-w market-sup last-update">{Data.circulating_supply.toFixed(2)}</div>
-                    </div>
+                    </td>
                     
                      
                     {/* <div> <button className='div-btn Purchase' onClick={handleClick } id={Data.name}>Buy</button></div> */}
-                </div>
+                </tr>
         
         ))}
-            </div>)}
-        </div>
+            </tbody>)}
+        </table>
+       
     
     <Form show={isVisible} focus={Visiblity}  data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form}  buyCoin={buyCoin}/>
     </>

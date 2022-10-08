@@ -1,6 +1,7 @@
 .view {
-    padding :5rem;
+    padding: 5rem;
     background-color: var(--background);
+    
 } 
 
 .details-top {
@@ -10,6 +11,7 @@
     width: 100%;
     justify-content: space-between;
     border-bottom: 3px solid #fff;
+    /* border-bottom: 1px solid var(--color1); */
 }
 
 .name-w {
@@ -32,7 +34,7 @@
 }
 
 .rank, .cap,.rank:hover, .cap:hover {
-    background: #0d579b;
+    background: var(--color2);
     /* border-radius: 4px; */
     margin:0 5px;
     width: 8rem;
@@ -41,25 +43,31 @@
     font: inherit;
     cursor: text;
     padding: 2px;
-    background: #0d579b;
+    background: var(--color2);
     
 }
 .price-label {
     font-size: 1.rem;
     font-weight: 500;
-    color: #4d4d4d;
+    /* color: #4d4d4d; */
+    color: var(--color1);
     text-align : right;
 }
 .price h2{
     font-size: 2.5rem;
     font-weight: 600;
+    color: var(--font-white-co);
 }
 .price {
     display:flex;
     gap: 0.4rem;
     padding-bottom: 1rem;
-    color:#4d4d4d;
+    /* color:#4d4d4d; */
+    
     font-size: 1.2rem;
+}
+p.price {
+    color: var(--font-white-co);
 }
 .rate,.rate:hover {
     background-color: inherit;
@@ -81,32 +89,33 @@
 .buys {
     border: none;
     background-color: #329239;
-    color: #ffffff;
+    color: var(--color1);
     border-radius: 9px;
-    box-shadow: 0 8px #999;
+    /* box-shadow: 0 8px #999; */
     padding: 15px 25px;
     font-size: 24px;
     transition: all 2s;
 }
 .buys:active {
     background-color: #3e8e41;
-    box-shadow: 0 5px #666;
+    /* box-shadow: 0 5px #666; */
     transform: translateY(4px);
     transition: all 4ms;
 }
 .bulk {
     display:flex;
     justify-content: space-between;
+    /* background-color: var(--blackest-nav); */
 }
 .bulk h3 {
     padding-bottom: 1.2rem;
     text-align: left;
 }
 .bulk div:not(:last-child) {
-    border-right: 3px solid #fff;
+    /* border-right: 3px solid #fff; */
 }
 .title {
-    color: #0d579b
+    color: var(--color2)
 }
 .bulk p {
     text-align: center;
@@ -151,7 +160,6 @@
     }
     .buys {
         border-radius: 8px;
-        box-shadow: 0 6px #999;
         padding: 10px 18px;
         font-size: 20px;
         transition: all 2s;
@@ -206,10 +214,12 @@
         width: 210px;
         height: 170px;
         border-radius: 24px;
-        border: 1px solid #d3d3d3;
+        /* border: 1px solid #d3d3d3; */
+        border: 1px solid var(--color1);
         /* box-shadow: rgb(0 0 0 / 12%) 0px 8px 24px; */
         text-align: center;
-        background-color: rgba(247, 148, 26,0.5);
+        /* background-color: rgba(247, 148, 26,0.5); */
+        background-color: var(--blackest-nav);
     }
 } 
 @media screen and (max-width: 460px){
@@ -239,5 +249,12 @@
         font-size: 1.4rem;
         font-weight: 400;
     }
+    
+}
+@media screen and (max-width: 340px){
+    .price h2 {
+        font-size: 1rem;
+    }
+    .price .view-b .green-b { font-size: 0.7rem}
     
 }

@@ -5,7 +5,7 @@ import { FiArrowUpRight, FiArrowDown } from 'react-icons/fi';
 import './Homestyle.css';
 import imge1 from "./assets/about-banner.png";
 // import imge2 from "./assets/images.png";
-import vid from './assets/video.mp4'
+import vid from './../../assets/video.mp4';
 
 const Home = () => {
 
@@ -23,7 +23,7 @@ const Home = () => {
     }, [])
 
 
-    if (!data) return (<h2>Loading ...</h2>);
+    if (!data) return (<h2 style={{color:'white'}}>Loading ...</h2>);
 
     return (
         <div className='featured'>

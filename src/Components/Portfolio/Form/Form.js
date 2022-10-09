@@ -44,12 +44,14 @@ const Form =(props)=>{
         // }
 
     }
+    
+    
 
 
     return (
         
         props.show &&
-        <div className='form-buy' >
+        <div className='form-buy'>
             <button className='close' onClick={Focus}>X</button>
             <h2>BUY COIN</h2>
             <input list="coins" placeholder='Enter coin name' onChange={changeFormName} value={props.form.name} id='a'/>

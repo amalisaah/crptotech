@@ -10,9 +10,9 @@ const Navbar = () => {
 
   return (
     <header className='header'>
-      <div className='container'>
+      <div className='container' >
         <h1><NavLink to='/'>Crypto<span className='primary'>Tech</span></NavLink></h1>
-        <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+        <ul className={click ? 'nav-menu active' : 'nav-menu'} onMouseLeave={handleClick}>
           <li>
               <NavLink to='/portfolio'>PORTFOLIO</NavLink>
           </li>
@@ -29,8 +29,8 @@ const Navbar = () => {
               <option value='euro'>USD</option>
             </select>
         </form>
-        <div className='hamburger' onClick={handleClick}>
-            {click ? (<FaTimes size={20} style={{color: '#333'}}/>) : (<FaBars size={20} />)}
+        <div className='hamburger' onClick={handleClick} >
+            {click ? (<FaTimes size={20} style={{color: 'white'}}/>) : (<FaBars size={20} />)}
             
         </div>
       </div>

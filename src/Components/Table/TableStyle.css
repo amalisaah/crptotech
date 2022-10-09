@@ -114,6 +114,9 @@ table {
     display: table-cell;
     background-color: inherit;
   }
+  th#Add {
+    background-color:hsl(240, 5%, 8%);
+  }
 
   .Purchase,#Purchase {display: none;}
 

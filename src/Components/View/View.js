@@ -8,7 +8,6 @@ import Form from '../Portfolio/Form/Form';
 const View = (props)=>{
     
     const coin=props.coin
-    console.log(coin)
 
     
   
@@ -139,10 +138,10 @@ const View = (props)=>{
                     }
                 </div>
 
-                <div className='details chart'>
+                {/* <div className='details chart'>
                     CHART
                     
-                </div>
+                </div> */}
                 
             </div>
             <Form show={isVisible} focus={Visiblity} data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form}  buyCoin={buyCoin} />

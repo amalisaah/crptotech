@@ -46,11 +46,13 @@
     /* box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 24px; */
     text-align: center;
     /* background-color: var(--color1); */
+    animation: rotate linear 1s 1 alternate;
 }
 
-/* .featured .right .card:hover {
-    box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px;
-} */
+.featured .right .card:hover {
+    /* box-shadow: rgb(0 0 0 / 20%) 0px 8px 24px; */
+    animation-play-state: paused;
+}
 /* .featured .card .top {
     display: flex;
     flex-direction: column;
@@ -60,6 +62,7 @@
     width: 50px;
     margin: auto;
     padding: .2rem 0;
+    animation: bounceIn 4s;
 }
  
 /*
@@ -74,6 +77,7 @@
     border-radius: 24px 4px;
     color: white;
     transition: background-color 0.2s;
+    animation: bounceIn 2s;
 }
 .link {
     color: inherit;

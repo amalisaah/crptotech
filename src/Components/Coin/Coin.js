@@ -8,6 +8,14 @@ import Form from '../Portfolio/Form/Form';
     
 
 const Coin = (props)=>{
+   //coins
+   const sorted=(a)=>{
+    props.sorted(a)
+   }
+
+
+
+
     //watchlist
     let data= props.data;
     const getCoin=(val)=>{
@@ -45,7 +53,7 @@ const Coin = (props)=>{
     const head = ['Fav','#','Add','Name','Price','24H %','7d %','Market-Cap','Volume','Purchase']
     return(
     <>
-        <Table data={data} head={head} onClick={Visiblity} addfav={getCoin} SelCoin={SelCoin}  watch={props.watch}/>
+        <Table data={data} head={head} sorted={sorted} onClick={Visiblity} addfav={getCoin} SelCoin={SelCoin}  watch={props.watch}/>
         <Form show={isVisible} focus={Visiblity} data={data}  changeFormNum={changeFormNum} changeFormName={changeFormName} form={props.form} buyCoin={buyCoin} />
     </>
     )

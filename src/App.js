@@ -12,6 +12,7 @@ import {getCryptotById} from './views/helperFunction/helperFunctions';
 import {deleteCoinById} from './views/helperFunction/helperFunctions';
 // import {cryptoId} from './views/helperFunction/helperFunctions';
 import {cryptoPriceSum} from './views/helperFunction/helperFunctions';
+// import axios from 'axios';
 
 
 
@@ -31,13 +32,15 @@ function App() {
   
   const[data,setData]=useState([]);
 
+
   const [id,setId]=useState(0);
  
   //////////// Get all available Crytpo Currencies///////////////////////
   const baseUrl = 'https://cryptotech-backend.herokuapp.com';
-    const getAllCrypto = async () => {
+    const getAllCrypto = async (Url) => {
+      // let url=baseUrl
         try {
-            const res = await fetch(baseUrl)
+            const res = await fetch(Url)
             if (res.ok) {
                 const response = await res.json()
                 setData(response.data)
@@ -79,12 +82,58 @@ function App() {
     
 }
 
-  /*SET DATA ONLY ON FIRST RENDER*/
+
+/*DISPLAYING COIN*/
+  const[sort,setSort]=useState('');
+
+  const sorted=(a)=>{
+    switch (a){
+      case '3': setSort('na');
+                break;
+      case '4': setSort('pa');
+                break;
+      case '6': setSort('nd');
+                break;
+      case '7': setSort('pd');
+                break;
+      default : setSort('');
+                break;
+    }
+    
+    
+  }
+
+  
+
+
+  /*SET DATA depending on sort value*/
  
   useEffect(()=>{
-    getAllCrypto()
+    let urlFetch;
+    const endPoint = '/sort';
+    let requestParams;
+    switch(sort){
+      // case 'pa':  requestParams = 'pa'
+      //             urlFetch=`${baseUrl}${endPoint}${requestParams}`; //price ascending
+      //             break;
+      case 'pa':  requestParams = '?sort=price&sort_dir=asc'
+                  urlFetch=`${baseUrl}${endPoint}${requestParams}`; //price ascending
+                  break;
+      case 'pd':  requestParams = '?sort=price&sort_dir=desc';
+                  urlFetch=`${baseUrl}${endPoint}${requestParams}`; //price descending
+                  break;
+      case 'na': requestParams = '?sort=name&sort_dir=asc';
+                 urlFetch=`${baseUrl}${endPoint}${requestParams}`; //name ascending
+                  break;
+      case 'nd': requestParams = '?sort=name&sort_dir=desc';
+                 urlFetch=`${baseUrl}${endPoint}${requestParams}`; //name descending
+                  break;
+      default : urlFetch=baseUrl
+                  break;
+    }
+    getAllCrypto(urlFetch);
     
-  },[])
+  },[sort])
  
 
   const cryptoId = (data, name) => {
@@ -214,7 +263,7 @@ function App() {
           
         </Route>
         <Route path='view' element={<View coin={coin} addfav={addWatch} data={data} Visiblity={Visiblity} isVisible={isVisible} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}  buyCoin={buyCoin} buy={buy} watch={watch}  />} />
-        <Route path='coin' element={<Coin data={data} addfav={addWatch} Visiblity={Visiblity} isVisible={isVisible} SelCoin={SelCoin} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}  buyCoin={buyCoin} buy={buy}  watch={watch} />}></Route>
+        <Route path='coin' element={<Coin data={data} sorted={sorted}addfav={addWatch} Visiblity={Visiblity} isVisible={isVisible} SelCoin={SelCoin} changeFormNum={changeFormNum} changeFormName={changeFormName} form={form}  buyCoin={buyCoin} buy={buy}  watch={watch} />}></Route>
  
       </Routes>
       <Footer />

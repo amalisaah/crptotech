@@ -7,7 +7,7 @@ import vid from './../../assets/video.mp4';
 
 
 
-const Table = ({data,head,onClick,addfav,SelCoin,watch})=>{
+const Table = ({data,head,onClick,addfav,SelCoin,watch,sorted})=>{
 
     const handleClick =(e)=>{ //display form
         onClick(true)
@@ -27,6 +27,8 @@ const Table = ({data,head,onClick,addfav,SelCoin,watch})=>{
     }
     
     const showCoin=(e)=>{SelCoin(e.target.id)}
+
+    const chale=(e)=>{sorted(e.target.id)}
  
     // console.log(watch)
 
@@ -45,7 +47,14 @@ const Table = ({data,head,onClick,addfav,SelCoin,watch})=>{
                 <tr className="table-row table-title">
                 {head.map((topic,index) => (
                     
-                <th className='table-heading' key={index} id={topic}>{topic}</th>))}
+                <th className='table-heading' key={index} id={topic} >
+                    {topic} 
+                    {(index===3 || index===4) && <div className='sort'>
+                        <i className="material-icons" id={index} style={{fontSize:'9px',fontWeight:'300',opacity:'0.6'}} onClick={chale}>expand_less</i>
+                        <i className="material-icons" id={index+3} style={{fontSize:'9px',fontWeight:'300',opacity:'0.6'}} onClick={chale}>expand_more</i>
+                        </div>}
+                    
+                </th>))}
                 </tr>
             </thead>
             

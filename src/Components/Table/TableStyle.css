@@ -50,6 +50,15 @@ table {
   width: 100%;
   
 }
+.market-table thead th>.sort {
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+}
+/* .market-table thead th {
+  display: flex;
+  
+} */
 .red,.green {white-space: nowrap}
 .table-btn {
   border: 0.02rem solid var(--color2);
